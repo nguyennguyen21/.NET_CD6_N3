@@ -2,11 +2,11 @@
 Công Nghệ .NET chủ đề 6 phần mềm quản lí học viên của TTNN
 phân công việc:
 - Ngọc :
-
+2,3,9
 - Nguyên:
-
+1,4,5,10
 - Thành :
-
+6,7,8
 * những trang cần làm :
   1. Trang chung
 •	Trang đăng nhập (/login)
