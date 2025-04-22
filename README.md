@@ -1,6 +1,6 @@
 # .NET_CD6_N3
 Công Nghệ .NET chủ đề 6 phần mềm quản lí học viên của TTNN
-phan6 công việc:
+phân công việc:
 - Ngọc :
 
 - Nguyên:
