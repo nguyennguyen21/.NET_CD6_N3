@@ -35,7 +35,7 @@
             this.borderButton3 = new AdminLodash.BorderButton();
             this.borderButton4 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new AdminLodash.TextBox.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -131,20 +131,27 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(340, 142);
+            this.panel2.Location = new System.Drawing.Point(451, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(484, 35);
+            this.panel2.Size = new System.Drawing.Size(373, 478);
             this.panel2.TabIndex = 6;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 9);
+            this.textBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBox1.BorderSize = 2;
+            this.textBox1.Location = new System.Drawing.Point(3, 81);
+            this.textBox1.Multiline = false;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 20);
+            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.textBox1.PasswordChar = false;
+            this.textBox1.Size = new System.Drawing.Size(350, 28);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Thông tin học viên";
+            this.textBox1.Texts = "";
+            this.textBox1.UnderlinedStyle = false;
             // 
             // coursemanagement
             // 
@@ -163,7 +170,6 @@
             this.Text = "coursemanagement";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -177,6 +183,6 @@
         private BorderButton borderButton3;
         private BorderButton borderButton4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private TextBox.TextBox textBox1;
     }
 }
