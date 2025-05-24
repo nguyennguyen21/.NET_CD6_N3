@@ -12,8 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Security.Cryptography; // mã hóa mật khẩu
 using MySql.Data.MySqlClient; // Thêm thư viện MySQL
-using AdminLodash.Mysql.AdminTacVu;
-using static AdminLodash.Mysql.AdminTacVu.TacVu;
+
 
 namespace AdminLodash
 {
@@ -64,28 +63,7 @@ namespace AdminLodash
 
         private void borderButton2_Click(object sender, EventArgs e)
         {
-            string hoTen = FullName.Text.Trim();
-            string gioiTinh = rbNam.Checked ? "Nam" : (rbNu.Checked ? "Nữ" : "");
-            string sdt = txtSDt.Text.Trim();
-            string diaChi = txtDiaChi.Text.Trim();
-            string matKhau = txtSDt.Text.Trim();
-
-            TacVu dk = new TacVu();
-
-            dk.DangKyHocVien(
-                hoTen,
-                dtpNgaySinh.Value,
-                gioiTinh,
-                sdt,
-                diaChi,
-                matKhau,
-                error => labelLoi.Text = error,
-                success =>
-                {
-                    MessageBox.Show(success);
-                    this.Close(); // Có thể chuyển sang form khác nếu cần
-                }
-            );
+           
         }
 
 
