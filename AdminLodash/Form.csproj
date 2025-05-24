@@ -178,6 +178,7 @@
     <Compile Include="StudentLodash.Designer.cs">
       <DependentUpon>StudentLodash.cs</DependentUpon>
     </Compile>
+    <Compile Include="TacVu\Login.cs" />
     <Compile Include="TextBox\BorderTextBox.cs" />
     <Compile Include="TextBox\TextBox.cs">
       <SubType>UserControl</SubType>

@@ -66,11 +66,11 @@ namespace AdminLodash
         {
             string hoTen = FullName.Text.Trim();
             string gioiTinh = rbNam.Checked ? "Nam" : (rbNu.Checked ? "Nữ" : "");
-            string sdt = txtSoDienThoai.Text.Trim();
+            string sdt = txtSDt.Text.Trim();
             string diaChi = txtDiaChi.Text.Trim();
-            string matKhau = txtMatKhau.Text.Trim();
+            string matKhau = txtSDt.Text.Trim();
 
-            dangKi dk = new dangKi();
+            TacVu dk = new TacVu();
 
             dk.DangKyHocVien(
                 hoTen,
