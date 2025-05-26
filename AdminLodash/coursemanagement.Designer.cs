@@ -67,9 +67,9 @@
             this.borderButton1.FlatAppearance.BorderSize = 0;
             this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton1.ForeColor = System.Drawing.Color.White;
-            this.borderButton1.Location = new System.Drawing.Point(1298, 96);
+            this.borderButton1.Location = new System.Drawing.Point(1298, 80);
             this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(150, 40);
+            this.borderButton1.Size = new System.Drawing.Size(150, 56);
             this.borderButton1.TabIndex = 2;
             this.borderButton1.Text = "borderButton1";
             this.borderButton1.TextColor = System.Drawing.Color.White;
@@ -85,9 +85,9 @@
             this.borderButton2.FlatAppearance.BorderSize = 0;
             this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton2.ForeColor = System.Drawing.Color.White;
-            this.borderButton2.Location = new System.Drawing.Point(1142, 96);
+            this.borderButton2.Location = new System.Drawing.Point(1142, 80);
             this.borderButton2.Name = "borderButton2";
-            this.borderButton2.Size = new System.Drawing.Size(150, 40);
+            this.borderButton2.Size = new System.Drawing.Size(150, 56);
             this.borderButton2.TabIndex = 3;
             this.borderButton2.Text = "borderButton2";
             this.borderButton2.TextColor = System.Drawing.Color.White;
@@ -103,9 +103,9 @@
             this.borderButton3.FlatAppearance.BorderSize = 0;
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.ForeColor = System.Drawing.Color.White;
-            this.borderButton3.Location = new System.Drawing.Point(986, 96);
+            this.borderButton3.Location = new System.Drawing.Point(986, 80);
             this.borderButton3.Name = "borderButton3";
-            this.borderButton3.Size = new System.Drawing.Size(150, 40);
+            this.borderButton3.Size = new System.Drawing.Size(150, 56);
             this.borderButton3.TabIndex = 4;
             this.borderButton3.Text = "borderButton3";
             this.borderButton3.TextColor = System.Drawing.Color.White;
@@ -121,9 +121,9 @@
             this.borderButton4.FlatAppearance.BorderSize = 0;
             this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton4.ForeColor = System.Drawing.Color.White;
-            this.borderButton4.Location = new System.Drawing.Point(830, 96);
+            this.borderButton4.Location = new System.Drawing.Point(830, 80);
             this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(150, 40);
+            this.borderButton4.Size = new System.Drawing.Size(150, 56);
             this.borderButton4.TabIndex = 5;
             this.borderButton4.Text = "borderButton4";
             this.borderButton4.TextColor = System.Drawing.Color.White;
@@ -148,7 +148,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Padding = new System.Windows.Forms.Padding(7);
             this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(350, 28);
+            this.textBox1.Size = new System.Drawing.Size(365, 28);
             this.textBox1.TabIndex = 0;
             this.textBox1.Texts = "";
             this.textBox1.UnderlinedStyle = false;

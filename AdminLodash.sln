@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "AdminLodash\Form.csproj", "{DA8022CC-DE99-4E41-8717-520E9C83BB6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{C1C12604-2026-41F8-8ACC-69BF8E0C07D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{D8614F93-CF74-43C0-9550-F858B60B3B53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DA8022CC-DE99-4E41-8717-520E9C83BB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA8022CC-DE99-4E41-8717-520E9C83BB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA8022CC-DE99-4E41-8717-520E9C83BB6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C12604-2026-41F8-8ACC-69BF8E0C07D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C12604-2026-41F8-8ACC-69BF8E0C07D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C12604-2026-41F8-8ACC-69BF8E0C07D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C12604-2026-41F8-8ACC-69BF8E0C07D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8614F93-CF74-43C0-9550-F858B60B3B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8614F93-CF74-43C0-9550-F858B60B3B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8614F93-CF74-43C0-9550-F858B60B3B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8614F93-CF74-43C0-9550-F858B60B3B53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
