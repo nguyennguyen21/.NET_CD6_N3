@@ -40,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.borderButton2 = new AdminLodash.BorderButton();
+            this.borderButton3 = new AdminLodash.BorderButton();
+            this.borderButton4 = new AdminLodash.BorderButton();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelRadius1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +50,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.borderButton4);
+            this.panel1.Controls.Add(this.borderButton3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -212,6 +217,42 @@
             this.borderButton2.TextColor = System.Drawing.Color.White;
             this.borderButton2.UseVisualStyleBackColor = false;
             // 
+            // borderButton3
+            // 
+            this.borderButton3.BackColor = System.Drawing.Color.White;
+            this.borderButton3.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton3.BoderRadius1 = 40;
+            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton3.BorderSize = 0;
+            this.borderButton3.FlatAppearance.BorderSize = 0;
+            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton3.ForeColor = System.Drawing.Color.Black;
+            this.borderButton3.Location = new System.Drawing.Point(1211, 9);
+            this.borderButton3.Name = "borderButton3";
+            this.borderButton3.Size = new System.Drawing.Size(45, 45);
+            this.borderButton3.TabIndex = 14;
+            this.borderButton3.Text = "---";
+            this.borderButton3.TextColor = System.Drawing.Color.Black;
+            this.borderButton3.UseVisualStyleBackColor = false;
+            // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.White;
+            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton4.BoderRadius1 = 40;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.Black;
+            this.borderButton4.Location = new System.Drawing.Point(1277, 9);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(45, 45);
+            this.borderButton4.TabIndex = 15;
+            this.borderButton4.Text = "X";
+            this.borderButton4.TextColor = System.Drawing.Color.Black;
+            this.borderButton4.UseVisualStyleBackColor = false;
+            // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +272,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = " ";
             this.Load += new System.EventHandler(this.register_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
@@ -253,5 +295,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private BorderButton borderButton2;
+        private BorderButton borderButton4;
+        private BorderButton borderButton3;
     }
 }

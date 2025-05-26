@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.borderButton4 = new AdminLodash.BorderButton();
-            this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +53,8 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.FullName = new AdminLodash.TextBox.TextBox();
             this.labelLoi = new System.Windows.Forms.Label();
+            this.borderButton3 = new AdminLodash.BorderButton();
+            this.borderButton4 = new AdminLodash.BorderButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelRadius3.SuspendLayout();
@@ -72,46 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 60);
             this.panel1.TabIndex = 0;
-            // 
-            // borderButton4
-            // 
-            this.borderButton4.BackColor = System.Drawing.Color.White;
-            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton4.BoderRadius1 = 40;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton4.ForeColor = System.Drawing.Color.Red;
-            this.borderButton4.Location = new System.Drawing.Point(1218, 12);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(49, 42);
-            this.borderButton4.TabIndex = 1;
-            this.borderButton4.Text = "-";
-            this.borderButton4.TextColor = System.Drawing.Color.Red;
-            this.borderButton4.UseVisualStyleBackColor = false;
-            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
-            // 
-            // borderButton3
-            // 
-            this.borderButton3.BackColor = System.Drawing.Color.White;
-            this.borderButton3.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton3.BoderRadius1 = 40;
-            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton3.BorderSize = 0;
-            this.borderButton3.FlatAppearance.BorderSize = 0;
-            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton3.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton3.ForeColor = System.Drawing.Color.Red;
-            this.borderButton3.Location = new System.Drawing.Point(1273, 12);
-            this.borderButton3.Name = "borderButton3";
-            this.borderButton3.Size = new System.Drawing.Size(49, 42);
-            this.borderButton3.TabIndex = 0;
-            this.borderButton3.Text = "X";
-            this.borderButton3.TextColor = System.Drawing.Color.Red;
-            this.borderButton3.UseVisualStyleBackColor = false;
-            this.borderButton3.Click += new System.EventHandler(this.borderButton3_Click);
             // 
             // panel2
             // 
@@ -134,7 +94,7 @@
             this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.Location = new System.Drawing.Point(70, 185);
+            this.borderButton1.Location = new System.Drawing.Point(70, 193);
             this.borderButton1.Name = "borderButton1";
             this.borderButton1.Size = new System.Drawing.Size(272, 52);
             this.borderButton1.TabIndex = 10;
@@ -177,7 +137,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(981, 187);
+            this.label4.Location = new System.Drawing.Point(921, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 11;
@@ -188,7 +148,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(981, 269);
+            this.label5.Location = new System.Drawing.Point(921, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 24);
             this.label5.TabIndex = 12;
@@ -199,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(981, 343);
+            this.label6.Location = new System.Drawing.Point(921, 343);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 24);
             this.label6.TabIndex = 13;
@@ -251,7 +211,7 @@
             this.panelRadius3.BorderSize = 0;
             this.panelRadius3.Controls.Add(this.rbNu);
             this.panelRadius3.ForeColor = System.Drawing.Color.White;
-            this.panelRadius3.Location = new System.Drawing.Point(1098, 370);
+            this.panelRadius3.Location = new System.Drawing.Point(1037, 370);
             this.panelRadius3.Name = "panelRadius3";
             this.panelRadius3.Size = new System.Drawing.Size(84, 35);
             this.panelRadius3.TabIndex = 19;
@@ -281,7 +241,7 @@
             this.panelRadius2.BorderSize = 0;
             this.panelRadius2.Controls.Add(this.rbNam);
             this.panelRadius2.ForeColor = System.Drawing.Color.White;
-            this.panelRadius2.Location = new System.Drawing.Point(985, 370);
+            this.panelRadius2.Location = new System.Drawing.Point(925, 370);
             this.panelRadius2.Name = "panelRadius2";
             this.panelRadius2.Size = new System.Drawing.Size(84, 35);
             this.panelRadius2.TabIndex = 18;
@@ -335,7 +295,7 @@
             this.txtDiaChi.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtDiaChi.BorderSize = 3;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(985, 301);
+            this.txtDiaChi.Location = new System.Drawing.Point(925, 301);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiaChi.Multiline = false;
             this.txtDiaChi.Name = "txtDiaChi";
@@ -354,7 +314,7 @@
             this.txtSDt.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSDt.BorderSize = 3;
             this.txtSDt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDt.Location = new System.Drawing.Point(985, 222);
+            this.txtSDt.Location = new System.Drawing.Point(925, 222);
             this.txtSDt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSDt.Multiline = false;
             this.txtSDt.Name = "txtSDt";
@@ -413,7 +373,7 @@
             this.borderButton2.FlatAppearance.BorderSize = 0;
             this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton2.ForeColor = System.Drawing.Color.White;
-            this.borderButton2.Location = new System.Drawing.Point(985, 467);
+            this.borderButton2.Location = new System.Drawing.Point(925, 459);
             this.borderButton2.Name = "borderButton2";
             this.borderButton2.Size = new System.Drawing.Size(318, 53);
             this.borderButton2.TabIndex = 3;
@@ -444,11 +404,49 @@
             // labelLoi
             // 
             this.labelLoi.AutoSize = true;
-            this.labelLoi.Location = new System.Drawing.Point(998, 425);
+            this.labelLoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoi.ForeColor = System.Drawing.Color.Red;
+            this.labelLoi.Location = new System.Drawing.Point(922, 435);
             this.labelLoi.Name = "labelLoi";
-            this.labelLoi.Size = new System.Drawing.Size(41, 13);
+            this.labelLoi.Size = new System.Drawing.Size(61, 18);
             this.labelLoi.TabIndex = 23;
             this.labelLoi.Text = "label10";
+            // 
+            // borderButton3
+            // 
+            this.borderButton3.BackColor = System.Drawing.Color.White;
+            this.borderButton3.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton3.BoderRadius1 = 40;
+            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton3.BorderSize = 0;
+            this.borderButton3.FlatAppearance.BorderSize = 0;
+            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton3.ForeColor = System.Drawing.Color.Black;
+            this.borderButton3.Location = new System.Drawing.Point(1198, 6);
+            this.borderButton3.Name = "borderButton3";
+            this.borderButton3.Size = new System.Drawing.Size(45, 45);
+            this.borderButton3.TabIndex = 1;
+            this.borderButton3.Text = "---";
+            this.borderButton3.TextColor = System.Drawing.Color.Black;
+            this.borderButton3.UseVisualStyleBackColor = false;
+            // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.White;
+            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton4.BoderRadius1 = 40;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.Black;
+            this.borderButton4.Location = new System.Drawing.Point(1266, 6);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(45, 45);
+            this.borderButton4.TabIndex = 2;
+            this.borderButton4.Text = "X";
+            this.borderButton4.TextColor = System.Drawing.Color.Black;
+            this.borderButton4.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -518,10 +516,10 @@
         private panelRadius.panelRadius panelRadius3;
         private System.Windows.Forms.Label label8;
         private Datepicker.DateandTime dtpNgaySinh;
-        private BorderButton borderButton3;
-        private BorderButton borderButton4;
         private RadioButton1.RadioButton1 rbNu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelLoi;
+        private BorderButton borderButton4;
+        private BorderButton borderButton3;
     }
 }

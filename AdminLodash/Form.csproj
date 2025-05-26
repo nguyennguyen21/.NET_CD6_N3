@@ -218,6 +218,9 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Studenmanagement.resx">
+      <DependentUpon>Studenmanagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentLodash.resx">
       <DependentUpon>StudentLodash.cs</DependentUpon>
     </EmbeddedResource>

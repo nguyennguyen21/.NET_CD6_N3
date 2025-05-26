@@ -39,6 +39,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.borderButton1 = new AdminLodash.BorderButton();
+            this.borderButton2 = new AdminLodash.BorderButton();
+            this.borderButton3 = new AdminLodash.BorderButton();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +50,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.borderButton3);
+            this.panel1.Controls.Add(this.borderButton2);
+            this.panel1.Controls.Add(this.borderButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -79,7 +86,7 @@
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(229, 45);
             this.button1.TabIndex = 0;
-            this.button1.Text = "manage";
+            this.button1.Text = "dashboard";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -150,7 +157,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(229, 45);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "course";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -179,11 +186,66 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMain.Location = new System.Drawing.Point(224, 60);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1366, 584);
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.White;
+            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton1.BoderRadius1 = 40;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.ForeColor = System.Drawing.Color.Black;
+            this.borderButton1.Location = new System.Drawing.Point(23, 9);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(45, 45);
+            this.borderButton1.TabIndex = 0;
+            this.borderButton1.Text = "<----";
+            this.borderButton1.TextColor = System.Drawing.Color.Black;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            // 
+            // borderButton2
+            // 
+            this.borderButton2.BackColor = System.Drawing.Color.White;
+            this.borderButton2.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton2.BoderRadius1 = 40;
+            this.borderButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton2.BorderSize = 0;
+            this.borderButton2.FlatAppearance.BorderSize = 0;
+            this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton2.ForeColor = System.Drawing.Color.Black;
+            this.borderButton2.Location = new System.Drawing.Point(1532, 9);
+            this.borderButton2.Name = "borderButton2";
+            this.borderButton2.Size = new System.Drawing.Size(45, 45);
+            this.borderButton2.TabIndex = 1;
+            this.borderButton2.Text = "X";
+            this.borderButton2.TextColor = System.Drawing.Color.Black;
+            this.borderButton2.UseVisualStyleBackColor = false;
+            // 
+            // borderButton3
+            // 
+            this.borderButton3.BackColor = System.Drawing.SystemColors.Window;
+            this.borderButton3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.borderButton3.BoderRadius1 = 40;
+            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton3.BorderSize = 0;
+            this.borderButton3.FlatAppearance.BorderSize = 0;
+            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton3.ForeColor = System.Drawing.Color.Black;
+            this.borderButton3.Location = new System.Drawing.Point(1481, 9);
+            this.borderButton3.Name = "borderButton3";
+            this.borderButton3.Size = new System.Drawing.Size(45, 45);
+            this.borderButton3.TabIndex = 2;
+            this.borderButton3.Text = "---";
+            this.borderButton3.TextColor = System.Drawing.Color.Black;
+            this.borderButton3.UseVisualStyleBackColor = false;
             // 
             // AdmninLodashForm
             // 
@@ -199,6 +261,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdmninLodashForm";
             this.Load += new System.EventHandler(this.AdmninLodashForm_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -218,5 +281,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panelMain;
+        private BorderButton borderButton1;
+        private BorderButton borderButton3;
+        private BorderButton borderButton2;
     }
 }
