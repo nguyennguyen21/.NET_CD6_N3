@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
+using MySql.Data.MySqlClient;
+
+using System.Data.SqlClient;
+
 
 
 namespace Data
 {
     public class SQLServer
     {
-        public static SqlConnection conn;
-        public static string chuoiketnoi = "Data source = MSI; database = QLHangHoa; integrated security = true";
+        public static MySqlConnection conn;
+        public static string chuoiketnoi = "Server=localhost;Database=QLHangHoa;Uid=root;Pwd=matkhau;";
         public static Boolean taoketnoi()
         {
-            conn = new SqlConnection(chuoiketnoi);
+            conn = new MySqlConnection(chuoiketnoi);
             try
             {
                 if (conn.State == ConnectionState.Closed)
@@ -31,37 +34,39 @@ namespace Data
         }
         public static DataTable laydulieutheotenbang(String tenbang)
         {
-            string sql = "select * from " + tenbang;
+            string sql = "SELECT * FROM " + tenbang;
             DataTable dt = new DataTable();
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.CommandText = sql;
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-                    sqlDataAdapter.Fill(dt);
-                    return dt;
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
                 }
+                return dt;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Lỗi đọc dữ liệu: " + ex.Message);
                 return dt;
             }
         }
 
         public static int ThemBaiThi(string testId, string classId, string testName,
-                             DateTime testDate, string description, decimal fee)
+                     DateTime testDate, string description, decimal fee)
         {
             string sql = @"INSERT INTO Tests 
-                   (TestID, ClassID, TestName, TestDate, Description, Fee) 
-                   VALUES 
-                   (@TestID, @ClassID, @TestName, @TestDate, @Description, @Fee)";
+           (TestID, ClassID, TestName, TestDate, Description, Fee) 
+           VALUES 
+           (@TestID, @ClassID, @TestName, @TestDate, @Description, @Fee)";
 
             int sodong = 0;
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@TestID", testId);
                     cmd.Parameters.AddWithValue("@ClassID", classId);
@@ -70,7 +75,7 @@ namespace Data
                     cmd.Parameters.AddWithValue("@Description", description);
                     cmd.Parameters.AddWithValue("@Fee", fee);
 
-                    conn.Open();
+                    taoketnoi(); // Mở kết nối nếu chưa mở
                     sodong = cmd.ExecuteNonQuery();
                 }
             }
@@ -99,7 +104,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
                     cmd.Parameters.AddWithValue("@FullName", fullName);
@@ -140,7 +145,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@ClassID", classId);
                     cmd.Parameters.AddWithValue("@CourseID", courseId);
@@ -179,7 +184,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@EnrollmentID", enrollmentId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -217,7 +222,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@CourseID", courseId);
                     cmd.Parameters.AddWithValue("@CourseName", courseName);
@@ -255,7 +260,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@ResultID", resultId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -293,7 +298,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@FeeID", feeId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -334,7 +339,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@TeacherID", teacherId);
                     cmd.Parameters.AddWithValue("@FullName", fullName);
@@ -376,7 +381,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@AttendanceID", attendanceId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
@@ -402,17 +407,16 @@ namespace Data
         }
 
 
-        public static int CapNhatDuLieu(string tenBang, Dictionary<string, object> duLieuCapNhat, string dieuKienWhere, params SqlParameter[] parameters)
+        public static int CapNhatDuLieu(string tenBang, Dictionary<string, object> duLieuCapNhat, string dieuKienWhere, params MySqlParameter[] parameters)
         {
             if (string.IsNullOrEmpty(tenBang) || string.IsNullOrEmpty(dieuKienWhere) || duLieuCapNhat == null || duLieuCapNhat.Count == 0)
                 return -1;
 
             StringBuilder sql = new StringBuilder("UPDATE " + tenBang + " SET ");
-            List<string> danhSachTruong = new List<string>();
 
             foreach (var item in duLieuCapNhat)
             {
-                sql.Append(item.Key + " = @" + item.Key + ", ");
+                sql.Append($"{item.Key} = @{item.Key}, ");
             }
 
             // Bỏ dấu phẩy cuối cùng và thêm WHERE
@@ -422,7 +426,7 @@ namespace Data
             int sodong = 0;
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql.ToString(), conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql.ToString(), conn))
                 {
                     foreach (var item in duLieuCapNhat)
                     {
@@ -435,7 +439,7 @@ namespace Data
                         cmd.Parameters.AddRange(parameters);
                     }
 
-                    taoketnoi();
+                    taoketnoi(); // Mở kết nối nếu chưa mở
                     sodong = cmd.ExecuteNonQuery();
                 }
             }
@@ -461,7 +465,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     if (parameters != null && parameters.Length > 0)
                     {
@@ -493,7 +497,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     taoketnoi();
                     object result = cmd.ExecuteScalar();
@@ -560,7 +564,7 @@ namespace Data
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(sql, SQLServer.conn))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     SQLServer.taoketnoi();
                     object result = cmd.ExecuteScalar();

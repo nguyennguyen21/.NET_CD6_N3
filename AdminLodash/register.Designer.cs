@@ -32,18 +32,20 @@
             this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.borderButton1 = new AdminLodash.BorderButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.borderButton2 = new AdminLodash.BorderButton();
             this.togglecontrol1 = new AdminLodash.ToggleControls.Togglecontrol();
             this.panelRadius1 = new AdminLodash.panelRadius.panelRadius();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new AdminLodash.TextBox.TextBox();
             this.textBox1 = new AdminLodash.TextBox.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.borderButton2 = new AdminLodash.BorderButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,13 +70,14 @@
             this.borderButton4.FlatAppearance.BorderSize = 0;
             this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton4.ForeColor = System.Drawing.Color.Black;
-            this.borderButton4.Location = new System.Drawing.Point(1277, 9);
+            this.borderButton4.Location = new System.Drawing.Point(1268, 9);
             this.borderButton4.Name = "borderButton4";
             this.borderButton4.Size = new System.Drawing.Size(45, 45);
             this.borderButton4.TabIndex = 15;
             this.borderButton4.Text = "X";
             this.borderButton4.TextColor = System.Drawing.Color.Black;
             this.borderButton4.UseVisualStyleBackColor = false;
+            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
             // 
             // borderButton3
             // 
@@ -93,10 +96,12 @@
             this.borderButton3.Text = "---";
             this.borderButton3.TextColor = System.Drawing.Color.Black;
             this.borderButton3.UseVisualStyleBackColor = false;
+            this.borderButton3.Click += new System.EventHandler(this.borderButton3_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.panel2.Controls.Add(this.pictureBorder1);
             this.panel2.Controls.Add(this.borderButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(898, 60);
@@ -104,6 +109,22 @@
             this.panel2.Size = new System.Drawing.Size(427, 499);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // pictureBorder1
+            // 
+            this.pictureBorder1.BackColor = System.Drawing.Color.White;
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(123, 32);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(188, 188);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 1;
+            this.pictureBorder1.TabStop = false;
             // 
             // borderButton1
             // 
@@ -124,6 +145,55 @@
             this.borderButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
             this.borderButton1.UseVisualStyleBackColor = false;
             this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(242, 204);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 24);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "User :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(242, 294);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Password :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(242, 376);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Show Password :";
+            // 
+            // borderButton2
+            // 
+            this.borderButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.borderButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.borderButton2.BoderRadius1 = 40;
+            this.borderButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton2.BorderSize = 0;
+            this.borderButton2.FlatAppearance.BorderSize = 0;
+            this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borderButton2.ForeColor = System.Drawing.Color.White;
+            this.borderButton2.Location = new System.Drawing.Point(238, 457);
+            this.borderButton2.Name = "borderButton2";
+            this.borderButton2.Size = new System.Drawing.Size(324, 51);
+            this.borderButton2.TabIndex = 13;
+            this.borderButton2.Text = "Accept";
+            this.borderButton2.TextColor = System.Drawing.Color.White;
+            this.borderButton2.UseVisualStyleBackColor = false;
             // 
             // togglecontrol1
             // 
@@ -204,55 +274,6 @@
             this.textBox1.UnderlinedStyle = true;
             this.textBox1.Load += new System.EventHandler(this.textBox1_Load);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(242, 204);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 24);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "User :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(242, 294);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 24);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Password :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(242, 376);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Show Password :";
-            // 
-            // borderButton2
-            // 
-            this.borderButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton2.BoderRadius1 = 40;
-            this.borderButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton2.BorderSize = 0;
-            this.borderButton2.FlatAppearance.BorderSize = 0;
-            this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton2.ForeColor = System.Drawing.Color.White;
-            this.borderButton2.Location = new System.Drawing.Point(246, 457);
-            this.borderButton2.Name = "borderButton2";
-            this.borderButton2.Size = new System.Drawing.Size(316, 51);
-            this.borderButton2.TabIndex = 13;
-            this.borderButton2.Text = "Accept";
-            this.borderButton2.TextColor = System.Drawing.Color.White;
-            this.borderButton2.UseVisualStyleBackColor = false;
-            // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +295,7 @@
             this.Load += new System.EventHandler(this.register_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
             this.ResumeLayout(false);
@@ -297,5 +319,6 @@
         private BorderButton borderButton2;
         private BorderButton borderButton4;
         private BorderButton borderButton3;
+        private pictureBorder.PictureBorder pictureBorder1;
     }
 }

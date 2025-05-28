@@ -94,6 +94,7 @@
             this.borderButton4.Text = "X";
             this.borderButton4.TextColor = System.Drawing.Color.Black;
             this.borderButton4.UseVisualStyleBackColor = false;
+            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click_1);
             // 
             // borderButton3
             // 
@@ -112,6 +113,7 @@
             this.borderButton3.Text = "---";
             this.borderButton3.TextColor = System.Drawing.Color.Black;
             this.borderButton3.UseVisualStyleBackColor = false;
+            this.borderButton3.Click += new System.EventHandler(this.borderButton3_Click_1);
             // 
             // panel2
             // 

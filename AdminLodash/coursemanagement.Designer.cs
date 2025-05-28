@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.borderButton2 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
@@ -53,20 +52,13 @@
             this.textBox1 = new AdminLodash.TextBox.TextBox();
             this.borderButton5 = new AdminLodash.BorderButton();
             this.borderButton6 = new AdminLodash.BorderButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(401, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(936, 465);
-            this.dataGridView1.TabIndex = 1;
             // 
             // borderButton1
             // 
@@ -363,11 +355,20 @@
             this.borderButton6.TextColor = System.Drawing.Color.White;
             this.borderButton6.UseVisualStyleBackColor = false;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(407, 84);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(930, 458);
+            this.dataGridView2.TabIndex = 9;
+            // 
             // coursemanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 545);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.borderButton6);
             this.Controls.Add(this.borderButton5);
             this.Controls.Add(this.panel2);
@@ -375,12 +376,10 @@
             this.Controls.Add(this.borderButton3);
             this.Controls.Add(this.borderButton2);
             this.Controls.Add(this.borderButton1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "coursemanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "coursemanagement";
             this.Load += new System.EventHandler(this.coursemanagement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -388,12 +387,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private BorderButton borderButton1;
         private BorderButton borderButton2;
         private BorderButton borderButton3;
@@ -418,5 +417,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

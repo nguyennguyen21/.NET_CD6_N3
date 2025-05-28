@@ -99,6 +99,16 @@ namespace AdminLodash
         {
 
         }
+
+        private void borderButton4_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void borderButton3_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
 
