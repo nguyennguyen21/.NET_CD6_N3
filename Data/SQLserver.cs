@@ -400,6 +400,194 @@ namespace Data
 
             return sodong;
         }
+
+
+        public static int CapNhatDuLieu(string tenBang, Dictionary<string, object> duLieuCapNhat, string dieuKienWhere, params SqlParameter[] parameters)
+        {
+            if (string.IsNullOrEmpty(tenBang) || string.IsNullOrEmpty(dieuKienWhere) || duLieuCapNhat == null || duLieuCapNhat.Count == 0)
+                return -1;
+
+            StringBuilder sql = new StringBuilder("UPDATE " + tenBang + " SET ");
+            List<string> danhSachTruong = new List<string>();
+
+            foreach (var item in duLieuCapNhat)
+            {
+                sql.Append(item.Key + " = @" + item.Key + ", ");
+            }
+
+            // Bỏ dấu phẩy cuối cùng và thêm WHERE
+            sql.Length -= 2; // Xóa dấu ", "
+            sql.Append(" WHERE " + dieuKienWhere);
+
+            int sodong = 0;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql.ToString(), conn))
+                {
+                    foreach (var item in duLieuCapNhat)
+                    {
+                        cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                    }
+
+                    // Thêm các tham số bổ sung nếu có từ mảng parameters
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+
+                    taoketnoi();
+                    sodong = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return sodong;
+        }
+        public static int XoaDuLieu(string tenBang, string dieuKienWhere, params SqlParameter[] parameters)
+        {
+            if (string.IsNullOrEmpty(tenBang) || string.IsNullOrEmpty(dieuKienWhere))
+                return -1;
+
+            string sql = "DELETE FROM " + tenBang + " WHERE " + dieuKienWhere;
+            int sodong = 0;
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+
+                    taoketnoi();
+                    sodong = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return sodong;
+        }
+
+        /*lấy mã học viên*/
+        public static string LayMaHocVienLonNhat()
+        {
+            string sql = "SELECT TOP 1 StudentID FROM Students WHERE StudentID LIKE 'hv%' ORDER BY StudentID DESC";
+            string maCuoi = null;
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    taoketnoi();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        maCuoi = result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return maCuoi;
+        }
+        /*Tạo mã học viên*/
+        public static string TaoMaHocVienTuDong()
+        {
+            string prefix = "hv";
+            string maCuoi = LayMaHocVienLonNhat();
+            int stt = 1;
+
+            if (!string.IsNullOrEmpty(maCuoi) && maCuoi.StartsWith(prefix))
+            {
+                string soSauMa = maCuoi.Substring(prefix.Length); // Lấy phần số sau "hv"
+
+                if (int.TryParse(soSauMa, out int currentNumber))
+                {
+                    stt = currentNumber + 1;
+                }
+            }
+
+            return prefix + stt.ToString("D3"); // Tạo mã có 3 chữ số, vd: hv001, hv012...
+        }
+        /*Tạo mã lớp học*/
+        public static string TaoMaPhu(string tenLop)
+        {
+            // Tách theo dấu cách và loại bỏ phần tử trống
+            string[] words = tenLop.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            string maPhu = "";
+            foreach (var word in words)
+            {
+                if (!string.IsNullOrWhiteSpace(word))
+                {
+                    maPhu += char.ToUpper(word[0]);
+                }
+            }
+
+            return maPhu;
+        }
+        public static int LaySoThuTuLonNhat(string prefix)
+        {
+            string sql = $"SELECT MAX(CAST(SUBSTRING(ClassID, LEN('{prefix}') + 1, LEN(ClassID)) AS INT)) " +
+                         $"FROM Classes WHERE ClassID LIKE '{prefix}%'";
+            int maxNumber = 0;
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, SQLServer.conn))
+                {
+                    SQLServer.taoketnoi();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        maxNumber = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy số thứ tự lớn nhất: " + ex.Message);
+            }
+
+            return maxNumber;
+        }
+        public static string TaoMaLopHoc(string tenLop)
+        {
+            string prefix = "TA"; // Tiền tố cố định
+            string maPhu = TaoMaPhu(tenLop); // Mã phụ từ tên lớp
+            string baseCode = prefix + maPhu; // TA + GTNC...
+
+            int nextNumber = LaySoThuTuLonNhat(baseCode) + 1;
+
+            return baseCode + nextNumber.ToString("D3"); // D3: số 3 chữ số, ví dụ: 001, 012...
+        }
         static void Main(string[] args)
         {
         }

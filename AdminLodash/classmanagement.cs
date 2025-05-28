@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class coursemanagement : Form
+    public partial class classmanagement : Form
     {
-        public coursemanagement()
+        public classmanagement()
         {
             InitializeComponent();
-        }
-
-        private void borderButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void coursemanagement_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

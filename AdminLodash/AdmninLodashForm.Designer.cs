@@ -189,7 +189,7 @@
             this.panelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMain.Location = new System.Drawing.Point(224, 60);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1366, 584);
+            this.panelMain.Size = new System.Drawing.Size(1365, 584);
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 

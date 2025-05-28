@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class coursemanagement : Form
+    public partial class Studentmanagement : Form
     {
-        public coursemanagement()
+        public Studentmanagement()
         {
             InitializeComponent();
         }
 
-        private void borderButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void coursemanagement_Load(object sender, EventArgs e)
+        private void textBox1_Load(object sender, EventArgs e)
         {
 
         }

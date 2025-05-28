@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class Studenmanagement : Form
+    public partial class Addstudentinclass : Form
     {
-        public Studenmanagement()
+        public Addstudentinclass()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

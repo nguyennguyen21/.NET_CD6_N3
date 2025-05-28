@@ -127,11 +127,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminClass.cs">
+    <Compile Include="Addstudentinclass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminClass.Designer.cs">
-      <DependentUpon>AdminClass.cs</DependentUpon>
+    <Compile Include="Addstudentinclass.Designer.cs">
+      <DependentUpon>Addstudentinclass.cs</DependentUpon>
     </Compile>
     <Compile Include="AdmninLodashForm.cs">
       <SubType>Form</SubType>
@@ -141,6 +141,12 @@
     </Compile>
     <Compile Include="BorderButton\BorderButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classmanagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classmanagement.Designer.cs">
+      <DependentUpon>classmanagement.cs</DependentUpon>
     </Compile>
     <Compile Include="coursemanagement.cs">
       <SubType>Form</SubType>
@@ -157,7 +163,16 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="management.Designer.cs">
+      <DependentUpon>management.cs</DependentUpon>
+    </Compile>
     <Compile Include="panelRadius\panelRadius.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="pictureBorder\PictureBorder.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -171,17 +186,17 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Studenmanagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Studenmanagement.Designer.cs">
-      <DependentUpon>Studenmanagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentLodash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentLodash.Designer.cs">
       <DependentUpon>StudentLodash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studentmanagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Studentmanagement.Designer.cs">
+      <DependentUpon>Studentmanagement.cs</DependentUpon>
     </Compile>
     <Compile Include="TextBox\BorderTextBox.cs" />
     <Compile Include="TextBox\TextBox.cs">
@@ -193,17 +208,20 @@
     <Compile Include="togglecontrols\Togglecontrol.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="AdminClass.resx">
-      <DependentUpon>AdminClass.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdmninLodashForm.resx">
       <DependentUpon>AdmninLodashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classmanagement.resx">
+      <DependentUpon>classmanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="coursemanagement.resx">
       <DependentUpon>coursemanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="management.resx">
+      <DependentUpon>management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,11 +236,11 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Studenmanagement.resx">
-      <DependentUpon>Studenmanagement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentLodash.resx">
       <DependentUpon>StudentLodash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studentmanagement.resx">
+      <DependentUpon>Studentmanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextBox\TextBox.resx">
       <DependentUpon>TextBox.cs</DependentUpon>

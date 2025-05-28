@@ -1,6 +1,6 @@
 ﻿namespace AdminLodash
 {
-    partial class Studenmanagement
+    partial class management
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,7 +43,7 @@
             this.borderButton3 = new AdminLodash.BorderButton();
             this.borderButton2 = new AdminLodash.BorderButton();
             this.borderButton1 = new AdminLodash.BorderButton();
-            this.button6 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,8 +60,21 @@
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(229, 545);
-            this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 5;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(0, 408);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(229, 45);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Admin";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -82,6 +97,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.button8);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button2);
@@ -89,8 +105,21 @@
             this.panel4.Controls.Add(this.button3);
             this.panel4.Location = new System.Drawing.Point(0, 104);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(229, 233);
+            this.panel4.Size = new System.Drawing.Size(229, 281);
             this.panel4.TabIndex = 2;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(0, 225);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(229, 45);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -115,7 +144,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(229, 45);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "Classes";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -177,7 +206,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1573, 60);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
             // 
             // borderButton3
             // 
@@ -189,7 +218,7 @@
             this.borderButton3.FlatAppearance.BorderSize = 0;
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1456, 9);
+            this.borderButton3.Location = new System.Drawing.Point(1447, 9);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(45, 45);
             this.borderButton3.TabIndex = 2;
@@ -225,7 +254,7 @@
             this.borderButton1.FlatAppearance.BorderSize = 0;
             this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton1.ForeColor = System.Drawing.Color.Black;
-            this.borderButton1.Location = new System.Drawing.Point(23, 9);
+            this.borderButton1.Location = new System.Drawing.Point(23, 7);
             this.borderButton1.Name = "borderButton1";
             this.borderButton1.Size = new System.Drawing.Size(45, 45);
             this.borderButton1.TabIndex = 0;
@@ -233,28 +262,23 @@
             this.borderButton1.TextColor = System.Drawing.Color.Black;
             this.borderButton1.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // panel5
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(0, 408);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(229, 45);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.panel5.Location = new System.Drawing.Point(227, 60);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1346, 545);
+            this.panel5.TabIndex = 6;
             // 
-            // Studenmanagement
+            // management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1573, 605);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Studenmanagement";
-            this.Text = "Studenmanagement";
+            this.Name = "management";
+            this.Text = "management";
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -265,6 +289,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button7;
@@ -277,6 +302,7 @@
         private BorderButton borderButton3;
         private BorderButton borderButton2;
         private BorderButton borderButton1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panel5;
     }
 }

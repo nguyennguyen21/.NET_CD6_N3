@@ -1,6 +1,6 @@
 ﻿namespace AdminLodash
 {
-    partial class AdminClass
+    partial class Studentmanagement
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // AdminClass
+            // Studentmanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(120, 0);
-            this.Name = "AdminClass";
-            this.Text = "AdminClass";
+            this.ClientSize = new System.Drawing.Size(1349, 545);
+            this.Name = "Studentmanagement";
+            this.Text = "Studentmanagement";
             this.ResumeLayout(false);
 
         }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.borderButton4 = new AdminLodash.BorderButton();
+            this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,13 +55,15 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.FullName = new AdminLodash.TextBox.TextBox();
             this.labelLoi = new System.Windows.Forms.Label();
-            this.borderButton3 = new AdminLodash.BorderButton();
-            this.borderButton4 = new AdminLodash.BorderButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelRadius3.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panelRadius1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +76,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.White;
+            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton4.BoderRadius1 = 40;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.Black;
+            this.borderButton4.Location = new System.Drawing.Point(1266, 6);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(45, 45);
+            this.borderButton4.TabIndex = 2;
+            this.borderButton4.Text = "X";
+            this.borderButton4.TextColor = System.Drawing.Color.Black;
+            this.borderButton4.UseVisualStyleBackColor = false;
+            // 
+            // borderButton3
+            // 
+            this.borderButton3.BackColor = System.Drawing.Color.White;
+            this.borderButton3.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton3.BoderRadius1 = 40;
+            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton3.BorderSize = 0;
+            this.borderButton3.FlatAppearance.BorderSize = 0;
+            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton3.ForeColor = System.Drawing.Color.Black;
+            this.borderButton3.Location = new System.Drawing.Point(1198, 6);
+            this.borderButton3.Name = "borderButton3";
+            this.borderButton3.Size = new System.Drawing.Size(45, 45);
+            this.borderButton3.TabIndex = 1;
+            this.borderButton3.Text = "---";
+            this.borderButton3.TextColor = System.Drawing.Color.Black;
+            this.borderButton3.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -211,7 +251,7 @@
             this.panelRadius3.BorderSize = 0;
             this.panelRadius3.Controls.Add(this.rbNu);
             this.panelRadius3.ForeColor = System.Drawing.Color.White;
-            this.panelRadius3.Location = new System.Drawing.Point(1037, 370);
+            this.panelRadius3.Location = new System.Drawing.Point(1027, 370);
             this.panelRadius3.Name = "panelRadius3";
             this.panelRadius3.Size = new System.Drawing.Size(84, 35);
             this.panelRadius3.TabIndex = 19;
@@ -338,7 +378,7 @@
             this.textBox3.Multiline = false;
             this.textBox3.Name = "textBox3";
             this.textBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox3.PasswordChar = false;
+            this.textBox3.PasswordChar = true;
             this.textBox3.Size = new System.Drawing.Size(321, 31);
             this.textBox3.TabIndex = 5;
             this.textBox3.Texts = "";
@@ -356,7 +396,7 @@
             this.txtMatKhau.Multiline = false;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Padding = new System.Windows.Forms.Padding(7);
-            this.txtMatKhau.PasswordChar = false;
+            this.txtMatKhau.PasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(321, 31);
             this.txtMatKhau.TabIndex = 4;
             this.txtMatKhau.Texts = "";
@@ -373,9 +413,9 @@
             this.borderButton2.FlatAppearance.BorderSize = 0;
             this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton2.ForeColor = System.Drawing.Color.White;
-            this.borderButton2.Location = new System.Drawing.Point(925, 459);
+            this.borderButton2.Location = new System.Drawing.Point(925, 462);
             this.borderButton2.Name = "borderButton2";
-            this.borderButton2.Size = new System.Drawing.Size(318, 53);
+            this.borderButton2.Size = new System.Drawing.Size(386, 50);
             this.borderButton2.TabIndex = 3;
             this.borderButton2.Text = "accept";
             this.borderButton2.TextColor = System.Drawing.Color.White;
@@ -406,53 +446,52 @@
             this.labelLoi.AutoSize = true;
             this.labelLoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoi.ForeColor = System.Drawing.Color.Red;
-            this.labelLoi.Location = new System.Drawing.Point(922, 435);
+            this.labelLoi.Location = new System.Drawing.Point(922, 417);
             this.labelLoi.Name = "labelLoi";
             this.labelLoi.Size = new System.Drawing.Size(61, 18);
             this.labelLoi.TabIndex = 23;
             this.labelLoi.Text = "label10";
             // 
-            // borderButton3
+            // groupBox1
             // 
-            this.borderButton3.BackColor = System.Drawing.Color.White;
-            this.borderButton3.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton3.BoderRadius1 = 40;
-            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton3.BorderSize = 0;
-            this.borderButton3.FlatAppearance.BorderSize = 0;
-            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1198, 6);
-            this.borderButton3.Name = "borderButton3";
-            this.borderButton3.Size = new System.Drawing.Size(45, 45);
-            this.borderButton3.TabIndex = 1;
-            this.borderButton3.Text = "---";
-            this.borderButton3.TextColor = System.Drawing.Color.Black;
-            this.borderButton3.UseVisualStyleBackColor = false;
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(1117, 343);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(194, 62);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "role";
             // 
-            // borderButton4
+            // radioButton2
             // 
-            this.borderButton4.BackColor = System.Drawing.Color.White;
-            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton4.BoderRadius1 = 40;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.ForeColor = System.Drawing.Color.Black;
-            this.borderButton4.Location = new System.Drawing.Point(1266, 6);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(45, 45);
-            this.borderButton4.TabIndex = 2;
-            this.borderButton4.Text = "X";
-            this.borderButton4.TextColor = System.Drawing.Color.Black;
-            this.borderButton4.UseVisualStyleBackColor = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(100, 35);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(94, 28);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "student";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(7, 35);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(95, 28);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "teacher";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1325, 559);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelLoi);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpNgaySinh);
@@ -487,6 +526,8 @@
             this.panelRadius2.PerformLayout();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +562,8 @@
         private System.Windows.Forms.Label labelLoi;
         private BorderButton borderButton4;
         private BorderButton borderButton3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

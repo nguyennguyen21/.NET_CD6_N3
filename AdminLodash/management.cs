@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class AdminClass : Form
+    public partial class management : Form
     {
-        public AdminClass()
+        public management()
         {
             InitializeComponent();
         }
