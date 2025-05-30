@@ -35,7 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.textBox2 = new AdminLodash.TextBox.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateandTime2 = new AdminLodash.Datepicker.DateandTime();
@@ -162,7 +162,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbLevel);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dateandTime2);
@@ -192,23 +192,23 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(17, 227);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
+            this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Duration";
+            this.label8.Text = "level";
             // 
-            // comboBox1
+            // cmbLevel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Items.AddRange(new object[] {
             "",
             "easy",
             "normal",
             "difficult",
             "advanced"});
-            this.comboBox1.Location = new System.Drawing.Point(94, 223);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 24);
-            this.comboBox1.TabIndex = 17;
+            this.cmbLevel.Location = new System.Drawing.Point(94, 223);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(257, 24);
+            this.cmbLevel.TabIndex = 17;
             // 
             // textBox2
             // 
@@ -245,7 +245,7 @@
             this.dateandTime2.Location = new System.Drawing.Point(94, 296);
             this.dateandTime2.MinimumSize = new System.Drawing.Size(100, 35);
             this.dateandTime2.Name = "dateandTime2";
-            this.dateandTime2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dateandTime2.Padding = new System.Windows.Forms.Padding(5);
             this.dateandTime2.Size = new System.Drawing.Size(253, 35);
             this.dateandTime2.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
             this.dateandTime2.TabIndex = 14;
@@ -261,7 +261,7 @@
             this.dateandTime1.Location = new System.Drawing.Point(94, 255);
             this.dateandTime1.MinimumSize = new System.Drawing.Size(100, 35);
             this.dateandTime1.Name = "dateandTime1";
-            this.dateandTime1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dateandTime1.Padding = new System.Windows.Forms.Padding(5);
             this.dateandTime1.Size = new System.Drawing.Size(254, 35);
             this.dateandTime1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
             this.dateandTime1.TabIndex = 13;
@@ -308,7 +308,7 @@
             this.textBox3.BorderFocusColor = System.Drawing.Color.HotPink;
             this.textBox3.BorderSize = 3;
             this.textBox3.Location = new System.Drawing.Point(99, 14);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Multiline = false;
             this.textBox3.Name = "textBox3";
             this.textBox3.Padding = new System.Windows.Forms.Padding(12, 11, 12, 11);
@@ -420,7 +420,7 @@
             this.textBox1.Location = new System.Drawing.Point(6, 64);
             this.textBox1.Multiline = false;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
             this.textBox1.PasswordChar = false;
             this.textBox1.Size = new System.Drawing.Size(339, 31);
             this.textBox1.TabIndex = 0;
@@ -617,6 +617,6 @@
         private TextBox.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbLevel;
     }
 }

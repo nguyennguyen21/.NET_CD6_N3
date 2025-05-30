@@ -22,8 +22,34 @@ namespace AdminLodash
             this.TopLevel = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
-        }
 
+            InitializeCustomControls();
+            // Khởi tạo ComboBox cấp độ
+            cmbLevel.Items.AddRange(new string[] { "Dễ", "Trung bình", "Khó", "Nâng cao" });
+            this.Load += coursemanagement_Load;
+
+
+        }
+        private void InitializeCustomControls()
+        {
+            // Tạo cmbLevel
+            cmbLevel = new ComboBox
+            {
+                Location = new System.Drawing.Point(20, 20),
+                Width = 200
+            };
+            cmbLevel.Items.AddRange(new object[] { "Dễ", "Trung bình", "Khó", "Nâng cao" });
+            this.Controls.Add(cmbLevel);
+
+            // Tạo dataGridView2
+            dataGridView2 = new DataGridView
+            {
+                Dock = DockStyle.Bottom,
+                Top = 50,
+                Height = 400
+            };
+            this.Controls.Add(dataGridView2);
+        }
         private void borderButton3_Click(object sender, EventArgs e)
         {
 
@@ -31,13 +57,36 @@ namespace AdminLodash
 
         private void coursemanagement_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
 
+        private void LoadData()
+        {
+            try
+            {
+                DataTable dt = BUS.LayDanhSachKhoaHoc();
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    dataGridView2.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+
         }
+      
 
         private void textBox3_Load(object sender, EventArgs e)
         {

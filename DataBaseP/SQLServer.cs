@@ -38,6 +38,7 @@ namespace Data
             try
             {
                 if (!taoketnoi()) return dt;
+
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                 {

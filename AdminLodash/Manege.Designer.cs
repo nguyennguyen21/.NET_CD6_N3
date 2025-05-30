@@ -39,12 +39,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.borderButton2 = new AdminLodash.BorderButton();
-            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -194,18 +194,6 @@
             this.panelMain.Size = new System.Drawing.Size(1365, 671);
             this.panelMain.TabIndex = 2;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.pictureBorder1);
-            this.panel6.Location = new System.Drawing.Point(228, 60);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1345, 545);
-            this.panel6.TabIndex = 4;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
             // borderButton3
             // 
             this.borderButton3.BackColor = System.Drawing.SystemColors.Window;
@@ -246,6 +234,40 @@
             this.borderButton2.UseVisualStyleBackColor = false;
             this.borderButton2.Click += new System.EventHandler(this.borderButton2_Click);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.pictureBorder1);
+            this.panel6.Location = new System.Drawing.Point(228, 60);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1345, 545);
+            this.panel6.TabIndex = 4;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.label2.Location = new System.Drawing.Point(389, 249);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(535, 73);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "FOR YOUR LIFE";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.label1.Location = new System.Drawing.Point(501, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 73);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ENGLISH";
+            // 
             // pictureBorder1
             // 
             this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -261,28 +283,6 @@
             this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBorder1.TabIndex = 0;
             this.pictureBorder1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(501, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 73);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ENGLISH";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.label2.Location = new System.Drawing.Point(389, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(535, 73);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "FOR YOUR LIFE";
             // 
             // Manege
             // 
