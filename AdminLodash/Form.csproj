@@ -169,11 +169,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="management.cs">
+    <Compile Include="Manege.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="management.Designer.cs">
-      <DependentUpon>management.cs</DependentUpon>
+    <Compile Include="Manege.Designer.cs">
+      <DependentUpon>Manege.cs</DependentUpon>
     </Compile>
     <Compile Include="panelRadius\panelRadius.cs">
       <SubType>Component</SubType>
@@ -229,8 +229,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="management.resx">
-      <DependentUpon>management.cs</DependentUpon>
+    <EmbeddedResource Include="Manege.resx">
+      <DependentUpon>Manege.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -286,6 +286,12 @@
   <ItemGroup>
     <Content Include="Resources\calendarDark.png" />
     <Content Include="Resources\calendarWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{d8614f93-cf74-43c0-9550-f858b60b3b53}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

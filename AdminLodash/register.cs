@@ -21,7 +21,7 @@ namespace AdminLodash
        
         private void textBox1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panelRadius1_Paint(object sender, PaintEventArgs e)

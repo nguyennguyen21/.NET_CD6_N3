@@ -137,7 +137,7 @@
             this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.Location = new System.Drawing.Point(64, 241);
+            this.borderButton1.Location = new System.Drawing.Point(75, 241);
             this.borderButton1.Name = "borderButton1";
             this.borderButton1.Size = new System.Drawing.Size(272, 52);
             this.borderButton1.TabIndex = 0;

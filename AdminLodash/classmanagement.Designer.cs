@@ -57,15 +57,19 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Schedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // borderButton6
@@ -333,9 +337,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "ClassID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -420,25 +425,25 @@
             this.borderButton1.Name = "borderButton1";
             this.borderButton1.Size = new System.Drawing.Size(150, 50);
             this.borderButton1.TabIndex = 10;
-            this.borderButton1.Text = "borderButton1";
+            this.borderButton1.Text = "Add Class";
             this.borderButton1.TextColor = System.Drawing.Color.White;
             this.borderButton1.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClassID,
+            this.CourseID,
+            this.TeacherID,
+            this.ClassName,
+            this.MaxStudent,
+            this.Schedule,
+            this.Room});
             this.dataGridView1.Location = new System.Drawing.Point(401, 117);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(468, 424);
+            this.dataGridView1.Size = new System.Drawing.Size(947, 424);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(875, 117);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(468, 424);
-            this.dataGridView2.TabIndex = 17;
             // 
             // label10
             // 
@@ -449,23 +454,47 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "label10";
             // 
-            // label11
+            // ClassID
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(872, 92);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "label11";
+            this.ClassID.HeaderText = "ClassID";
+            this.ClassID.Name = "ClassID";
+            // 
+            // CourseID
+            // 
+            this.CourseID.HeaderText = "CourseID";
+            this.CourseID.Name = "CourseID";
+            // 
+            // TeacherID
+            // 
+            this.TeacherID.HeaderText = "TeacherID";
+            this.TeacherID.Name = "TeacherID";
+            // 
+            // ClassName
+            // 
+            this.ClassName.HeaderText = "ClassName";
+            this.ClassName.Name = "ClassName";
+            // 
+            // MaxStudent
+            // 
+            this.MaxStudent.HeaderText = "MaxStudent";
+            this.MaxStudent.Name = "MaxStudent";
+            // 
+            // Schedule
+            // 
+            this.Schedule.HeaderText = "Schedule";
+            this.Schedule.Name = "Schedule";
+            // 
+            // Room
+            // 
+            this.Room.HeaderText = "Room";
+            this.Room.Name = "Room";
             // 
             // classmanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 545);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.borderButton6);
             this.Controls.Add(this.borderButton5);
             this.Controls.Add(this.panel2);
@@ -474,8 +503,10 @@
             this.Controls.Add(this.borderButton2);
             this.Controls.Add(this.borderButton1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "classmanagement";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.classmanagement_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -484,7 +515,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,8 +551,13 @@
         private TextBox.TextBox textBox2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Schedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
     }
 }
