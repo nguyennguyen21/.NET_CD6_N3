@@ -449,8 +449,10 @@ namespace Data
         // Xóa dữ liệu
         public static int XoaDuLieu(string tenBang, string dieuKienWhere, params MySqlParameter[] parameters)
         {
-            if (string.IsNullOrEmpty(tenBang) || string.IsNullOrEmpty(dieuKienWhere)) return -1;
-            string sql = "DELETE FROM " + tenBang + " WHERE " + dieuKienWhere;
+            if (string.IsNullOrEmpty(tenBang) || string.IsNullOrEmpty(dieuKienWhere))
+                return -1;
+
+            string sql = $"DELETE FROM {tenBang} WHERE {dieuKienWhere}";
             int sodong = 0;
             try
             {
@@ -473,6 +475,7 @@ namespace Data
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
+
             return sodong;
         }
 
@@ -604,6 +607,36 @@ namespace Data
             string datePart = startDate.ToString("yyyyMMdd");
             string prefix = $"KH{datePart}";
             int nextNumber = LaySoThuTuLonNhat(prefix) + 1;
+            return $"{prefix}{nextNumber:D3}";
+        }
+
+        public static string TaoMaKhoaHocTuDong(string level, DateTime startDate)
+        {
+            string levelCode;
+
+            if (level == "Dễ")
+            {
+                levelCode = "DE";
+            }
+            else if (level == "Trung bình")
+            {
+                levelCode = "TB";
+            }
+            else if (level == "Khó")
+            {
+                levelCode = "KHO";
+            }
+            else if (level == "Nâng cao")
+            {
+                levelCode = "NC";
+            }
+            else
+            {
+                levelCode = "XX";
+            }
+
+            string prefix = $"KH{levelCode}{startDate:yyyyMMdd}";
+            int nextNumber = SQLServer.LaySoThuTuLonNhat(prefix) + 1;
             return $"{prefix}{nextNumber:D3}";
         }
 

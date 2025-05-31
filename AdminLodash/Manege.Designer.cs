@@ -138,6 +138,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Teachers";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel2
             // 
@@ -205,7 +206,7 @@
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1461, 12);
+            this.borderButton3.Location = new System.Drawing.Point(1474, 9);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(45, 45);
             this.borderButton3.TabIndex = 2;
@@ -225,7 +226,7 @@
             this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton2.ForeColor = System.Drawing.Color.Black;
-            this.borderButton2.Location = new System.Drawing.Point(1525, 12);
+            this.borderButton2.Location = new System.Drawing.Point(1525, 9);
             this.borderButton2.Name = "borderButton2";
             this.borderButton2.Size = new System.Drawing.Size(45, 45);
             this.borderButton2.TabIndex = 1;
@@ -251,7 +252,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.label2.Location = new System.Drawing.Point(389, 249);
+            this.label2.Location = new System.Drawing.Point(388, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(535, 73);
             this.label2.TabIndex = 2;
@@ -262,7 +263,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(501, 166);
+            this.label1.Location = new System.Drawing.Point(498, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(321, 73);
             this.label1.TabIndex = 1;
@@ -274,7 +275,7 @@
             this.pictureBorder1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
             this.pictureBorder1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
             this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.BorderSize = 10;
             this.pictureBorder1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBorder1.GradientAngle = 50F;
             this.pictureBorder1.Location = new System.Drawing.Point(0, 0);

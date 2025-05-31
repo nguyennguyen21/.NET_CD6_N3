@@ -9,18 +9,16 @@ namespace Bus
     // ================== LỚP XỬ LÝ KHÓA HỌC ==================
     public class BUS
     {
+        public static int CapNhatDuLieu(string tenBang, Dictionary<string, object> duLieuCapNhat, string dieuKienWhere, params MySqlParameter[] parameters)
+        {
+            return Data.SQLServer.CapNhatDuLieu(tenBang, duLieuCapNhat, dieuKienWhere, parameters);
+        }
         public static DataTable LayDanhSachKhoaHoc()
         {
             return SQLServer.laydulieutheotenbang("courses");
         }
 
-        // Thêm khóa học
-        public static int ThemKhoaHoc(string courseId, string courseName, string level,
-                                      string description, decimal tuitionFee, int duration,
-                                      DateTime startDate, DateTime endDate)
-        {
-            return SQLServer.ThemKhoaHoc(courseId, courseName, level, description, tuitionFee, duration, startDate, endDate);
-        }
+       
 
         // Xóa khóa học
         public static int XoaKhoaHoc(string courseId)
@@ -31,8 +29,8 @@ namespace Bus
 
         // Cập nhật khóa học
         public static int CapNhatKhoaHoc(string courseId, string courseName, string level,
-                                        string description, decimal tuitionFee, int duration,
-                                        DateTime startDate, DateTime endDate)
+                                   string description, decimal tuitionFee, int duration,
+                                   DateTime startDate, DateTime endDate)
         {
             var data = new Dictionary<string, object>
             {
@@ -48,13 +46,20 @@ namespace Bus
             return SQLServer.CapNhatDuLieu("Courses", data, "CourseID = @CourseID",
                 new MySqlParameter("@CourseID", courseId));
         }
-
         // Tự động sinh mã khóa học
-        public static string TaoMaKhoaHoc(DateTime startDate)
+        // Hàm sinh mã khóa học tự động
+        public static string TaoMaKhoaHocTuDong(DateTime startDate)
         {
-            return SQLServer.GenerateCourseID("", startDate);
+            return SQLServer.GenerateCourseID("", startDate); // Nếu bạn không cần phân biệt cấp độ
         }
 
+        // Hàm thêm khóa học
+        public static int ThemKhoaHoc(string courseId, string courseName, string level,
+                                    string description, decimal tuitionFee, int duration,
+                                    DateTime startDate, DateTime endDate)
+        {
+            return Data.SQLServer.ThemKhoaHoc(courseId, courseName, level, description, tuitionFee, duration, startDate, endDate);
+        }
         // ================== LỚP XỬ LÝ SINH VIÊN ==================
         public class StudentBUS
         {
