@@ -50,13 +50,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new AdminLodash.TextBox.TextBox();
+            this.txtTimKiem = new AdminLodash.TextBox.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
             this.borderButton8 = new AdminLodash.BorderButton();
             this.borderButton7 = new AdminLodash.BorderButton();
             this.borderButton6 = new AdminLodash.BorderButton();
             this.borderButton5 = new AdminLodash.BorderButton();
-            this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,6 +73,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(389, 530);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // groupBox2
             // 
@@ -110,20 +111,18 @@
             this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "level";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cmbLevel
             // 
             this.cmbLevel.FormattingEnabled = true;
             this.cmbLevel.Items.AddRange(new object[] {
-            "",
-            "easy",
-            "normal",
-            "difficult",
-            "advanced"});
+            ""});
             this.cmbLevel.Location = new System.Drawing.Point(94, 223);
             this.cmbLevel.Name = "cmbLevel";
             this.cmbLevel.Size = new System.Drawing.Size(257, 24);
             this.cmbLevel.TabIndex = 17;
+            this.cmbLevel.SelectedIndexChanged += new System.EventHandler(this.cmbLevel_SelectedIndexChanged);
             // 
             // txtDuration
             // 
@@ -140,6 +139,7 @@
             this.txtDuration.TabIndex = 16;
             this.txtDuration.Texts = "";
             this.txtDuration.UnderlinedStyle = true;
+            this.txtDuration.Load += new System.EventHandler(this.txtDuration_Load);
             // 
             // label2
             // 
@@ -150,6 +150,7 @@
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Duration";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpEndDate
             // 
@@ -166,6 +167,7 @@
             this.dtpEndDate.TabIndex = 14;
             this.dtpEndDate.TextColor = System.Drawing.Color.White;
             this.dtpEndDate.Value = new System.DateTime(2025, 5, 28, 18, 53, 51, 4);
+            this.dtpEndDate.Load += new System.EventHandler(this.dtpEndDate_Load);
             // 
             // dtpStartDate
             // 
@@ -244,6 +246,7 @@
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "EndDate";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -254,6 +257,7 @@
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "StartDate";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -264,6 +268,7 @@
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "TuitionFee";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -274,6 +279,7 @@
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "CourseName";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -329,7 +335,7 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTimKiem);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 18);
@@ -338,6 +344,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button2
             // 
@@ -345,8 +352,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Delete";
+            this.button2.Text = "ReNew";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -356,6 +364,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -365,22 +374,23 @@
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "course Id";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox1.BorderSize = 3;
-            this.textBox1.Location = new System.Drawing.Point(6, 64);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(339, 31);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Texts = "";
-            this.textBox1.UnderlinedStyle = true;
-            this.textBox1.Load += new System.EventHandler(this.textBox1_Load);
+            this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTimKiem.BorderSize = 3;
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 64);
+            this.txtTimKiem.Multiline = false;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Padding = new System.Windows.Forms.Padding(7);
+            this.txtTimKiem.PasswordChar = false;
+            this.txtTimKiem.Size = new System.Drawing.Size(339, 31);
+            this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.Texts = "";
+            this.txtTimKiem.UnderlinedStyle = true;
+            this.txtTimKiem.Load += new System.EventHandler(this.textBox1_Load);
             // 
             // dataGridView2
             // 
@@ -391,6 +401,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(930, 447);
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CommandTimeout = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.Transaction = null;
+            this.mySqlCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
             // borderButton8
             // 
@@ -403,7 +420,7 @@
             this.borderButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton8.ForeColor = System.Drawing.Color.White;
-            this.borderButton8.Location = new System.Drawing.Point(1187, 39);
+            this.borderButton8.Location = new System.Drawing.Point(1167, 43);
             this.borderButton8.Name = "borderButton8";
             this.borderButton8.Size = new System.Drawing.Size(150, 50);
             this.borderButton8.TabIndex = 11;
@@ -423,7 +440,7 @@
             this.borderButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton7.ForeColor = System.Drawing.Color.White;
-            this.borderButton7.Location = new System.Drawing.Point(875, 39);
+            this.borderButton7.Location = new System.Drawing.Point(817, 43);
             this.borderButton7.Name = "borderButton7";
             this.borderButton7.Size = new System.Drawing.Size(150, 50);
             this.borderButton7.TabIndex = 10;
@@ -443,7 +460,7 @@
             this.borderButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.borderButton6.ForeColor = System.Drawing.Color.White;
-            this.borderButton6.Location = new System.Drawing.Point(1031, 39);
+            this.borderButton6.Location = new System.Drawing.Point(1000, 43);
             this.borderButton6.Name = "borderButton6";
             this.borderButton6.Size = new System.Drawing.Size(150, 50);
             this.borderButton6.TabIndex = 8;
@@ -463,7 +480,7 @@
             this.borderButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton5.ForeColor = System.Drawing.Color.White;
-            this.borderButton5.Location = new System.Drawing.Point(719, 39);
+            this.borderButton5.Location = new System.Drawing.Point(638, 43);
             this.borderButton5.Name = "borderButton5";
             this.borderButton5.Size = new System.Drawing.Size(150, 50);
             this.borderButton5.TabIndex = 7;
@@ -471,26 +488,6 @@
             this.borderButton5.TextColor = System.Drawing.Color.White;
             this.borderButton5.UseVisualStyleBackColor = false;
             this.borderButton5.Click += new System.EventHandler(this.borderButton5_Click);
-            // 
-            // borderButton4
-            // 
-            this.borderButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton4.BoderRadius1 = 37;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton4.ForeColor = System.Drawing.Color.White;
-            this.borderButton4.Location = new System.Drawing.Point(407, 39);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(150, 50);
-            this.borderButton4.TabIndex = 5;
-            this.borderButton4.Text = "select All";
-            this.borderButton4.TextColor = System.Drawing.Color.White;
-            this.borderButton4.UseVisualStyleBackColor = false;
-            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
             // 
             // borderButton3
             // 
@@ -503,7 +500,7 @@
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton3.ForeColor = System.Drawing.Color.White;
-            this.borderButton3.Location = new System.Drawing.Point(563, 39);
+            this.borderButton3.Location = new System.Drawing.Point(457, 43);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(150, 50);
             this.borderButton3.TabIndex = 4;
@@ -523,7 +520,6 @@
             this.Controls.Add(this.borderButton6);
             this.Controls.Add(this.borderButton5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.borderButton4);
             this.Controls.Add(this.borderButton3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "coursemanagement";
@@ -544,9 +540,8 @@
         private BorderButton borderButton1;
         private BorderButton borderButton2;
         private BorderButton borderButton3;
-        private BorderButton borderButton4;
         private System.Windows.Forms.Panel panel2;
-        private TextBox.TextBox textBox1;
+        private TextBox.TextBox txtTimKiem;
         private BorderButton borderButton5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
@@ -571,5 +566,6 @@
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.DataGridView dataGridView2;
         private BorderButton borderButton8;
+        private MySqlConnector.MySqlCommand mySqlCommand1;
     }
 }

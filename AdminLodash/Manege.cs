@@ -91,5 +91,15 @@ namespace AdminLodash
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            LoadForm(new viewclasslistmanagement());
+        }
     }
 }

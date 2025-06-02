@@ -18,8 +18,7 @@ namespace Bus
             return SQLServer.laydulieutheotenbang("courses");
         }
 
-       
-
+      
         // Xóa khóa học
         public static int XoaKhoaHoc(string courseId)
         {
@@ -60,6 +59,12 @@ namespace Bus
         {
             return Data.SQLServer.ThemKhoaHoc(courseId, courseName, level, description, tuitionFee, duration, startDate, endDate);
         }
+        // Hàm mới: Tìm khóa học theo tên hoặc mã
+        public static DataTable TimKhoaHocTheoTenHoacMa(string keyword)
+        {
+            return Data.SQLServer.laydulieutheotenbang($"Courses WHERE CourseID LIKE '%{keyword}%' OR CourseName LIKE '%{keyword}%'");
+        }
+
         // ================== LỚP XỬ LÝ SINH VIÊN ==================
         public class StudentBUS
         {
@@ -81,6 +86,42 @@ namespace Bus
         // ================== LỚP XỬ LÝ LỚP HỌC ==================
         public class ClassBUS
         {
+            public static DataTable LayDanhLopHoc()
+            {
+                return SQLServer.laydulieutheotenbang("classes");
+            }
+
+            // Hàm xóa lớp học
+            public static int XoaLopHoc(string classId)
+            {
+                int deletedRows = 0;
+
+                try
+                {
+                    if (!Data.SQLServer.taoketnoi()) return 0;
+
+                    // Bước 1: Xóa các bản ghi phụ thuộc
+                    deletedRows += Data.SQLServer.XoaDuLieu("Enrollments", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
+                    deletedRows += Data.SQLServer.XoaDuLieu("Attendance", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
+                    deletedRows += Data.SQLServer.XoaDuLieu("Results", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
+                    deletedRows += Data.SQLServer.XoaDuLieu("Tests", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
+
+                    // Bước 2: Xóa lớp học
+                    deletedRows += Data.SQLServer.XoaDuLieu("Classes", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi xóa lớp học: " + ex.Message);
+                    return -1;
+                }
+                finally
+                {
+                    if (Data.SQLServer.conn.State == ConnectionState.Open)
+                        Data.SQLServer.conn.Close();
+                }
+
+                return deletedRows;
+            }
             public static int ThemLopHoc(string classId, string courseId, string teacherId, string className,
                                          int maxStudent, string schedule, string room)
             {
@@ -95,10 +136,51 @@ namespace Bus
 
                 return SQLServer.ThemLopHoc(classId, courseId, teacherId, className, maxStudent, schedule, room);
             }
-        }
 
-        // ================== LỚP XỬ LÝ ĐĂNG KÝ ==================
-        public class EnrollmentBUS
+            public static DataTable LopHocTheoTenHoacMa(string keyword)
+            {
+                return Data.SQLServer.laydulieutheotenbang($"Classes WHERE ClassID LIKE '%{keyword}%' OR ClassName LIKE '%{keyword}%'");
+            }
+            public static int CapNhatLopHoc(
+                string classId,
+                string courseId,
+                string teacherId,
+                string className,
+                int maxStudent,
+            string schedule,
+    string room)
+            {
+                var data = new Dictionary<string, object>
+                {
+                    ["CourseID"] = courseId,
+                    ["TeacherID"] = teacherId,
+                    ["ClassName"] = className,
+                    ["MaxStudent"] = maxStudent,
+                    ["Schedule"] = schedule,
+                    ["Room"] = room
+                };
+
+                string dieuKienWhere = "ClassID = @ClassID";
+                var parameters = new MySqlParameter[]
+                {
+        new MySqlParameter("@ClassID", classId)
+                };
+
+                return SQLServer.CapNhatDuLieu("Classes", data, dieuKienWhere, parameters);
+            }
+
+            public static string TaoMaLopHoc(string tenLop)
+            {
+                return Data.SQLServer.TaoMaLopHoc(tenLop);
+            }
+
+            public static DataTable LayDanhSachHocVienTheoLop(string classId)
+            {
+                return Data.SQLServer.LayDanhSachHocVienTheoLop(classId);
+            }
+        }
+            // ================== LỚP XỬ LÝ ĐĂNG KÝ ==================
+            public class EnrollmentBUS
         {
             public static int ThemDangKy(string enrollmentId, string studentId, string classId,
                                  DateTime enrollDate, string status)
@@ -119,6 +201,10 @@ namespace Bus
         // ================== LỚP XỬ LÝ GIÁO VIÊN ==================
         public class TeacherBUS
         {
+            public static DataTable LayDanhSachGiaoVien()
+            {
+                return Data.SQLServer.laydulieutheotenbang("Teachers");
+            }
             public static int ThemGiaoVien(string teacherId, string fullName, string specialty,
                                    DateTime createdAt, string degree, string email,
                                    string phone, string status)
@@ -205,9 +291,10 @@ namespace Bus
                 return SQLServer.ThemDiemDanh(attendanceId, studentId, classId, date, status);
             }
         }
+      
         //lấy danh sách khóa học
-        
-            static void Main(string[] args)
+
+        static void Main(string[] args)
             {
             }
         }

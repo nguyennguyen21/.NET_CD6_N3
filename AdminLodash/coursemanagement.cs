@@ -15,6 +15,7 @@ using Google.Protobuf.WellKnownTypes;
 using System.Runtime.InteropServices.ComTypes;
 using Data;
 using System.Globalization;
+using ClosedXML.Excel;
 
 namespace AdminLodash
 {
@@ -33,6 +34,9 @@ namespace AdminLodash
             this.Load += coursemanagement_Load;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             dataGridView2.CellContentClick -= dataGridView2_CellContentClick;
+
+            borderButton8.Click += borderButton8_Click_1;
+            borderButton8.Click -= borderButton8_Click_1;
 
 
         }
@@ -58,7 +62,33 @@ namespace AdminLodash
         }
         private void borderButton3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridView2.DataSource == null)
+                {
+                    MessageBox.Show("Chưa có dữ liệu để sắp xếp.");
+                    return;
+                }
 
+                if (dataGridView2.DataSource is DataTable originalDt)
+                {
+                    DataView dv = new DataView(originalDt)
+                    {
+                        Sort = "StartDate ASC" // Sắp xếp tăng dần
+                    };
+
+                    dataGridView2.DataSource = dv;
+                    MessageBox.Show("Dữ liệu đã được sắp xếp theo StartDate tăng dần.");
+                }
+                else
+                {
+                    MessageBox.Show("Kiểu dữ liệu không hỗ trợ sắp xếp.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
 
@@ -123,12 +153,101 @@ namespace AdminLodash
 
         private void borderButton5_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridView2.DataSource == null)
+                {
+                    MessageBox.Show("Chưa có dữ liệu để sắp xếp.");
+                    return;
+                }
 
+                if (dataGridView2.DataSource is DataTable originalDt)
+                {
+                    DataView dv = new DataView(originalDt)
+                    {
+                        Sort = "EndDate ASC" // Sắp xếp tăng dần
+                    };
+
+                    dataGridView2.DataSource = dv;
+                    MessageBox.Show("Dữ liệu đã được sắp xếp theo EndDate tăng dần.");
+                }
+                else
+                {
+                    MessageBox.Show("Kiểu dữ liệu không hỗ trợ sắp xếp.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
         private void borderButton6_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Kiểm tra xem có dữ liệu để xuất không
+                if (dataGridView2.DataSource == null)
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất.");
+                    return;
+                }
 
+                // Chọn đường dẫn lưu file Excel
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                saveFileDialog.FileName = "DanhSachKhoaHoc.xlsx";
+
+                if (saveFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                string filePath = saveFileDialog.FileName;
+
+                // Lấy dữ liệu từ DataGridView
+                var dataTable = new DataTable("Courses");
+
+                foreach (DataGridViewColumn column in dataGridView2.Columns)
+                {
+                    if (column.Visible)
+                        dataTable.Columns.Add(column.HeaderText ?? column.Name);
+                }
+
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        var dataRow = dataTable.NewRow();
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            if (row.Cells[i].Value != null)
+                                dataRow[i] = row.Cells[i].Value.ToString();
+                        }
+                        dataTable.Rows.Add(dataRow);
+                    }
+                }
+
+                // Tạo workbook và xuất dữ liệu
+                using (var workbook = new XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add(dataTable);
+                    workbook.SaveAs(filePath);
+                }
+
+                // Hỏi người dùng có muốn mở file không
+                DialogResult result = MessageBox.Show("Xuất dữ liệu thành công! Bạn có muốn mở file Excel?", "Thông báo",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("explorer", filePath); // Mở thư mục chứa file
+                                                                            // Hoặc dùng: System.Diagnostics.Process.Start(filePath);
+                }
+
+                MessageBox.Show("Đã xuất dữ liệu thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
+            }
         }
 
         private void textBox1_Load(object sender, EventArgs e)
@@ -243,10 +362,31 @@ namespace AdminLodash
         {
 
         }
-
+        
         private void borderButton7_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridView2.DataSource is DataTable dt)
+                {
+                    DataView dv = new DataView(dt)
+                    {
+                        Sort = "TuitionFee ASC"
+                    };
 
+                    dataGridView2.DataSource = dv;
+                    MessageBox.Show("Sắp xếp theo học phí thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu không hợp lệ để sắp xếp.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Bỏ qua cảnh báo về ex nếu không dùng
+                MessageBox.Show("Lỗi khi sắp xếp.");
+            }
         }
         private bool isEditingMode = false;
         private void borderButton8_Click(object sender, EventArgs e)
@@ -254,7 +394,7 @@ namespace AdminLodash
             if (!isEditingMode)
             {
                 // Chế độ sửa – đổi tên nút và mở ReadOnly
-                borderButton8.Text = "Lưu";
+                borderButton8.Text = "Save";
                 dataGridView2.ReadOnly = false;
                 isEditingMode = true;
 
@@ -269,30 +409,56 @@ namespace AdminLodash
         }
         private void ResetForm()
         {
-            // Xóa trắng các ô nhập liệu
-            if (txtCourseName != null) txtCourseName.ResetText();
-            //if (txtDescription != null) txtDescription.Clear();
-            //if (txtTuitionFee != null) txtTuitionFee.Clear();
-            //if (txtDuration != null) txtDuration.Clear();
+            if (txtTimKiem != null)
+                txtTimKiem.Texts = "";
 
-            //if (cmbLevel != null) cmbLevel.SelectedIndex = -1;
+            if (txtCourseName != null)
+                txtCourseName.Texts = "";
 
-            //if (dtpStartDate != null) dtpStartDate.Value = DateTime.Now;
-            //if (dtpEndDate != null) dtpEndDate.Value = DateTime.Now.AddDays(30);
-            //cmbLevel.SelectedIndex = -1;
-            //txtDescription.Clear();
-            //txtTuitionFee.Clear();
-            //txtDuration.Clear();
-            //dtpStartDate.Value = DateTime.Now;
-            //dtpEndDate.Value = DateTime.Now.AddDays(30); // Mặc định 30 ngày sau
-        }
+            if (txtDescription != null)
+                txtDescription.Texts = "";
+
+            if (txtTuitionFee != null)
+                txtTuitionFee.Texts = "";
+
+            if (txtDuration != null)
+                txtDuration.Texts = "";
+
+            if (cmbLevel != null)
+            {
+                cmbLevel.SelectedIndex = -1; // Bỏ chọn
+                cmbLevel.Text = "";          // Đặt lại text (nếu có)
+            }
+
+            if (dtpStartDate != null)
+                dtpStartDate.Value = DateTime.Now;
+
+            if (dtpEndDate != null)
+                dtpEndDate.Value = DateTime.Now.AddDays(30); // Mặc định +30 ngày
         
+        }
 
+        private bool isEdittingMode = false;
         private void borderButton8_Click_1(object sender, EventArgs e)
         {
-            
+            if (!isEdittingMode)
+            {
+                // Bắt đầu chế độ sửa
+                dataGridView2.ReadOnly = false;
+                borderButton8.Text = "Save";
+                isEditingMode = true;
 
-            
+                // Đăng ký sự kiện KeyDown để bắt phím Enter
+                dataGridView2.KeyDown += dataGridView2_KeyDown;
+            }
+            else
+            {
+                // Kết thúc chế độ sửa – hiện MessageBox xác nhận
+                XacNhanLuuDuLieu();
+            }
+
+
+
         }
 
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
@@ -331,7 +497,7 @@ namespace AdminLodash
 
             DialogResult result = MessageBox.Show(
                 "Bạn có chắc muốn lưu thay đổi?",
-                "Xác nhận",
+                "acept",
                 MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
@@ -357,7 +523,7 @@ namespace AdminLodash
 
             // Trở lại chế độ xem
             dataGridView2.ReadOnly = true;
-            borderButton8.Text = "Sửa";
+            borderButton8.Text = "repair";
             isEditingMode = false;
         }
 
@@ -403,9 +569,105 @@ namespace AdminLodash
         private void borderButton2_Click(object sender, EventArgs e)
         {
               ResetForm();
+              LoadData();
         }
 
         private void txtTuitionFee_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Texts.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm.");
+                return;
+            }
+
+            try
+            {
+                DataTable dt = BUS.TimKhoaHocTheoTenHoacMa(keyword);
+
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView2.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khóa học nào.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+            LoadData();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDuration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpEndDate_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

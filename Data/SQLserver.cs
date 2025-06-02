@@ -646,7 +646,107 @@ namespace Data
             return new List<string> { "Dễ", "Trung bình", "Khó", "Nâng cao" };
         }
 
+        //xóa ràng buộc 
+        public static int XoaLopHoc(string classId)
+        {
+            int sodong = 0;
+            try
+            {
+                if (!taoketnoi()) return 0;
+
+                using (MySqlCommand cmd = new MySqlCommand("XoaLopHoc", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("p_classId", classId);
+                    sodong = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi xóa lớp học: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return sodong;
+        }
+
+        private static int XoaLopHocKhongKiemTraRangBuoc(string classId)
+        {
+            int sodong = 0;
+            try
+            {
+                if (!taoketnoi()) return 0;
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+
+                    // Tắt ràng buộc khóa ngoại
+                    cmd.CommandText = "SET FOREIGN_KEY_CHECKS = 0;";
+                    cmd.ExecuteNonQuery();
+
+                    // Xóa lớp học
+                    cmd.CommandText = "DELETE FROM Classes WHERE ClassID = @ClassID";
+                    cmd.Parameters.AddWithValue("@ClassID", classId);
+                    sodong = cmd.ExecuteNonQuery();
+
+                    // Bật lại ràng buộc khóa ngoại
+                    cmd.CommandText = "SET FOREIGN_KEY_CHECKS = 1;";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi xóa lớp học: " + ex.Message);
+                sodong = -1;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return sodong;
+        }
+
+        public static DataTable LayDanhSachHocVienTheoLop(string classId)
+        {
+            string sql = @"SELECT s.StudentID, s.FullName, s.Phone, s.Email, e.EnrollDate, e.Status 
+                   FROM Students s
+                   INNER JOIN Enrollments e ON s.StudentID = e.StudentID
+                   WHERE e.ClassID = @ClassID";
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!taoketnoi()) return dt;
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClassID", classId);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách học viên theo lớp: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return dt;
+        }
         // Main method (nếu cần)
+
+
+
         static void Main(string[] args)
         {
             // Có thể để trống hoặc chạy thử nghiệm ở đây

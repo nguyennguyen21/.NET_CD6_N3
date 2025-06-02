@@ -60,11 +60,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(-1, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(229, 45);
+            this.button1.Size = new System.Drawing.Size(230, 62);
             this.button1.TabIndex = 0;
             this.button1.Text = "Management";
             this.button1.UseVisualStyleBackColor = false;
@@ -80,8 +80,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(229, 45);
             this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
+            this.button7.Text = "View class list";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -143,13 +144,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(229, 545);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel4
             // 
@@ -159,14 +160,15 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(0, 48);
+            this.panel4.Location = new System.Drawing.Point(-1, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(229, 233);
+            this.panel4.Size = new System.Drawing.Size(229, 364);
             this.panel4.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panelMain);
             this.panel1.Controls.Add(this.borderButton3);
@@ -276,6 +278,7 @@
             this.pictureBorder1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
             this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pictureBorder1.BorderSize = 10;
+            this.pictureBorder1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBorder1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBorder1.GradientAngle = 50F;
             this.pictureBorder1.Location = new System.Drawing.Point(0, 0);
@@ -294,7 +297,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Manege";
             this.Text = "Manege";
             this.Load += new System.EventHandler(this.Manege_Load);
