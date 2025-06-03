@@ -9,9 +9,9 @@ phân công việc:
 6,7,8
 * những trang cần làm :
   1. Trang chung
-•	Trang đăng nhập (/login)
-•	Trang dashboard quản trị (/admin/dashboard)
-•	Trang thông báo (/notifications)
+•	Trang đăng nhập (/login)(đã xong)
+•	Trang dashboard quản trị (/admin/dashboard)(không cần làm)
+•	Trang thông báo (/notifications)(có thể nếu muốn)
 ________________________________________
 2. Quản lý học viên
 •	Danh sách học viên
@@ -27,7 +27,7 @@ ________________________________________
 •	Danh sách khóa học
 •	Thêm/sửa/xóa khóa học
 ________________________________________
-5. Quản lý lớp học
+5. Quản lý lớp học(đã xong)
 •	Danh sách lớp học
 •	Thêm/sửa/xóa lớp
 •	Gán học viên vào lớp
