@@ -32,7 +32,6 @@
             this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.borderButton1 = new AdminLodash.BorderButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,15 +54,13 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.FullName = new AdminLodash.TextBox.TextBox();
             this.labelLoi = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelRadius3.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panelRadius1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,7 +103,7 @@
             this.borderButton3.FlatAppearance.BorderSize = 0;
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1198, 6);
+            this.borderButton3.Location = new System.Drawing.Point(1215, 6);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(45, 45);
             this.borderButton3.TabIndex = 1;
@@ -118,32 +115,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.panel2.Controls.Add(this.borderButton1);
+            this.panel2.Controls.Add(this.pictureBorder1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(427, 499);
             this.panel2.TabIndex = 1;
-            // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.White;
-            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.Location = new System.Drawing.Point(70, 193);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(272, 52);
-            this.borderButton1.TabIndex = 10;
-            this.borderButton1.Text = "Login";
-            this.borderButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
             // 
             // label1
             // 
@@ -448,52 +425,33 @@
             this.labelLoi.AutoSize = true;
             this.labelLoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoi.ForeColor = System.Drawing.Color.Red;
-            this.labelLoi.Location = new System.Drawing.Point(922, 417);
+            this.labelLoi.Location = new System.Drawing.Point(934, 417);
             this.labelLoi.Name = "labelLoi";
             this.labelLoi.Size = new System.Drawing.Size(61, 18);
             this.labelLoi.TabIndex = 23;
             this.labelLoi.Text = "label10";
             // 
-            // groupBox1
+            // pictureBorder1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(1117, 343);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(194, 74);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "role";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(100, 35);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(94, 28);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "student";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 35);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(95, 28);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "teacher";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.pictureBorder1.BackColor = System.Drawing.Color.White;
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(113, 32);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(199, 199);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 11;
+            this.pictureBorder1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1325, 559);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelLoi);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpNgaySinh);
@@ -528,8 +486,7 @@
             this.panelRadius2.PerformLayout();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,7 +497,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private TextBox.TextBox FullName;
-        private BorderButton borderButton1;
         private BorderButton borderButton2;
         private TextBox.TextBox txtMatKhau;
         private TextBox.TextBox textBox3;
@@ -564,8 +520,6 @@
         private System.Windows.Forms.Label labelLoi;
         private BorderButton borderButton4;
         private BorderButton borderButton3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private pictureBorder.PictureBorder pictureBorder1;
     }
 }

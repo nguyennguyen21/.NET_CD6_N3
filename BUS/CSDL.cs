@@ -13,6 +13,7 @@ namespace Bus
         {
             return Data.SQLServer.CapNhatDuLieu(tenBang, duLieuCapNhat, dieuKienWhere, parameters);
         }
+        
         public static DataTable LayDanhSachKhoaHoc()
         {
             return SQLServer.laydulieutheotenbang("courses");
@@ -64,6 +65,10 @@ namespace Bus
         {
             return Data.SQLServer.laydulieutheotenbang($"Courses WHERE CourseID LIKE '%{keyword}%' OR CourseName LIKE '%{keyword}%'");
         }
+        public static int XoaKhoaHocKhongRangBuoc(string courseId)
+        {
+            return Data.SQLServer.XoaKhoaHocKhongRangBuoc(courseId);
+        }
 
         // ================== LỚP XỬ LÝ SINH VIÊN ==================
         public class StudentBUS
@@ -81,6 +86,14 @@ namespace Bus
                 return SQLServer.ThemSinhVien(studentId, fullName, dateOfBirth, gender, phone, address,
                                               registrationDate, status, password);
             }
+            public static DataTable LayDanhSachHocVien()
+            {
+                return Data.SQLServer.LayDanhSachHocVien();
+            }
+            public static DataTable LayDanhSachHocVienTheoTrangThai(string status)
+            {
+                return Data.SQLServer.LayDanhSachHocVienTheoTrangThai(status);
+            }
         }
 
         // ================== LỚP XỬ LÝ LỚP HỌC ==================
@@ -90,7 +103,10 @@ namespace Bus
             {
                 return SQLServer.laydulieutheotenbang("classes");
             }
-
+            public static int GetMaxStudentFromClass(string classId)
+            {
+                return Data.SQLServer.GetMaxStudentFromClass(classId);
+            }
             // Hàm xóa lớp học
             public static int XoaLopHoc(string classId)
             {
@@ -182,25 +198,39 @@ namespace Bus
             // ================== LỚP XỬ LÝ ĐĂNG KÝ ==================
             public class EnrollmentBUS
         {
-            public static int ThemDangKy(string enrollmentId, string studentId, string classId,
-                                 DateTime enrollDate, string status)
-            {
-                if (string.IsNullOrWhiteSpace(enrollmentId))
-                    throw new ArgumentException("Mã đăng ký không được để trống.");
 
+            // Hàm sinh mã đăng ký tự động
+            public static int TaoMaDangKyTuDong()
+            {
+                return Data.SQLServer.TaoMaDangKyTuDong();
+            }
+
+
+            public static int ThemDangKy(string studentId, string classId,
+                             DateTime enrollDate, string status)
+            {
                 if (string.IsNullOrWhiteSpace(studentId))
                     throw new ArgumentException("Mã sinh viên không được để trống.");
-
                 if (string.IsNullOrWhiteSpace(classId))
                     throw new ArgumentException("Mã lớp học không được để trống.");
 
-                return SQLServer.ThemDangKy(enrollmentId, studentId, classId, enrollDate, status);
+                return SQLServer.ThemDangKy(studentId, classId, enrollDate, status);
             }
+
+            public static bool KiemTraDaDangKy(string studentId, string classId)
+            {
+                return Data.SQLServer.KiemTraDaDangKy(studentId, classId);
+            }
+
+
+
         }
 
         // ================== LỚP XỬ LÝ GIÁO VIÊN ==================
         public class TeacherBUS
         {
+            
+
             public static DataTable LayDanhSachGiaoVien()
             {
                 return Data.SQLServer.laydulieutheotenbang("Teachers");
@@ -219,6 +249,10 @@ namespace Bus
                     throw new ArgumentException("Email không được để trống.");
 
                 return SQLServer.ThemGiaoVien(teacherId, fullName, specialty, createdAt, degree, email, phone, status);
+            }
+            public static bool KiemTraDangNhapGiaoVien(string teacherId, string password)
+            {
+                return Data.SQLServer.KiemTraDangNhapGiaoVien(teacherId, password);
             }
         }
 

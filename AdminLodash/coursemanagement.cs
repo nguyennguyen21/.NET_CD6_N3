@@ -60,6 +60,8 @@ namespace AdminLodash
             };
             this.Controls.Add(dataGridView2);
         }
+        private bool sortedByStartDate = false;
+
         private void borderButton3_Click(object sender, EventArgs e)
         {
             try
@@ -70,20 +72,48 @@ namespace AdminLodash
                     return;
                 }
 
+                // Sắp xếp theo StartDate tăng dần
                 if (dataGridView2.DataSource is DataTable originalDt)
                 {
                     DataView dv = new DataView(originalDt)
                     {
-                        Sort = "StartDate ASC" // Sắp xếp tăng dần
+                        Sort = "StartDate ASC"
                     };
-
                     dataGridView2.DataSource = dv;
-                    MessageBox.Show("Dữ liệu đã được sắp xếp theo StartDate tăng dần.");
                 }
-                else
-                {
-                    MessageBox.Show("Kiểu dữ liệu không hỗ trợ sắp xếp.");
-                }
+
+                // Vô hiệu hóa nút kia
+                borderButton5.Enabled = false;
+
+                // Bật lại nút này nếu nhấn lại
+                borderButton3.Click -= borderButton3_Click;
+                borderButton3.Click += borderButton3_ResetClick;
+
+                // Đổi text hoặc thông báo tùy chọn
+                borderButton3.Text = "Sorted by StartDate";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void borderButton3_ResetClick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Quay về chế độ mặc định (không sắp xếp)
+                LoadData(); // Hàm tải lại dữ liệu gốc
+
+                // Bật lại nút kia
+                borderButton5.Enabled = true;
+
+                // Khôi phục trạng thái ban đầu của nút
+                borderButton3.Text = "Sort by StartDate";
+
+                // Đăng ký lại sự kiện ban đầu
+                borderButton3.Click -= borderButton3_ResetClick;
+                borderButton3.Click += borderButton3_Click;
             }
             catch (Exception ex)
             {
@@ -92,7 +122,7 @@ namespace AdminLodash
         }
 
 
-        
+
         private void coursemanagement_Load(object sender, EventArgs e)
         {
             // Thêm cột nút Xóa (nếu chưa có)
@@ -161,27 +191,51 @@ namespace AdminLodash
                     return;
                 }
 
+                // Sắp xếp theo EndDate tăng dần
                 if (dataGridView2.DataSource is DataTable originalDt)
                 {
                     DataView dv = new DataView(originalDt)
                     {
-                        Sort = "EndDate ASC" // Sắp xếp tăng dần
+                        Sort = "EndDate ASC"
                     };
-
                     dataGridView2.DataSource = dv;
-                    MessageBox.Show("Dữ liệu đã được sắp xếp theo EndDate tăng dần.");
                 }
-                else
-                {
-                    MessageBox.Show("Kiểu dữ liệu không hỗ trợ sắp xếp.");
-                }
+
+                // Vô hiệu hóa nút kia
+                borderButton3.Enabled = false;
+
+                // Thay đổi hành vi khi nhấn lại
+                borderButton5.Click -= borderButton5_Click;
+                borderButton5.Click += borderButton5_ResetClick;
+
+                // Đổi tên nút để người dùng biết đang ở chế độ sắp xếp
+                borderButton5.Text = "Sorted by EndDate";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+        private void borderButton5_ResetClick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tải lại dữ liệu gốc
+                LoadData();
 
+                // Bật lại nút kia
+                borderButton3.Enabled = true;
+
+                // Khôi phục tên nút và sự kiện
+                borderButton5.Text = "Sort by EndDate";
+                borderButton5.Click -= borderButton5_ResetClick;
+                borderButton5.Click += borderButton5_Click;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
         private void borderButton6_Click(object sender, EventArgs e)
         {
             try
@@ -531,13 +585,10 @@ namespace AdminLodash
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
-
             string columnName = dataGridView2.Columns[e.ColumnIndex].Name;
-
             if (columnName == "colXoa")
             {
                 string courseId = dataGridView2.Rows[e.RowIndex].Cells["CourseID"].Value?.ToString();
-
                 if (string.IsNullOrEmpty(courseId))
                 {
                     MessageBox.Show("Không lấy được mã khóa học.");
@@ -552,19 +603,14 @@ namespace AdminLodash
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int ketQua = Bus.BUS.XoaKhoaHoc(courseId);
-                    if (ketQua > 0)
-                    {
-                        MessageBox.Show("Xóa thành công!");
+                    int ketQua = Bus.BUS.XoaKhoaHocKhongRangBuoc(courseId); // Hoặc XoaKhoaHoc
+                    
                         LoadData(); // Làm mới dữ liệu trên lưới
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại. Có thể do ràng buộc dữ liệu hoặc bản ghi không tồn tại.");
-                        }
-                    }
+                   
+                   
                 }
             }
+        }
 
         private void borderButton2_Click(object sender, EventArgs e)
         {

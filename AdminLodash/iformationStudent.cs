@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class enrollmentmanagement : Form
+    public partial class iformationStudent : Form
     {
-        public enrollmentmanagement()
+        public iformationStudent()
         {
             InitializeComponent();
         }
 
-        private void enrollmentmanagement_Load(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void borderButton1_Click(object sender, EventArgs e)
         {
-
+            this.Close(); 
         }
     }
 }

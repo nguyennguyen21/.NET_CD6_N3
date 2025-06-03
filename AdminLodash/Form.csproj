@@ -198,12 +198,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdmninLodashForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdmninLodashForm.Designer.cs">
-      <DependentUpon>AdmninLodashForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,11 +222,17 @@
     <Compile Include="Datepicker\DateandTime.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="enrollmentmanagement.cs">
+    <Compile Include="iformationStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="enrollmentmanagement.Designer.cs">
-      <DependentUpon>enrollmentmanagement.cs</DependentUpon>
+    <Compile Include="iformationStudent.Designer.cs">
+      <DependentUpon>iformationStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherManagement.Designer.cs">
+      <DependentUpon>TeacherManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="viewclasslistmanagement.cs">
       <SubType>Form</SubType>
@@ -269,12 +269,6 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentLodash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentLodash.Designer.cs">
-      <DependentUpon>StudentLodash.cs</DependentUpon>
-    </Compile>
     <Compile Include="Studentmanagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,9 +285,6 @@
     <Compile Include="togglecontrols\Togglecontrol.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="AdmninLodashForm.resx">
-      <DependentUpon>AdmninLodashForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,8 +294,8 @@
     <EmbeddedResource Include="coursemanagement.resx">
       <DependentUpon>coursemanagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="enrollmentmanagement.resx">
-      <DependentUpon>enrollmentmanagement.cs</DependentUpon>
+    <EmbeddedResource Include="iformationStudent.resx">
+      <DependentUpon>iformationStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -325,11 +316,11 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentLodash.resx">
-      <DependentUpon>StudentLodash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Studentmanagement.resx">
       <DependentUpon>Studentmanagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherManagement.resx">
+      <DependentUpon>TeacherManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextBox\TextBox.resx">
       <DependentUpon>TextBox.cs</DependentUpon>

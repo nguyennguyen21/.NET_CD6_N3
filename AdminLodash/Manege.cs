@@ -89,7 +89,7 @@ namespace AdminLodash
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            LoadForm(new TeacherManagement());
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -101,5 +101,16 @@ namespace AdminLodash
         {
             LoadForm(new viewclasslistmanagement());
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Studentmanagement());
+        }
+    
     }
 }

@@ -430,7 +430,10 @@ namespace AdminLodash
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            
+            txtClassName.Clear();
+            txtMaxStudent.Enabled = true;
+            textBox1.Enabled = true;
+            txtRoom.Refresh();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

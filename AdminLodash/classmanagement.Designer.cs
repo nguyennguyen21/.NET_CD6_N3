@@ -30,7 +30,11 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.textBox1 = new AdminLodash.TextBox.TextBox();
+            this.borderButton7 = new AdminLodash.BorderButton();
+            this.borderButton1 = new AdminLodash.BorderButton();
+            this.txtRoom = new AdminLodash.TextBox.TextBox();
+            this.txtMaxStudent = new AdminLodash.TextBox.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboTeacher = new System.Windows.Forms.ComboBox();
             this.cboCourseID = new System.Windows.Forms.ComboBox();
@@ -43,30 +47,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.borderButton6 = new AdminLodash.BorderButton();
-            this.borderButton5 = new AdminLodash.BorderButton();
-            this.textBox1 = new AdminLodash.TextBox.TextBox();
-            this.borderButton7 = new AdminLodash.BorderButton();
-            this.borderButton1 = new AdminLodash.BorderButton();
-            this.txtRoom = new AdminLodash.TextBox.TextBox();
-            this.txtMaxStudent = new AdminLodash.TextBox.TextBox();
             this.txtTimKiem = new AdminLodash.TextBox.TextBox();
-            this.borderButton4 = new AdminLodash.BorderButton();
-            this.borderButton3 = new AdminLodash.BorderButton();
-            this.borderButton2 = new AdminLodash.BorderButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.borderButton5 = new AdminLodash.BorderButton();
+            this.txtClassName = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(12, 9);
@@ -76,11 +69,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtClassName);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.borderButton7);
             this.groupBox2.Controls.Add(this.borderButton1);
             this.groupBox2.Controls.Add(this.txtRoom);
-            this.groupBox2.Controls.Add(this.txtClassName);
             this.groupBox2.Controls.Add(this.txtMaxStudent);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cboTeacher);
@@ -98,13 +91,89 @@
             this.groupBox2.Text = "Change";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // txtClassName
+            // textBox1
             // 
-            this.txtClassName.Location = new System.Drawing.Point(66, 26);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(241, 20);
-            this.txtClassName.TabIndex = 20;
-            this.txtClassName.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBox1.BorderSize = 2;
+            this.textBox1.Location = new System.Drawing.Point(65, 113);
+            this.textBox1.Multiline = false;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.textBox1.PasswordChar = false;
+            this.textBox1.Size = new System.Drawing.Size(240, 28);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Texts = "";
+            this.textBox1.UnderlinedStyle = true;
+            // 
+            // borderButton7
+            // 
+            this.borderButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.borderButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.borderButton7.BoderRadius1 = 34;
+            this.borderButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton7.BorderSize = 0;
+            this.borderButton7.FlatAppearance.BorderSize = 0;
+            this.borderButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton7.ForeColor = System.Drawing.Color.White;
+            this.borderButton7.Location = new System.Drawing.Point(93, 214);
+            this.borderButton7.Name = "borderButton7";
+            this.borderButton7.Size = new System.Drawing.Size(102, 39);
+            this.borderButton7.TabIndex = 22;
+            this.borderButton7.Text = "ReNew";
+            this.borderButton7.TextColor = System.Drawing.Color.White;
+            this.borderButton7.UseVisualStyleBackColor = false;
+            this.borderButton7.Click += new System.EventHandler(this.borderButton7_Click);
+            // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BoderRadius1 = 29;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.ForeColor = System.Drawing.Color.White;
+            this.borderButton1.Location = new System.Drawing.Point(201, 214);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(104, 39);
+            this.borderButton1.TabIndex = 10;
+            this.borderButton1.Text = "Add Class";
+            this.borderButton1.TextColor = System.Drawing.Color.White;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
+            // txtRoom
+            // 
+            this.txtRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.txtRoom.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtRoom.BorderSize = 2;
+            this.txtRoom.Location = new System.Drawing.Point(66, 180);
+            this.txtRoom.Multiline = false;
+            this.txtRoom.Name = "txtRoom";
+            this.txtRoom.Padding = new System.Windows.Forms.Padding(7);
+            this.txtRoom.PasswordChar = false;
+            this.txtRoom.Size = new System.Drawing.Size(240, 28);
+            this.txtRoom.TabIndex = 14;
+            this.txtRoom.Texts = "";
+            this.txtRoom.UnderlinedStyle = true;
+            // 
+            // txtMaxStudent
+            // 
+            this.txtMaxStudent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.txtMaxStudent.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtMaxStudent.BorderSize = 2;
+            this.txtMaxStudent.Location = new System.Drawing.Point(66, 146);
+            this.txtMaxStudent.Multiline = false;
+            this.txtMaxStudent.Name = "txtMaxStudent";
+            this.txtMaxStudent.Padding = new System.Windows.Forms.Padding(7);
+            this.txtMaxStudent.PasswordChar = false;
+            this.txtMaxStudent.Size = new System.Drawing.Size(240, 28);
+            this.txtMaxStudent.TabIndex = 13;
+            this.txtMaxStudent.Texts = "";
+            this.txtMaxStudent.UnderlinedStyle = true;
+            this.txtMaxStudent.Load += new System.EventHandler(this.textBox4_Load);
             // 
             // label7
             // 
@@ -223,138 +292,6 @@
             this.label1.Text = "ClassID";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(401, 117);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 424);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // borderButton6
-            // 
-            this.borderButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton6.BoderRadius1 = 36;
-            this.borderButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton6.BorderSize = 0;
-            this.borderButton6.FlatAppearance.BorderSize = 0;
-            this.borderButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton6.ForeColor = System.Drawing.Color.White;
-            this.borderButton6.Location = new System.Drawing.Point(185, 77);
-            this.borderButton6.Name = "borderButton6";
-            this.borderButton6.Size = new System.Drawing.Size(139, 41);
-            this.borderButton6.TabIndex = 16;
-            this.borderButton6.Text = "dentify class";
-            this.borderButton6.TextColor = System.Drawing.Color.White;
-            this.borderButton6.UseVisualStyleBackColor = false;
-            this.borderButton6.Click += new System.EventHandler(this.borderButton6_Click);
-            // 
-            // borderButton5
-            // 
-            this.borderButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton5.BoderRadius1 = 34;
-            this.borderButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton5.BorderSize = 0;
-            this.borderButton5.FlatAppearance.BorderSize = 0;
-            this.borderButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton5.ForeColor = System.Drawing.Color.White;
-            this.borderButton5.Location = new System.Drawing.Point(880, 54);
-            this.borderButton5.Name = "borderButton5";
-            this.borderButton5.Size = new System.Drawing.Size(150, 50);
-            this.borderButton5.TabIndex = 15;
-            this.borderButton5.Text = "export file";
-            this.borderButton5.TextColor = System.Drawing.Color.White;
-            this.borderButton5.UseVisualStyleBackColor = false;
-            this.borderButton5.Click += new System.EventHandler(this.borderButton5_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Location = new System.Drawing.Point(65, 113);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(240, 28);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Texts = "";
-            this.textBox1.UnderlinedStyle = true;
-            // 
-            // borderButton7
-            // 
-            this.borderButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton7.BoderRadius1 = 34;
-            this.borderButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton7.BorderSize = 0;
-            this.borderButton7.FlatAppearance.BorderSize = 0;
-            this.borderButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton7.ForeColor = System.Drawing.Color.White;
-            this.borderButton7.Location = new System.Drawing.Point(93, 214);
-            this.borderButton7.Name = "borderButton7";
-            this.borderButton7.Size = new System.Drawing.Size(102, 39);
-            this.borderButton7.TabIndex = 22;
-            this.borderButton7.Text = "borderButton7";
-            this.borderButton7.TextColor = System.Drawing.Color.White;
-            this.borderButton7.UseVisualStyleBackColor = false;
-            this.borderButton7.Click += new System.EventHandler(this.borderButton7_Click);
-            // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BoderRadius1 = 29;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.ForeColor = System.Drawing.Color.White;
-            this.borderButton1.Location = new System.Drawing.Point(201, 214);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(104, 39);
-            this.borderButton1.TabIndex = 10;
-            this.borderButton1.Text = "Add Class";
-            this.borderButton1.TextColor = System.Drawing.Color.White;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
-            // 
-            // txtRoom
-            // 
-            this.txtRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.txtRoom.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtRoom.BorderSize = 2;
-            this.txtRoom.Location = new System.Drawing.Point(66, 180);
-            this.txtRoom.Multiline = false;
-            this.txtRoom.Name = "txtRoom";
-            this.txtRoom.Padding = new System.Windows.Forms.Padding(7);
-            this.txtRoom.PasswordChar = false;
-            this.txtRoom.Size = new System.Drawing.Size(240, 28);
-            this.txtRoom.TabIndex = 14;
-            this.txtRoom.Texts = "";
-            this.txtRoom.UnderlinedStyle = true;
-            // 
-            // txtMaxStudent
-            // 
-            this.txtMaxStudent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.txtMaxStudent.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtMaxStudent.BorderSize = 2;
-            this.txtMaxStudent.Location = new System.Drawing.Point(66, 146);
-            this.txtMaxStudent.Multiline = false;
-            this.txtMaxStudent.Name = "txtMaxStudent";
-            this.txtMaxStudent.Padding = new System.Windows.Forms.Padding(7);
-            this.txtMaxStudent.PasswordChar = false;
-            this.txtMaxStudent.Size = new System.Drawing.Size(240, 28);
-            this.txtMaxStudent.TabIndex = 13;
-            this.txtMaxStudent.Texts = "";
-            this.txtMaxStudent.UnderlinedStyle = true;
-            this.txtMaxStudent.Load += new System.EventHandler(this.textBox4_Load);
-            // 
             // txtTimKiem
             // 
             this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
@@ -370,69 +307,41 @@
             this.txtTimKiem.Texts = "";
             this.txtTimKiem.UnderlinedStyle = true;
             // 
-            // borderButton4
+            // dataGridView1
             // 
-            this.borderButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton4.BoderRadius1 = 37;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.ForeColor = System.Drawing.Color.White;
-            this.borderButton4.Location = new System.Drawing.Point(713, 52);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(150, 50);
-            this.borderButton4.TabIndex = 13;
-            this.borderButton4.Text = "borderButton4";
-            this.borderButton4.TextColor = System.Drawing.Color.White;
-            this.borderButton4.UseVisualStyleBackColor = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(401, 117);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(936, 424);
+            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // borderButton3
+            // borderButton5
             // 
-            this.borderButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton3.BoderRadius1 = 34;
-            this.borderButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton3.BorderSize = 0;
-            this.borderButton3.FlatAppearance.BorderSize = 0;
-            this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton3.ForeColor = System.Drawing.Color.White;
-            this.borderButton3.Location = new System.Drawing.Point(557, 52);
-            this.borderButton3.Name = "borderButton3";
-            this.borderButton3.Size = new System.Drawing.Size(150, 47);
-            this.borderButton3.TabIndex = 12;
-            this.borderButton3.Text = "borderButton3";
-            this.borderButton3.TextColor = System.Drawing.Color.White;
-            this.borderButton3.UseVisualStyleBackColor = false;
+            this.borderButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton5.BoderRadius1 = 34;
+            this.borderButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton5.BorderSize = 0;
+            this.borderButton5.FlatAppearance.BorderSize = 0;
+            this.borderButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton5.ForeColor = System.Drawing.Color.White;
+            this.borderButton5.Location = new System.Drawing.Point(401, 54);
+            this.borderButton5.Name = "borderButton5";
+            this.borderButton5.Size = new System.Drawing.Size(150, 50);
+            this.borderButton5.TabIndex = 15;
+            this.borderButton5.Text = "export file";
+            this.borderButton5.TextColor = System.Drawing.Color.White;
+            this.borderButton5.UseVisualStyleBackColor = false;
+            this.borderButton5.Click += new System.EventHandler(this.borderButton5_Click);
             // 
-            // borderButton2
+            // txtClassName
             // 
-            this.borderButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton2.BoderRadius1 = 40;
-            this.borderButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton2.BorderSize = 0;
-            this.borderButton2.FlatAppearance.BorderSize = 0;
-            this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton2.ForeColor = System.Drawing.Color.White;
-            this.borderButton2.Location = new System.Drawing.Point(401, 49);
-            this.borderButton2.Name = "borderButton2";
-            this.borderButton2.Size = new System.Drawing.Size(150, 50);
-            this.borderButton2.TabIndex = 11;
-            this.borderButton2.Text = "Se";
-            this.borderButton2.TextColor = System.Drawing.Color.White;
-            this.borderButton2.UseVisualStyleBackColor = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.borderButton6);
-            this.groupBox3.Location = new System.Drawing.Point(15, 389);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(330, 124);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.txtClassName.Location = new System.Drawing.Point(66, 21);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(240, 20);
+            this.txtClassName.TabIndex = 24;
             // 
             // classmanagement
             // 
@@ -441,9 +350,6 @@
             this.ClientSize = new System.Drawing.Size(1349, 545);
             this.Controls.Add(this.borderButton5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.borderButton4);
-            this.Controls.Add(this.borderButton3);
-            this.Controls.Add(this.borderButton2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "classmanagement";
@@ -455,14 +361,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private BorderButton borderButton6;
         private BorderButton borderButton5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
@@ -477,18 +380,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private TextBox.TextBox txtTimKiem;
-        private BorderButton borderButton4;
-        private BorderButton borderButton3;
-        private BorderButton borderButton2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private TextBox.TextBox txtRoom;
         private TextBox.TextBox txtMaxStudent;
         private System.Windows.Forms.ComboBox cboTeacher;
         private System.Windows.Forms.ComboBox cboCourseID;
-        private System.Windows.Forms.TextBox txtClassName;
         private BorderButton borderButton7;
         private BorderButton borderButton1;
         private TextBox.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtClassName;
     }
 }

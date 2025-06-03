@@ -26,9 +26,7 @@ namespace AdminLodash
 
         private void borderButton1_Click(object sender, EventArgs e)
         {
-            register Login = new register();
-            Login.Show();
-            this.Hide();
+           
         }
 
         private void borderTextBox1_Load(object sender, EventArgs e)
