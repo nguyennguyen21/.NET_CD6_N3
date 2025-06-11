@@ -308,24 +308,92 @@ namespace Bus
         }
 
         // ================== LỚP XỬ LÝ ĐIỂM DANH ==================
-        public class AttendanceBUS
+        public static class AttendanceBUS
         {
-            public static int ThemDiemDanh(string attendanceId, string studentId, string classId,
-                                   DateTime date, string status)
+            // Get StudentID by Name
+            public static int GetStudentID(string studentName)
             {
-                if (string.IsNullOrWhiteSpace(attendanceId))
-                    throw new ArgumentException("Mã điểm danh không được để trống.");
+                DataTable dt = Data.SQLServer.laydulieutheotenbang("Students");
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["StudentName"].ToString() == studentName)
+                    {
+                        return Convert.ToInt32(row["StudentID"]);
+                    }
+                }
+                throw new Exception($"Student '{studentName}' not found.");
+            }
 
-                if (string.IsNullOrWhiteSpace(studentId))
-                    throw new ArgumentException("Mã sinh viên không được để trống.");
+            // Get ClassID by Name
+            public static int GetClassID(string className)
+            {
+                DataTable dt = Data.SQLServer.laydulieutheotenbang("Classes");
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["ClassName"].ToString() == className)
+                    {
+                        return Convert.ToInt32(row["ClassID"]);
+                    }
+                }
+                throw new Exception($"Class '{className}' not found.");
+            }
 
-                if (string.IsNullOrWhiteSpace(classId))
-                    throw new ArgumentException("Mã lớp học không được để trống.");  
+            // Check if attendance already exists
+            public static bool CheckAttendance(int studentID, int classID, DateTime date)
+            {
+                string sql = $"SELECT COUNT(*) FROM attendance WHERE StudentID = {studentID} AND ClassID = {classID} AND Date = '{date:yyyy-MM-dd}'";
+                try
+                {
+                    if (!Data.SQLServer.taoketnoi()) return false;
 
-                return SQLServer.ThemDiemDanh(attendanceId, studentId, classId, date, status);
+                    using (MySqlCommand cmd = new MySqlCommand(sql, Data.SQLServer.conn))
+                    {
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        return count > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error checking attendance: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    if (Data.SQLServer.conn.State == ConnectionState.Open)
+                        Data.SQLServer.conn.Close();
+                }
+            }
+
+            // Insert new attendance record
+            public static bool InsertAttendance(int studentID, int classID, DateTime date, string status)
+            {
+                string sql = $"INSERT INTO attendance (StudentID, ClassID, Date, Status) VALUES ({studentID}, {classID}, '{date:yyyy-MM-dd}', '{status}')";
+
+                try
+                {
+                    if (!Data.SQLServer.taoketnoi()) return false;
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, Data.SQLServer.conn))
+                    {
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error inserting attendance: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    if (Data.SQLServer.conn.State == ConnectionState.Open)
+                        Data.SQLServer.conn.Close();
+                }
             }
         }
-      
+
+        
+        
+
         //lấy danh sách khóa học
 
         static void Main(string[] args)

@@ -32,15 +32,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.borderButton1 = new AdminLodash.BorderButton();
-            this.coboHV = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.absentRadioButton = new System.Windows.Forms.RadioButton();
+            this.studentComboBox = new System.Windows.Forms.ComboBox();
+            this.presentRadioButton = new System.Windows.Forms.RadioButton();
+            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboLopHoc = new System.Windows.Forms.ComboBox();
+            this.classComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewLopHoc = new System.Windows.Forms.DataGridView();
+            this.acceptButton = new AdminLodash.BorderButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLopHoc)).BeginInit();
             this.SuspendLayout();
@@ -51,144 +51,123 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.borderButton1);
-            this.panel1.Controls.Add(this.coboHV);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.absentRadioButton);
+            this.panel1.Controls.Add(this.acceptButton);
+            this.panel1.Controls.Add(this.studentComboBox);
+            this.panel1.Controls.Add(this.presentRadioButton);
+            this.panel1.Controls.Add(this.dtpNgay);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cboLopHoc);
+            this.panel1.Controls.Add(this.classComboBox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(25, 14);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(19, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1737, 178);
+            this.panel1.Size = new System.Drawing.Size(1303, 145);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(864, 22);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(648, 18);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 134);
+            this.panel2.Size = new System.Drawing.Size(641, 109);
             this.panel2.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(405, 30);
+            this.label4.Location = new System.Drawing.Point(304, 24);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 18);
+            this.label4.Size = new System.Drawing.Size(114, 18);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Studen Name";
+            this.label4.Text = "Student Name";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 129);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(22, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 10;
             this.label3.Text = "Status";
             // 
-            // radioButton2
+            // absentRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(285, 127);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 22);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "absent";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.absentRadioButton.AutoSize = true;
+            this.absentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.absentRadioButton.Location = new System.Drawing.Point(214, 105);
+            this.absentRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.absentRadioButton.Name = "absentRadioButton";
+            this.absentRadioButton.Size = new System.Drawing.Size(76, 22);
+            this.absentRadioButton.TabIndex = 9;
+            this.absentRadioButton.TabStop = true;
+            this.absentRadioButton.Text = "absent";
+            this.absentRadioButton.UseVisualStyleBackColor = true;
             // 
-            // borderButton1
+            // studentComboBox
             // 
-            this.borderButton1.BackColor = System.Drawing.Color.White;
-            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton1.ForeColor = System.Drawing.Color.Blue;
-            this.borderButton1.Location = new System.Drawing.Point(571, 102);
-            this.borderButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(241, 49);
-            this.borderButton1.TabIndex = 8;
-            this.borderButton1.Text = "apcept";
-            this.borderButton1.TextColor = System.Drawing.Color.Blue;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            this.studentComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentComboBox.FormattingEnabled = true;
+            this.studentComboBox.Location = new System.Drawing.Point(428, 18);
+            this.studentComboBox.Name = "studentComboBox";
+            this.studentComboBox.Size = new System.Drawing.Size(181, 26);
+            this.studentComboBox.TabIndex = 7;
+            this.studentComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // coboHV
+            // presentRadioButton
             // 
-            this.coboHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coboHV.FormattingEnabled = true;
-            this.coboHV.Location = new System.Drawing.Point(571, 22);
-            this.coboHV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.coboHV.Name = "coboHV";
-            this.coboHV.Size = new System.Drawing.Size(240, 26);
-            this.coboHV.TabIndex = 7;
-            this.coboHV.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.presentRadioButton.AutoSize = true;
+            this.presentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentRadioButton.Location = new System.Drawing.Point(120, 105);
+            this.presentRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.presentRadioButton.Name = "presentRadioButton";
+            this.presentRadioButton.Size = new System.Drawing.Size(82, 22);
+            this.presentRadioButton.TabIndex = 4;
+            this.presentRadioButton.TabStop = true;
+            this.presentRadioButton.Text = "present";
+            this.presentRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // dtpNgay
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(160, 129);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(82, 22);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "present";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(185, 62);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgay.Location = new System.Drawing.Point(139, 50);
+            this.dtpNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(151, 20);
+            this.dtpNgay.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 62);
+            this.label2.Location = new System.Drawing.Point(19, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Date";
             // 
-            // cboLopHoc
+            // classComboBox
             // 
-            this.cboLopHoc.FormattingEnabled = true;
-            this.cboLopHoc.Location = new System.Drawing.Point(185, 26);
-            this.cboLopHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboLopHoc.Name = "cboLopHoc";
-            this.cboLopHoc.Size = new System.Drawing.Size(200, 24);
-            this.cboLopHoc.TabIndex = 1;
-            this.cboLopHoc.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.classComboBox.FormattingEnabled = true;
+            this.classComboBox.Location = new System.Drawing.Point(139, 21);
+            this.classComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.classComboBox.Name = "classComboBox";
+            this.classComboBox.Size = new System.Drawing.Size(151, 21);
+            this.classComboBox.TabIndex = 1;
+            this.classComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 26);
+            this.label1.Location = new System.Drawing.Point(19, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 0;
@@ -198,23 +177,43 @@
             // dataGridViewLopHoc
             // 
             this.dataGridViewLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLopHoc.Location = new System.Drawing.Point(25, 209);
-            this.dataGridViewLopHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewLopHoc.Location = new System.Drawing.Point(19, 170);
+            this.dataGridViewLopHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewLopHoc.Name = "dataGridViewLopHoc";
             this.dataGridViewLopHoc.RowHeadersWidth = 51;
             this.dataGridViewLopHoc.RowTemplate.Height = 24;
-            this.dataGridViewLopHoc.Size = new System.Drawing.Size(1737, 388);
+            this.dataGridViewLopHoc.Size = new System.Drawing.Size(1303, 315);
             this.dataGridViewLopHoc.TabIndex = 7;
             this.dataGridViewLopHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // acceptButton
+            // 
+            this.acceptButton.BackColor = System.Drawing.Color.White;
+            this.acceptButton.BackgroundColor = System.Drawing.Color.White;
+            this.acceptButton.BoderRadius1 = 40;
+            this.acceptButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.acceptButton.BorderSize = 0;
+            this.acceptButton.FlatAppearance.BorderSize = 0;
+            this.acceptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptButton.ForeColor = System.Drawing.Color.Blue;
+            this.acceptButton.Location = new System.Drawing.Point(428, 83);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(181, 40);
+            this.acceptButton.TabIndex = 8;
+            this.acceptButton.Text = "accept";
+            this.acceptButton.TextColor = System.Drawing.Color.Blue;
+            this.acceptButton.UseVisualStyleBackColor = false;
+            this.acceptButton.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
             // Attendancemanagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1777, 623);
+            this.ClientSize = new System.Drawing.Size(1333, 506);
             this.Controls.Add(this.dataGridViewLopHoc);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Attendancemanagement";
             this.Text = "Attendance";
             this.Load += new System.EventHandler(this.Attendance_Load);
@@ -228,15 +227,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cboLopHoc;
+        private System.Windows.Forms.ComboBox classComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RadioButton presentRadioButton;
+        private System.Windows.Forms.DateTimePicker dtpNgay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewLopHoc;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private BorderButton borderButton1;
-        private System.Windows.Forms.ComboBox coboHV;
+        private System.Windows.Forms.RadioButton absentRadioButton;
+        private BorderButton acceptButton;
+        private System.Windows.Forms.ComboBox studentComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
