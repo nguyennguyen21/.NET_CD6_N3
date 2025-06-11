@@ -320,7 +320,7 @@ namespace Bus
                     throw new ArgumentException("Mã sinh viên không được để trống.");
 
                 if (string.IsNullOrWhiteSpace(classId))
-                    throw new ArgumentException("Mã lớp học không được để trống.");
+                    throw new ArgumentException("Mã lớp học không được để trống.");  
 
                 return SQLServer.ThemDiemDanh(attendanceId, studentId, classId, date, status);
             }

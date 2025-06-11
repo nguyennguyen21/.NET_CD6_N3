@@ -198,11 +198,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attendance.cs">
+    <Compile Include="Attendancemanagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Attendance.Designer.cs">
-      <DependentUpon>Attendance.cs</DependentUpon>
+    <Compile Include="Attendancemanagement.Designer.cs">
+      <DependentUpon>Attendancemanagement.cs</DependentUpon>
     </Compile>
     <Compile Include="BorderButton\BorderButton.cs">
       <SubType>Component</SubType>
@@ -233,6 +233,12 @@
     </Compile>
     <Compile Include="TeacherManagement.Designer.cs">
       <DependentUpon>TeacherManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="timetableMananege.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="timetableMananege.Designer.cs">
+      <DependentUpon>timetableMananege.cs</DependentUpon>
     </Compile>
     <Compile Include="viewclasslistmanagement.cs">
       <SubType>Form</SubType>
@@ -285,8 +291,8 @@
     <Compile Include="togglecontrols\Togglecontrol.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Attendance.resx">
-      <DependentUpon>Attendance.cs</DependentUpon>
+    <EmbeddedResource Include="Attendancemanagement.resx">
+      <DependentUpon>Attendancemanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="classmanagement.resx">
       <DependentUpon>classmanagement.cs</DependentUpon>

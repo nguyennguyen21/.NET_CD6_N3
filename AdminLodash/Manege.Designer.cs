@@ -95,7 +95,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(229, 45);
             this.button5.TabIndex = 4;
-            this.button5.Text = "class";
+            this.button5.Text = "Class";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -124,7 +124,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(229, 45);
             this.button4.TabIndex = 3;
-            this.button4.Text = "course";
+            this.button4.Text = "Course";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -179,7 +179,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(229, 45);
             this.button6.TabIndex = 7;
-            this.button6.Text = "enrollment";
+            this.button6.Text = "Attendent";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

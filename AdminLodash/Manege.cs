@@ -104,7 +104,7 @@ namespace AdminLodash
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            LoadForm(new Attendancemanagement());
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -416,7 +416,7 @@
             this.borderButton4.FlatAppearance.BorderSize = 0;
             this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton4.ForeColor = System.Drawing.Color.White;
-            this.borderButton4.Location = new System.Drawing.Point(15, 337);
+            this.borderButton4.Location = new System.Drawing.Point(32, 337);
             this.borderButton4.Name = "borderButton4";
             this.borderButton4.Size = new System.Drawing.Size(104, 41);
             this.borderButton4.TabIndex = 28;

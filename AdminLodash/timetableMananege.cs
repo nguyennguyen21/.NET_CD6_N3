@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AdminLodash
 {
-    public partial class Attendance : Form
+    public partial class timetableMananege : Form
     {
-        public Attendance()
+        public timetableMananege()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -104,6 +104,7 @@
             this.borderButton6.Text = "export file";
             this.borderButton6.TextColor = System.Drawing.Color.White;
             this.borderButton6.UseVisualStyleBackColor = false;
+            this.borderButton6.Click += new System.EventHandler(this.borderButton6_Click);
             // 
             // borderButton1
             // 

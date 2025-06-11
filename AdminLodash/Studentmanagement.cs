@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bus;
+using ClosedXML.Excel;
 
 namespace AdminLodash
 {
@@ -87,6 +88,76 @@ namespace AdminLodash
         {
             iformationStudent iformationStudent = new iformationStudent();
             iformationStudent.Show();
+
+        }
+
+        private void borderButton6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dữ liệu để xuất không
+                if (dataGridView2.DataSource == null)
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất.");
+                    return;
+                }
+
+                // Chọn đường dẫn lưu file Excel
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                saveFileDialog.FileName = "DanhSachHocVien.xlsx";
+
+                if (saveFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                string filePath = saveFileDialog.FileName;
+
+                // Lấy dữ liệu từ DataGridView
+                var dataTable = new DataTable("Students");
+
+                foreach (DataGridViewColumn column in dataGridView2.Columns)
+                {
+                    if (column.Visible)
+                        dataTable.Columns.Add(column.HeaderText ?? column.Name);
+                }
+
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        var dataRow = dataTable.NewRow();
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            if (row.Cells[i].Value != null)
+                                dataRow[i] = row.Cells[i].Value.ToString();
+                        }
+                        dataTable.Rows.Add(dataRow);
+                    }
+                }
+
+                // Tạo workbook và xuất dữ liệu
+                using (var workbook = new XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add(dataTable);
+                    workbook.SaveAs(filePath);
+                }
+
+                // Hỏi người dùng có muốn mở file không
+                DialogResult result = MessageBox.Show("Xuất dữ liệu thành công! Bạn có muốn mở file Excel?", "Thông báo",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("explorer", filePath); // Mở thư mục chứa file
+                                                                            // Hoặc dùng: System.Diagnostics.Process.Start(filePath);
+                }
+
+                MessageBox.Show("Đã xuất dữ liệu thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
+            }
+
 
         }
     }
