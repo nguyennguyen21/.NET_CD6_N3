@@ -111,6 +111,10 @@ namespace AdminLodash
         {
             LoadForm(new Studentmanagement());
         }
-    
+
+        private void borderButton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
