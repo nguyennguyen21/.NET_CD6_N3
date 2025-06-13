@@ -38,6 +38,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.borderButton4 = new AdminLodash.BorderButton();
+            this.borderButton1 = new AdminLodash.BorderButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.borderButton3 = new AdminLodash.BorderButton();
@@ -46,8 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
-            this.borderButton1 = new AdminLodash.BorderButton();
-            this.borderButton4 = new AdminLodash.BorderButton();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -201,6 +201,44 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.White;
+            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton4.BoderRadius1 = 40;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.Black;
+            this.borderButton4.Location = new System.Drawing.Point(1404, 12);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(40, 40);
+            this.borderButton4.TabIndex = 4;
+            this.borderButton4.Text = "-";
+            this.borderButton4.TextColor = System.Drawing.Color.Black;
+            this.borderButton4.UseVisualStyleBackColor = false;
+            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
+            // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.White;
+            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton1.BoderRadius1 = 40;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.ForeColor = System.Drawing.Color.Black;
+            this.borderButton1.Location = new System.Drawing.Point(1358, 12);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(40, 40);
+            this.borderButton1.TabIndex = 3;
+            this.borderButton1.Text = "-";
+            this.borderButton1.TextColor = System.Drawing.Color.Black;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -308,43 +346,6 @@
             this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBorder1.TabIndex = 0;
             this.pictureBorder1.TabStop = false;
-            // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.White;
-            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.ForeColor = System.Drawing.Color.Black;
-            this.borderButton1.Location = new System.Drawing.Point(1358, 12);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(40, 40);
-            this.borderButton1.TabIndex = 3;
-            this.borderButton1.Text = "-";
-            this.borderButton1.TextColor = System.Drawing.Color.Black;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            // 
-            // borderButton4
-            // 
-            this.borderButton4.BackColor = System.Drawing.Color.White;
-            this.borderButton4.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton4.BoderRadius1 = 40;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.ForeColor = System.Drawing.Color.Black;
-            this.borderButton4.Location = new System.Drawing.Point(1404, 12);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(40, 40);
-            this.borderButton4.TabIndex = 4;
-            this.borderButton4.Text = "-";
-            this.borderButton4.TextColor = System.Drawing.Color.Black;
-            this.borderButton4.UseVisualStyleBackColor = false;
-            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
             // 
             // Manege
             // 

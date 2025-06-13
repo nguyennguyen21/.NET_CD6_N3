@@ -84,7 +84,7 @@ namespace AdminLodash
 
         private void borderButton3_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,6 +115,11 @@ namespace AdminLodash
         private void borderButton4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void borderButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

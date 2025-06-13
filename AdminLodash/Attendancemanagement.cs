@@ -71,7 +71,7 @@ namespace AdminLodash
         {
             classComboBox.Items.Clear();
 
-            DataTable dt = Data.SQLServer.laydulieutheotenbang("Classes");
+            DataTable dt = Data.SQLServer.laydulieutheotenbang("Attendance");
             foreach (DataRow row in dt.Rows)
             {
                 classComboBox.Items.Add(row["classID"].ToString());
