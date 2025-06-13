@@ -362,6 +362,8 @@ namespace Bus
                     if (Data.SQLServer.conn.State == ConnectionState.Open)
                         Data.SQLServer.conn.Close();
                 }
+
+                
             }
 
             // Insert new attendance record

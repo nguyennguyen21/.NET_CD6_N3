@@ -1002,6 +1002,57 @@ namespace Data
 
             return dt;
         }
+        public static DataTable LayDanhSachDiemDanh()
+        {
+            string sql = "SELECT * FROM Attendance";
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!taoketnoi()) return dt;
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách điểm danh: " + ex.Message);
+                return dt;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        public static DataTable LayDanhSachDiemDanhTheoLopVaNgay(string classId, string date)
+        {
+            string sql = "SELECT * FROM Attendance WHERE ClassID = @ClassID AND Date = @Date";
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!taoketnoi()) return dt;
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClassID", classId);
+                    cmd.Parameters.AddWithValue("@Date", date);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách điểm danh theo lớp và ngày: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return dt;
+        }
         // Main method (nếu cần)
 
 
