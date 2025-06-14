@@ -111,15 +111,6 @@ namespace AdminLodash
         {
             LoadForm(new Studentmanagement());
         }
-
-        private void borderButton4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void borderButton1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+    
     }
 }

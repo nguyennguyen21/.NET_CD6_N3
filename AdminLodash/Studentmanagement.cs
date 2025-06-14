@@ -179,7 +179,7 @@ namespace AdminLodash
 
                 // Sắp xếp theo cột "Tên học viên", giả sử tên cột là "TenHocVien"
                 DataView dv = dt.DefaultView;
-                dv.Sort = "TenHocVien ASC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
+                dv.Sort = "FullName ASC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
 
                 // Gán lại nguồn dữ liệu đã được sắp xếp
                 dataGridView2.DataSource = dv.ToTable();

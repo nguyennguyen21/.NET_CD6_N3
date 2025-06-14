@@ -48,6 +48,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
+            this.borderButton4 = new AdminLodash.BorderButton();
+            this.borderButton5 = new AdminLodash.BorderButton();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,7 +153,8 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 74);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(229, 545);
             this.panel2.TabIndex = 3;
@@ -166,7 +169,8 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(-1, 65);
+            this.panel4.Location = new System.Drawing.Point(-1, 80);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(229, 310);
             this.panel4.TabIndex = 2;
@@ -188,14 +192,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.panel1.Controls.Add(this.borderButton4);
-            this.panel1.Controls.Add(this.borderButton1);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panelMain);
             this.panel1.Controls.Add(this.borderButton3);
             this.panel1.Controls.Add(this.borderButton2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1455, 60);
             this.panel1.TabIndex = 2;
@@ -242,7 +245,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(227, 60);
+            this.panel5.Location = new System.Drawing.Point(303, 74);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1365, 584);
             this.panel5.TabIndex = 2;
@@ -251,7 +255,8 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMain.Location = new System.Drawing.Point(224, 60);
+            this.panelMain.Location = new System.Drawing.Point(299, 74);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1365, 671);
             this.panelMain.TabIndex = 2;
@@ -267,7 +272,8 @@
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1474, 9);
+            this.borderButton3.Location = new System.Drawing.Point(1965, 11);
+            this.borderButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(45, 45);
             this.borderButton3.TabIndex = 2;
@@ -287,7 +293,8 @@
             this.borderButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borderButton2.ForeColor = System.Drawing.Color.Black;
-            this.borderButton2.Location = new System.Drawing.Point(1525, 9);
+            this.borderButton2.Location = new System.Drawing.Point(2033, 11);
+            this.borderButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.borderButton2.Name = "borderButton2";
             this.borderButton2.Size = new System.Drawing.Size(45, 45);
             this.borderButton2.TabIndex = 1;
@@ -302,7 +309,8 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.pictureBorder1);
-            this.panel6.Location = new System.Drawing.Point(227, 60);
+            this.panel6.Location = new System.Drawing.Point(303, 74);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1345, 545);
             this.panel6.TabIndex = 4;
@@ -315,7 +323,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
             this.label2.Location = new System.Drawing.Point(388, 293);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(535, 73);
+            this.label2.Size = new System.Drawing.Size(662, 91);
             this.label2.TabIndex = 2;
             this.label2.Text = "FOR YOUR LIFE";
             // 
@@ -324,9 +332,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.label1.Location = new System.Drawing.Point(498, 196);
+            this.label1.Location = new System.Drawing.Point(664, 241);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 73);
+            this.label1.Size = new System.Drawing.Size(396, 91);
             this.label1.TabIndex = 1;
             this.label1.Text = "ENGLISH";
             // 
@@ -341,11 +350,49 @@
             this.pictureBorder1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBorder1.GradientAngle = 50F;
             this.pictureBorder1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBorder1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBorder1.Name = "pictureBorder1";
             this.pictureBorder1.Size = new System.Drawing.Size(1345, 1345);
             this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBorder1.TabIndex = 0;
             this.pictureBorder1.TabStop = false;
+            // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.borderButton4.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.borderButton4.BoderRadius1 = 40;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.White;
+            this.borderButton4.Location = new System.Drawing.Point(1878, 12);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(50, 40);
+            this.borderButton4.TabIndex = 4;
+            this.borderButton4.Text = "-";
+            this.borderButton4.TextColor = System.Drawing.Color.White;
+            this.borderButton4.UseVisualStyleBackColor = false;
+            // 
+            // borderButton5
+            // 
+            this.borderButton5.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.borderButton5.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.borderButton5.BoderRadius1 = 40;
+            this.borderButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton5.BorderSize = 0;
+            this.borderButton5.FlatAppearance.BorderSize = 0;
+            this.borderButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton5.ForeColor = System.Drawing.Color.White;
+            this.borderButton5.Location = new System.Drawing.Point(1822, 12);
+            this.borderButton5.Name = "borderButton5";
+            this.borderButton5.Size = new System.Drawing.Size(50, 40);
+            this.borderButton5.TabIndex = 5;
+            this.borderButton5.Text = "-";
+            this.borderButton5.TextColor = System.Drawing.Color.White;
+            this.borderButton5.UseVisualStyleBackColor = false;
+            this.borderButton5.Click += new System.EventHandler(this.borderButton5_Click);
             // 
             // Manege
             // 
@@ -357,6 +404,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Manege";
             this.Text = "Manege";
             this.Load += new System.EventHandler(this.Manege_Load);
@@ -390,7 +438,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
-        private BorderButton borderButton4;
-        private BorderButton borderButton1;
     }
 }
