@@ -18,6 +18,8 @@ namespace AdminLodash
         {
             InitializeComponent();
             this.Load += StudentManagement_Load;
+            borderButton2.Click += borderButton2_Click;
+            borderButton2.Click -= borderButton2_Click;
         }
 
         private void textBox1_Load(object sender, EventArgs e)
@@ -159,6 +161,34 @@ namespace AdminLodash
             }
 
 
+        }
+
+        private void borderButton2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // Lấy nguồn dữ liệu từ DataGridView
+                DataTable dt = dataGridView2.DataSource as DataTable;
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để sắp xếp.");
+                    return;
+                }
+
+                // Sắp xếp theo cột "Tên học viên", giả sử tên cột là "TenHocVien"
+                DataView dv = dt.DefaultView;
+                dv.Sort = "TenHocVien ASC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
+
+                // Gán lại nguồn dữ liệu đã được sắp xếp
+                dataGridView2.DataSource = dv.ToTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi sắp xếp: " + ex.Message);
+            }
+            
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AdminLodash
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Attendancemanagement());
+            Application.Run(new Manege());
         }
     }
 }

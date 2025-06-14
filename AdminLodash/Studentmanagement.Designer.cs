@@ -85,6 +85,7 @@
             this.borderButton2.Text = "Sort Name";
             this.borderButton2.TextColor = System.Drawing.Color.White;
             this.borderButton2.UseVisualStyleBackColor = false;
+            this.borderButton2.Click += new System.EventHandler(this.borderButton2_Click);
             // 
             // borderButton6
             // 

@@ -60,7 +60,7 @@ namespace AdminLodash
             };
             this.Controls.Add(dataGridView2);
         }
-        private bool sortedByStartDate = false;
+        
 
         private void borderButton3_Click(object sender, EventArgs e)
         {

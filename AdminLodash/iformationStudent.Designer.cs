@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.borderButton1 = new AdminLodash.BorderButton();
+            this.Search = new System.Windows.Forms.Button();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,14 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Search = new System.Windows.Forms.Button();
-            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.panelRadius1 = new AdminLodash.panelRadius.panelRadius();
             this.label1 = new System.Windows.Forms.Label();
-            this.borderButton1 = new AdminLodash.BorderButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius1.SuspendLayout();
@@ -72,6 +72,78 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 650);
             this.panel1.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(371, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(252, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "phone Number";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(255, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(191, 22);
+            this.textBox2.TabIndex = 12;
+            // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BoderRadius1 = 40;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.ForeColor = System.Drawing.Color.White;
+            this.borderButton1.Location = new System.Drawing.Point(562, 20);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(111, 40);
+            this.borderButton1.TabIndex = 11;
+            this.borderButton1.Text = "Close";
+            this.borderButton1.TextColor = System.Drawing.Color.White;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
+            // Search
+            // 
+            this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search.Location = new System.Drawing.Point(130, 7);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 23);
+            this.Search.TabIndex = 10;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
+            // 
+            // pictureBorder1
+            // 
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(214, 88);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(232, 232);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 9;
+            this.pictureBorder1.TabStop = false;
             // 
             // label8
             // 
@@ -152,31 +224,6 @@
             this.textBox1.Size = new System.Drawing.Size(191, 22);
             this.textBox1.TabIndex = 1;
             // 
-            // Search
-            // 
-            this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search.Location = new System.Drawing.Point(130, 7);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 23);
-            this.Search.TabIndex = 10;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
-            // 
-            // pictureBorder1
-            // 
-            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 2;
-            this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(214, 88);
-            this.pictureBorder1.Name = "pictureBorder1";
-            this.pictureBorder1.Size = new System.Drawing.Size(232, 232);
-            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBorder1.TabIndex = 9;
-            this.pictureBorder1.TabStop = false;
-            // 
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
@@ -201,53 +248,6 @@
             this.label1.Size = new System.Drawing.Size(113, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Information";
-            // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.ForeColor = System.Drawing.Color.White;
-            this.borderButton1.Location = new System.Drawing.Point(560, 18);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(111, 40);
-            this.borderButton1.TabIndex = 11;
-            this.borderButton1.Text = "Close";
-            this.borderButton1.TextColor = System.Drawing.Color.White;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(371, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 16);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "phone Number";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(255, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 22);
-            this.textBox2.TabIndex = 12;
             // 
             // iformationStudent
             // 
