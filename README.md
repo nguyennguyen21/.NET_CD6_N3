@@ -13,12 +13,12 @@ phân công việc:
 •	Trang dashboard quản trị (/admin/dashboard)(không cần làm)
 •	Trang thông báo (/notifications)(có thể nếu muốn)
 ________________________________________
-2. Quản lý học viên
+2. Quản lý học viên(gần xong)
 •	Danh sách học viên
 •	Thêm/sửa/xóa học viên
 •	Xem thông tin chi tiết học viên
 ________________________________________
-3. Quản lý giáo viên
+3. Quản lý giáo viên(chưa xong phần dữ liệu)
 •	Danh sách giáo viên
 •	Thêm/sửa/xóa giáo viên
 •	Phân công lớp học
@@ -33,12 +33,12 @@ ________________________________________
 •	Gán học viên vào lớp
 •	Xem danh sách học viên theo lớp
 ________________________________________
-6. Quản lý học phí
+6. Quản lý học phí(chưa làm)
 •	Trang thu học phí
 •	Xem danh sách đã/đang nợ học phí
 •	Hóa đơn học phí
 ________________________________________
-7. Điểm danh
+7. Điểm danh(đang làm)
 •	Trang điểm danh theo lớp/ngày
 •	Xem lịch sử điểm danh
 ________________________________________
