@@ -33,7 +33,7 @@ ________________________________________
 •	Gán học viên vào lớp
 •	Xem danh sách học viên theo lớp
 ________________________________________
-6. Quản lý học phí(chưa làm)
+6. Quản lý học phí(đã xong tương lai có update)
 •	Trang thu học phí
 •	Xem danh sách đã/đang nợ học phí
 •	Hóa đơn học phí
