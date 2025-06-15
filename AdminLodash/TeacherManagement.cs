@@ -11,8 +11,10 @@ using Bus;
 
 namespace AdminLodash
 {
+
     public partial class TeacherManagement : Form
     {
+        internal Timer fadeInTimer;
         public TeacherManagement()
         {
             InitializeComponent();
@@ -47,6 +49,11 @@ namespace AdminLodash
             LoadData();
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TeacherManagement_Load_1(object sender, EventArgs e)
         {
 
         }

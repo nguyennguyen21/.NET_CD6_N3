@@ -143,6 +143,7 @@
             this.borderButton4.Text = "Sort  Adress";
             this.borderButton4.TextColor = System.Drawing.Color.White;
             this.borderButton4.UseVisualStyleBackColor = false;
+            this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
             // 
             // Studentmanagement
             // 
@@ -158,6 +159,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Studentmanagement";
             this.Text = "Studentmanagement";
+            this.Load += new System.EventHandler(this.Studentmanagement_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 

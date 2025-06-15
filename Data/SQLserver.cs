@@ -671,44 +671,7 @@ namespace Data
             return sodong;
         }
 
-        private static int XoaLopHocKhongKiemTraRangBuoc(string classId)
-        {
-            int sodong = 0;
-            try
-            {
-                if (!taoketnoi()) return 0;
-
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    cmd.Connection = conn;
-
-                    // Tắt ràng buộc khóa ngoại
-                    cmd.CommandText = "SET FOREIGN_KEY_CHECKS = 0;";
-                    cmd.ExecuteNonQuery();
-
-                    // Xóa lớp học
-                    cmd.CommandText = "DELETE FROM Classes WHERE ClassID = @ClassID";
-                    cmd.Parameters.AddWithValue("@ClassID", classId);
-                    sodong = cmd.ExecuteNonQuery();
-
-                    // Bật lại ràng buộc khóa ngoại
-                    cmd.CommandText = "SET FOREIGN_KEY_CHECKS = 1;";
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi xóa lớp học: " + ex.Message);
-                sodong = -1;
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
-
-            return sodong;
-        }
+       
 
         public static DataTable LayDanhSachHocVienTheoLop(string classId)
         {
@@ -1045,6 +1008,36 @@ namespace Data
             catch (Exception ex)
             {
                 Console.WriteLine("Lỗi tải danh sách điểm danh theo lớp và ngày: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!taoketnoi()) return dt;
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi thực thi truy vấn: " + ex.Message);
             }
             finally
             {

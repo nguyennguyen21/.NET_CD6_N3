@@ -32,6 +32,7 @@
             this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,18 +55,21 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.FullName = new AdminLodash.TextBox.TextBox();
             this.labelLoi = new System.Windows.Forms.Label();
-            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
+            this.panelRadius4 = new AdminLodash.panelRadius.panelRadius();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius3.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panelRadius1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
+            this.panelRadius4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.panelRadius4);
             this.panel1.Controls.Add(this.borderButton4);
             this.panel1.Controls.Add(this.borderButton3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -121,6 +125,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(427, 499);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBorder1
+            // 
+            this.pictureBorder1.BackColor = System.Drawing.Color.White;
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(113, 32);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(199, 199);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 11;
+            this.pictureBorder1.TabStop = false;
             // 
             // label1
             // 
@@ -431,21 +451,30 @@
             this.labelLoi.TabIndex = 23;
             this.labelLoi.Text = "label10";
             // 
-            // pictureBorder1
+            // panelRadius4
             // 
-            this.pictureBorder1.BackColor = System.Drawing.Color.White;
-            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 2;
-            this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(113, 32);
-            this.pictureBorder1.Name = "pictureBorder1";
-            this.pictureBorder1.Size = new System.Drawing.Size(199, 199);
-            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBorder1.TabIndex = 11;
-            this.pictureBorder1.TabStop = false;
+            this.panelRadius4.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius4.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius4.BoderRadius1 = 40;
+            this.panelRadius4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.panelRadius4.BorderSize = 0;
+            this.panelRadius4.Controls.Add(this.label10);
+            this.panelRadius4.ForeColor = System.Drawing.Color.White;
+            this.panelRadius4.Location = new System.Drawing.Point(99, 9);
+            this.panelRadius4.Name = "panelRadius4";
+            this.panelRadius4.Size = new System.Drawing.Size(213, 41);
+            this.panelRadius4.TabIndex = 6;
+            this.panelRadius4.TextColor = System.Drawing.Color.White;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(69, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 18);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "The Sun";
             // 
             // Login
             // 
@@ -480,13 +509,15 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.panelRadius3.ResumeLayout(false);
             this.panelRadius3.PerformLayout();
             this.panelRadius2.ResumeLayout(false);
             this.panelRadius2.PerformLayout();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
+            this.panelRadius4.ResumeLayout(false);
+            this.panelRadius4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +552,7 @@
         private BorderButton borderButton4;
         private BorderButton borderButton3;
         private pictureBorder.PictureBorder pictureBorder1;
+        private panelRadius.panelRadius panelRadius4;
+        private System.Windows.Forms.Label label10;
     }
 }

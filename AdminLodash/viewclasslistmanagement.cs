@@ -9,8 +9,10 @@ namespace AdminLodash
 {
     public partial class viewclasslistmanagement : Form
     {
+        internal Timer fadeInTimer;
         public viewclasslistmanagement()
         {
+
             InitializeComponent();
 
             this.Load += viewclasslistmanagement_Load;
@@ -218,6 +220,11 @@ namespace AdminLodash
         }
 
         private void coboHV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

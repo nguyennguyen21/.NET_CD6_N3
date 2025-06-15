@@ -21,6 +21,7 @@ namespace AdminLodash
 {
     public partial class coursemanagement : Form
     {
+        internal Timer fadeInTimer;
         public coursemanagement()
         {
             InitializeComponent();

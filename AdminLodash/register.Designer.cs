@@ -33,26 +33,29 @@
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
-            this.borderButton1 = new AdminLodash.BorderButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.borderButton2 = new AdminLodash.BorderButton();
             this.panelRadius1 = new AdminLodash.panelRadius.panelRadius();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new AdminLodash.TextBox.TextBox();
             this.txtTeacherId = new AdminLodash.TextBox.TextBox();
             this.toggleControl1 = new AdminLodash.ToggleControls.Togglecontrol();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.panelRadius2 = new AdminLodash.panelRadius.panelRadius();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius1.SuspendLayout();
+            this.panelRadius2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.panelRadius2);
             this.panel1.Controls.Add(this.borderButton4);
             this.panel1.Controls.Add(this.borderButton3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,7 +106,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
             this.panel2.Controls.Add(this.pictureBorder1);
-            this.panel2.Controls.Add(this.borderButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(898, 60);
             this.panel2.Name = "panel2";
@@ -120,32 +122,12 @@
             this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pictureBorder1.BorderSize = 2;
             this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(123, 32);
+            this.pictureBorder1.Location = new System.Drawing.Point(134, 105);
             this.pictureBorder1.Name = "pictureBorder1";
             this.pictureBorder1.Size = new System.Drawing.Size(188, 188);
             this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBorder1.TabIndex = 1;
             this.pictureBorder1.TabStop = false;
-            // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.White;
-            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.Location = new System.Drawing.Point(75, 241);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(272, 52);
-            this.borderButton1.TabIndex = 0;
-            this.borderButton1.Text = "Register";
-            this.borderButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
             // 
             // label2
             // 
@@ -213,6 +195,17 @@
             this.panelRadius1.TextColor = System.Drawing.Color.White;
             this.panelRadius1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRadius1_Paint);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(120, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Login";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
@@ -277,16 +270,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
-            // label5
+            // panelRadius2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(120, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 31);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Login";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.panelRadius2.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius2.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius2.BoderRadius1 = 40;
+            this.panelRadius2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.panelRadius2.BorderSize = 0;
+            this.panelRadius2.Controls.Add(this.label6);
+            this.panelRadius2.ForeColor = System.Drawing.Color.White;
+            this.panelRadius2.Location = new System.Drawing.Point(12, 9);
+            this.panelRadius2.Name = "panelRadius2";
+            this.panelRadius2.Size = new System.Drawing.Size(213, 41);
+            this.panelRadius2.TabIndex = 16;
+            this.panelRadius2.TextColor = System.Drawing.Color.White;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(69, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "The Sun";
             // 
             // register
             // 
@@ -303,6 +310,7 @@
             this.Controls.Add(this.txtTeacherId);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "register";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = " ";
@@ -312,6 +320,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
+            this.panelRadius2.ResumeLayout(false);
+            this.panelRadius2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +335,6 @@
         private TextBox.TextBox txtPassword;
         private panelRadius.panelRadius panelRadius1;
         private System.Windows.Forms.Label label1;
-        private BorderButton borderButton1;
         private ToggleControls.Togglecontrol toggleControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -335,5 +344,7 @@
         private BorderButton borderButton3;
         private pictureBorder.PictureBorder pictureBorder1;
         private System.Windows.Forms.Label label5;
+        private panelRadius.panelRadius panelRadius2;
+        private System.Windows.Forms.Label label6;
     }
 }

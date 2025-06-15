@@ -19,7 +19,7 @@ namespace AdminLodash
 {
     public partial class classmanagement : Form
     {
-
+        internal Timer fadeInTimer;
         public classmanagement()
         {
             InitializeComponent();

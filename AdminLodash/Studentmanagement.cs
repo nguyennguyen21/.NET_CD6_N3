@@ -14,6 +14,7 @@ namespace AdminLodash
 {
     public partial class Studentmanagement : Form
     {
+        internal Timer fadeInTimer;
         public Studentmanagement()
         {
             InitializeComponent();
@@ -179,7 +180,7 @@ namespace AdminLodash
 
                 // Sắp xếp theo cột "Tên học viên", giả sử tên cột là "TenHocVien"
                 DataView dv = dt.DefaultView;
-                dv.Sort = "FullName ASC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
+                dv.Sort = "FullName DESC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
 
                 // Gán lại nguồn dữ liệu đã được sắp xếp
                 dataGridView2.DataSource = dv.ToTable();
@@ -189,6 +190,37 @@ namespace AdminLodash
                 MessageBox.Show("Lỗi khi sắp xếp: " + ex.Message);
             }
             
+        }
+
+        private void borderButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy nguồn dữ liệu từ DataGridView
+                DataTable dt = dataGridView2.DataSource as DataTable;
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để sắp xếp.");
+                    return;
+                }
+
+                // Sắp xếp theo cột "Tên học viên", giả sử tên cột là "TenHocVien"
+                DataView dv = dt.DefaultView;
+                dv.Sort = "Address DESC"; // Thay "TenHocVien" bằng tên cột đúng trong CSDL của bạn
+
+                // Gán lại nguồn dữ liệu đã được sắp xếp
+                dataGridView2.DataSource = dv.ToTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi sắp xếp: " + ex.Message);
+            }
+        }
+
+        private void Studentmanagement_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

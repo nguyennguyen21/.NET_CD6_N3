@@ -48,9 +48,7 @@ namespace AdminLodash
 
         private void borderButton1_Click(object sender, EventArgs e)
         {
-            Login register = new Login();
-            register.Show();
-            this.Hide();
+           
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

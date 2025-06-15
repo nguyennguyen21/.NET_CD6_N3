@@ -94,6 +94,12 @@ namespace Bus
             {
                 return Data.SQLServer.LayDanhSachHocVienTheoTrangThai(status);
             }
+            public static DataTable TimHocVienTheoMa(string studentId)
+            {
+                string sql = "SELECT * FROM Students WHERE StudentID = @StudentID";
+                return Data.SQLServer.ExecuteQuery(sql,
+                    new MySqlParameter("@StudentID", studentId));
+            }
         }
 
         // ================== LỚP XỬ LÝ LỚP HỌC ==================
@@ -125,9 +131,9 @@ namespace Bus
                     // Bước 2: Xóa lớp học
                     deletedRows += Data.SQLServer.XoaDuLieu("Classes", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    Console.WriteLine("Lỗi xóa lớp học: " + ex.Message);
+                    
                     return -1;
                 }
                 finally
@@ -274,6 +280,15 @@ namespace Bus
 
                 return SQLServer.ThemHocPhi(feeId, studentId, classId, amountDue, paidAmount, dueDate, paymentDate, status);
             }
+
+            public static DataTable LayHocPhiTheoHocVien(string studentId)
+            {
+                string sql = "SELECT * FROM Fees WHERE StudentID = @StudentID";
+                return Data.SQLServer.ExecuteQuery(sql,
+                    new MySqlParameter("@StudentID", studentId));
+            }
+
+          
         }
 
         // ================== LỚP XỬ LÝ BÀI THI ==================
@@ -352,9 +367,9 @@ namespace Bus
                         return count > 0;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    Console.WriteLine("Error checking attendance: " + ex.Message);
+                    
                     return false;
                 }
                 finally
@@ -380,9 +395,9 @@ namespace Bus
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    Console.WriteLine("Error inserting attendance: " + ex.Message);
+                   
                     return false;
                 }
                 finally

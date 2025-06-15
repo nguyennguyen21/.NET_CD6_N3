@@ -16,6 +16,7 @@ namespace AdminLodash
 {
     public partial class Attendancemanagement : Form
     {
+        internal Timer fadeInTimer;
         public Attendancemanagement()
         {
             InitializeComponent();

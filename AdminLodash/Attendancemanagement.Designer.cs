@@ -36,11 +36,11 @@
             this.acceptButton = new AdminLodash.BorderButton();
             this.studentComboBox = new System.Windows.Forms.ComboBox();
             this.presentRadioButton = new System.Windows.Forms.RadioButton();
+            this.dtpNgayDiemDanh = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbLopHoc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDiemDanh = new System.Windows.Forms.DataGridView();
-            this.dtpNgayDiemDanh = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +152,15 @@
             this.presentRadioButton.Text = "present";
             this.presentRadioButton.UseVisualStyleBackColor = true;
             // 
+            // dtpNgayDiemDanh
+            // 
+            this.dtpNgayDiemDanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayDiemDanh.Location = new System.Drawing.Point(139, 50);
+            this.dtpNgayDiemDanh.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpNgayDiemDanh.Name = "dtpNgayDiemDanh";
+            this.dtpNgayDiemDanh.Size = new System.Drawing.Size(151, 20);
+            this.dtpNgayDiemDanh.TabIndex = 3;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -196,15 +205,6 @@
             this.dgvDiemDanh.Size = new System.Drawing.Size(1303, 315);
             this.dgvDiemDanh.TabIndex = 7;
             this.dgvDiemDanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // dtpNgayDiemDanh
-            // 
-            this.dtpNgayDiemDanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayDiemDanh.Location = new System.Drawing.Point(139, 50);
-            this.dtpNgayDiemDanh.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayDiemDanh.Name = "dtpNgayDiemDanh";
-            this.dtpNgayDiemDanh.Size = new System.Drawing.Size(151, 20);
-            this.dtpNgayDiemDanh.TabIndex = 3;
             // 
             // Attendancemanagement
             // 

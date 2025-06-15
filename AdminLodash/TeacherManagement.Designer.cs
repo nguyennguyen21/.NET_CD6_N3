@@ -39,6 +39,8 @@
             this.borderButton2 = new AdminLodash.BorderButton();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.borderButton4 = new AdminLodash.BorderButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.borderButton5 = new AdminLodash.BorderButton();
             this.borderButton6 = new AdminLodash.BorderButton();
-            this.borderButton4 = new AdminLodash.BorderButton();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,6 +233,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 20);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Full Name";
+            // 
+            // borderButton4
+            // 
+            this.borderButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton4.BoderRadius1 = 31;
+            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton4.BorderSize = 0;
+            this.borderButton4.FlatAppearance.BorderSize = 0;
+            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton4.ForeColor = System.Drawing.Color.White;
+            this.borderButton4.Location = new System.Drawing.Point(32, 337);
+            this.borderButton4.Name = "borderButton4";
+            this.borderButton4.Size = new System.Drawing.Size(104, 41);
+            this.borderButton4.TabIndex = 28;
+            this.borderButton4.Text = "Delete";
+            this.borderButton4.TextColor = System.Drawing.Color.White;
+            this.borderButton4.UseVisualStyleBackColor = false;
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(99, 206);
@@ -406,39 +434,11 @@
             this.borderButton6.TextColor = System.Drawing.Color.White;
             this.borderButton6.UseVisualStyleBackColor = false;
             // 
-            // borderButton4
-            // 
-            this.borderButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton4.BoderRadius1 = 31;
-            this.borderButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton4.BorderSize = 0;
-            this.borderButton4.FlatAppearance.BorderSize = 0;
-            this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton4.ForeColor = System.Drawing.Color.White;
-            this.borderButton4.Location = new System.Drawing.Point(32, 337);
-            this.borderButton4.Name = "borderButton4";
-            this.borderButton4.Size = new System.Drawing.Size(104, 41);
-            this.borderButton4.TabIndex = 28;
-            this.borderButton4.Text = "Delete";
-            this.borderButton4.TextColor = System.Drawing.Color.White;
-            this.borderButton4.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 20);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Full Name";
-            // 
             // TeacherManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1349, 545);
+            this.ClientSize = new System.Drawing.Size(1354, 545);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.borderButton8);
             this.Controls.Add(this.borderButton6);
@@ -448,6 +448,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TeacherManagement";
             this.Text = "TeacherManagement";
+            this.Load += new System.EventHandler(this.TeacherManagement_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
