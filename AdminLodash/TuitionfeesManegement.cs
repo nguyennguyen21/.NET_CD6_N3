@@ -202,5 +202,31 @@ namespace AdminLodash
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Lấy StudentID từ combobox
+            string studentId = textBox6.Text.Trim();
+
+            if (string.IsNullOrEmpty(studentId))
+            {
+                MessageBox.Show("Vui lòng chọn một học viên.");
+                return;
+            }
+
+            // Gọi hàm lấy học phí theo học viên
+            DataTable dtHocPhi = SQLServer.LayHocPhiTheoHocVien(studentId);
+
+            if (dtHocPhi.Rows.Count > 0)
+            {
+                dataGridView2.DataSource = dtHocPhi;
+                MessageBox.Show("Tìm thấy dữ liệu học phí của học viên " + studentId);
+            }
+            else
+            {
+                dataGridView2.DataSource = null;
+                MessageBox.Show("Không tìm thấy dữ liệu học phí cho học viên này.");
+            }
+        }
     }
 }

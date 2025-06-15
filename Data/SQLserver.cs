@@ -324,6 +324,12 @@ namespace Data
                 return false;
             }
         }
+
+        public static DataTable LayHocPhiTheoHocVien(string studentId)
+        {
+            string sql = "SELECT * FROM tuition_fees WHERE StudentID = @StudentID";
+            return ExecuteQuery(sql, new MySqlParameter("@StudentID", studentId));
+        }
         public static DataTable LayDanhSachHocVienChuaDangKy(string classId)
         {
             string sql = @"SELECT s.StudentID, s.FullName 

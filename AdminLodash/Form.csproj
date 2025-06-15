@@ -244,6 +244,12 @@
     <Compile Include="TeacherManagement.Designer.cs">
       <DependentUpon>TeacherManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestManagement.Designer.cs">
+      <DependentUpon>TestManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="TuitionfeesManegement.cs">
       <SubType>Form</SubType>
     </Compile>
