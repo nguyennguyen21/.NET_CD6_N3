@@ -326,35 +326,35 @@ namespace Bus
         public static class AttendanceBUS
         {
             // Get StudentID by Name
-            public static int GetStudentID(string studentName)
+            public static string GetStudentID(string studentName)
             {
                 DataTable dt = Data.SQLServer.laydulieutheotenbang("Students");
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (row["StudentName"].ToString() == studentName)
+                    if (row["FullName"].ToString() == studentName)
                     {
-                        return Convert.ToInt32(row["StudentID"]);
+                        return row["StudentID"].ToString();
                     }
                 }
-                throw new Exception($"Student '{studentName}' not found.");
+                throw new Exception($"Học viên '{studentName}' không tìm thấy.");
             }
 
             // Get ClassID by Name
-            public static int GetClassID(string className)
+            public static string GetClassID(string className)
             {
                 DataTable dt = Data.SQLServer.laydulieutheotenbang("Classes");
                 foreach (DataRow row in dt.Rows)
                 {
                     if (row["ClassName"].ToString() == className)
                     {
-                        return Convert.ToInt32(row["ClassID"]);
+                        return Convert.ToString(row["ClassID"]);
                     }
                 }
                 throw new Exception($"Class '{className}' not found.");
             }
 
             // Check if attendance already exists
-            public static bool CheckAttendance(int studentID, int classID, DateTime date)
+            public static bool CheckAttendance(string studentID, string classID, DateTime date)
             {
                 string sql = $"SELECT COUNT(*) FROM attendance WHERE StudentID = {studentID} AND ClassID = {classID} AND Date = '{date:yyyy-MM-dd}'";
                 try
@@ -382,7 +382,7 @@ namespace Bus
             }
 
             // Insert new attendance record
-            public static bool InsertAttendance(int studentID, int classID, DateTime date, string status)
+            public static bool InsertAttendance(string studentID, string classID, DateTime date, string status)
             {
                 string sql = $"INSERT INTO attendance (StudentID, ClassID, Date, Status) VALUES ({studentID}, {classID}, '{date:yyyy-MM-dd}', '{status}')";
 

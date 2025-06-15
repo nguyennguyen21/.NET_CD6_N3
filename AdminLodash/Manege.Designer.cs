@@ -66,11 +66,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-3, 5);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(237, 51);
+            this.button1.Size = new System.Drawing.Size(229, 51);
             this.button1.TabIndex = 0;
             this.button1.Text = "Management";
             this.button1.UseVisualStyleBackColor = false;
@@ -173,9 +173,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.button10);
-            this.panel6.Location = new System.Drawing.Point(-1, 486);
+            this.panel6.Location = new System.Drawing.Point(-1, 460);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(213, 68);
+            this.panel6.Size = new System.Drawing.Size(213, 100);
             this.panel6.TabIndex = 4;
             // 
             // button10
@@ -196,7 +196,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(-3, 432);
+            this.button9.Location = new System.Drawing.Point(-9, 412);
             this.button9.Margin = new System.Windows.Forms.Padding(0);
             this.button9.Name = "button9";
             this.button9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -216,10 +216,10 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(0, 83);
+            this.panel4.Location = new System.Drawing.Point(-1, 65);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 354);
+            this.panel4.Size = new System.Drawing.Size(238, 349);
             this.panel4.TabIndex = 2;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -293,7 +293,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1349, 545);
             this.panel3.TabIndex = 4;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
             // panelRadius1
             // 

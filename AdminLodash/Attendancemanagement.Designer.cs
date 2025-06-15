@@ -31,16 +31,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.absentRadioButton = new System.Windows.Forms.RadioButton();
             this.acceptButton = new AdminLodash.BorderButton();
             this.studentComboBox = new System.Windows.Forms.ComboBox();
-            this.presentRadioButton = new System.Windows.Forms.RadioButton();
             this.dtpNgayDiemDanh = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbLopHoc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDiemDanh = new System.Windows.Forms.DataGridView();
+            this.absentRadioButton = new System.Windows.Forms.RadioButton();
+            this.presentRadioButton = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.SuspendLayout();
@@ -86,29 +86,6 @@
             this.label4.Text = "Student Name";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Status";
-            // 
-            // absentRadioButton
-            // 
-            this.absentRadioButton.AutoSize = true;
-            this.absentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.absentRadioButton.Location = new System.Drawing.Point(214, 105);
-            this.absentRadioButton.Margin = new System.Windows.Forms.Padding(2);
-            this.absentRadioButton.Name = "absentRadioButton";
-            this.absentRadioButton.Size = new System.Drawing.Size(76, 22);
-            this.absentRadioButton.TabIndex = 9;
-            this.absentRadioButton.TabStop = true;
-            this.absentRadioButton.Text = "absent";
-            this.absentRadioButton.UseVisualStyleBackColor = true;
-            // 
             // acceptButton
             // 
             this.acceptButton.BackColor = System.Drawing.Color.White;
@@ -138,19 +115,6 @@
             this.studentComboBox.Size = new System.Drawing.Size(181, 26);
             this.studentComboBox.TabIndex = 7;
             this.studentComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // presentRadioButton
-            // 
-            this.presentRadioButton.AutoSize = true;
-            this.presentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presentRadioButton.Location = new System.Drawing.Point(120, 105);
-            this.presentRadioButton.Margin = new System.Windows.Forms.Padding(2);
-            this.presentRadioButton.Name = "presentRadioButton";
-            this.presentRadioButton.Size = new System.Drawing.Size(82, 22);
-            this.presentRadioButton.TabIndex = 4;
-            this.presentRadioButton.TabStop = true;
-            this.presentRadioButton.Text = "present";
-            this.presentRadioButton.UseVisualStyleBackColor = true;
             // 
             // dtpNgayDiemDanh
             // 
@@ -206,6 +170,43 @@
             this.dgvDiemDanh.TabIndex = 7;
             this.dgvDiemDanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // absentRadioButton
+            // 
+            this.absentRadioButton.AutoSize = true;
+            this.absentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.absentRadioButton.Location = new System.Drawing.Point(214, 105);
+            this.absentRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.absentRadioButton.Name = "absentRadioButton";
+            this.absentRadioButton.Size = new System.Drawing.Size(76, 22);
+            this.absentRadioButton.TabIndex = 9;
+            this.absentRadioButton.TabStop = true;
+            this.absentRadioButton.Text = "absent";
+            this.absentRadioButton.UseVisualStyleBackColor = true;
+            this.absentRadioButton.CheckedChanged += new System.EventHandler(this.absentRadioButton_CheckedChanged);
+            // 
+            // presentRadioButton
+            // 
+            this.presentRadioButton.AutoSize = true;
+            this.presentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentRadioButton.Location = new System.Drawing.Point(120, 105);
+            this.presentRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.presentRadioButton.Name = "presentRadioButton";
+            this.presentRadioButton.Size = new System.Drawing.Size(82, 22);
+            this.presentRadioButton.TabIndex = 4;
+            this.presentRadioButton.TabStop = true;
+            this.presentRadioButton.Text = "present";
+            this.presentRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Status";
+            // 
             // Attendancemanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,15 +230,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbLopHoc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton presentRadioButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvDiemDanh;
-        private System.Windows.Forms.RadioButton absentRadioButton;
         private BorderButton acceptButton;
         private System.Windows.Forms.ComboBox studentComboBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dtpNgayDiemDanh;
+        private System.Windows.Forms.DataGridView dgvDiemDanh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton absentRadioButton;
+        private System.Windows.Forms.RadioButton presentRadioButton;
     }
 }

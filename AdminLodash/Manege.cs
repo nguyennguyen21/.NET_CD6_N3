@@ -231,10 +231,5 @@ namespace AdminLodash
         {
            
         }
-
-        private void panel3_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

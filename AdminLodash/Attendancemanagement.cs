@@ -21,8 +21,10 @@ namespace AdminLodash
         {
             InitializeComponent();
             acceptButton.Click += acceptButton_Click;
+          
             LoadClasses();
             LoadStudentsByClass();
+            AddStatusColumn(); // Thêm dòng này
 
         }
 
@@ -38,8 +40,8 @@ namespace AdminLodash
 
             try
             {
-                int studentID = AttendanceBUS.GetStudentID(studentComboBox.Text);
-                int classID = AttendanceBUS.GetClassID(cmbLopHoc.Text);
+                string studentID = AttendanceBUS.GetStudentID(studentComboBox.Text);
+                string  classID = AttendanceBUS.GetClassID(cmbLopHoc.Text);
                 DateTime date = DateTime.Parse(dtpNgayDiemDanh.Text);
                 string status = presentRadioButton.Checked ? "Present" : "Absent";
 
@@ -65,6 +67,18 @@ namespace AdminLodash
             }
         }
 
+        private void AddStatusColumn()
+        {
+            var statusColumn = new DataGridViewComboBoxColumn();
+            statusColumn.HeaderText = "Trạng thái";
+            statusColumn.Name = "Status";
+            statusColumn.Items.Add("Present");
+            statusColumn.Items.Add("Absent");
+            if (!dgvDiemDanh.Columns.Contains("Status"))
+            {
+                dgvDiemDanh.Columns.Add(statusColumn);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadClasses();
@@ -140,19 +154,67 @@ namespace AdminLodash
         }
         private void borderButton1_Click(object sender, EventArgs e)
         {
-            if (cmbLopHoc.SelectedItem == null)
+            if (cmbLopHoc.SelectedItem == null || dgvDiemDanh.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn một lớp học.");
+                MessageBox.Show("Vui lòng chọn lớp và đảm bảo có học viên.");
                 return;
             }
 
-            string classId = cmbLopHoc.SelectedValue?.ToString() ?? cmbLopHoc.SelectedItem.ToString();
-            DateTime ngayDiemDanh = dtpNgayDiemDanh.Value.Date;
+            string className = cmbLopHoc.SelectedItem.ToString();
+            string classId = "";
 
-            // Gọi hàm phù hợp dựa trên mục tiêu: Theo lớp và ngày
-            DataTable dtDiemDanh = SQLServer.LayDanhSachDiemDanhTheoLopVaNgay(classId, ngayDiemDanh.ToString("yyyy-MM-dd"));
+            // Lấy ClassID từ tên lớp
+            DataTable dtClasses = ClassBUS.LayDanhLopHoc();
+            foreach (DataRow row in dtClasses.Rows)
+            {
+                if (row["ClassName"].ToString() == className)
+                {
+                    classId = row["ClassID"].ToString();
+                    break;
+                }
+            }
 
-            dgvDiemDanh.DataSource = dtDiemDanh;
+            if (string.IsNullOrEmpty(classId))
+            {
+                MessageBox.Show("Không tìm thấy mã lớp.");
+                return;
+            }
+
+            DateTime date = dtpNgayDiemDanh.Value.Date;
+
+            foreach (DataGridViewRow row in dgvDiemDanh.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string studentId = row.Cells["StudentID"].Value?.ToString();
+                string status = row.Cells["Status"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(studentId) || string.IsNullOrEmpty(status))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin cho tất cả học viên.");
+                    return;
+                }
+
+                try
+                {
+                    if (AttendanceBUS.CheckAttendance(studentId, classId, date))
+                    {
+                        MessageBox.Show($"Đã điểm danh {studentId} hôm nay rồi.");
+                        continue;
+                    }
+
+                    if (!AttendanceBUS.InsertAttendance(studentId, classId, date, status))
+                    {
+                        MessageBox.Show($"Không thể điểm danh {studentId}.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+
+            MessageBox.Show("Điểm danh thành công cho lớp " + className);
         }
 
 
@@ -183,24 +245,33 @@ namespace AdminLodash
         {
 
         }
+
+
         private void LoadStudentsByClass()
         {
             string className = cmbLopHoc.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(className)) return;
 
-            DataTable dtClasses = ClassBUS.LayDanhLopHoc();
+            DataTable dtClasses = ClassBUS.LayDanhLopHoc(); // Lấy danh sách lớp
+
             foreach (DataRow row in dtClasses.Rows)
             {
                 if (row["ClassName"].ToString() == className)
                 {
                     string classId = row["ClassID"].ToString();
+
+                    // Lấy danh sách học viên của lớp này từ CSDL
                     DataTable dtHocVien = ClassBUS.LayDanhSachHocVienTheoLop(classId);
+
                     dgvDiemDanh.DataSource = dtHocVien;
                     break;
                 }
             }
         }
 
-        
+        private void absentRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
