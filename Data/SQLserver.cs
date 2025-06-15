@@ -247,43 +247,92 @@ namespace Data
         }
 
         // Thêm học phí
-        public static int ThemHocPhi(string feeId, string studentId, string classId,
-                             decimal amountDue, decimal paidAmount,
-                             DateTime dueDate, DateTime paymentDate, string status)
+        public static int ThemHocPhi(string studentId, string classId,
+                              decimal amountDue, decimal paidAmount,
+                              DateTime dueDate, DateTime? paymentDate, int status)
         {
-            string sql = @"INSERT INTO Fees 
-                   (FeeID, StudentID, ClassID, AmountDue, PaidAmount, DueDate, PaymentDate, Status) 
+            string sql = @"INSERT INTO tuition_fees
+                   (StudentID, ClassID, AmountDue, PaidAmount, DueDate, PaymentDate, Status) 
                    VALUES 
-                   (@FeeID, @StudentID, @ClassID, @AmountDue, @PaidAmount, @DueDate, @PaymentDate, @Status)";
-            int sodong = 0;
+                   (@StudentID, @ClassID, @AmountDue, @PaidAmount, @DueDate, @PaymentDate, @Status)";
+
             try
             {
-                if (!taoketnoi()) return 0;
+                if (!taoketnoi()) return -1;
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@FeeID", feeId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
                     cmd.Parameters.AddWithValue("@ClassID", classId);
                     cmd.Parameters.AddWithValue("@AmountDue", amountDue);
                     cmd.Parameters.AddWithValue("@PaidAmount", paidAmount);
                     cmd.Parameters.AddWithValue("@DueDate", dueDate);
-                    cmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
-                    cmd.Parameters.AddWithValue("@Status", status);
-
-                    sodong = cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@PaymentDate", paymentDate.HasValue ? (object)paymentDate.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Status", status); // Truyền kiểu int
+                    return cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Lỗi thêm học phí: " + ex.Message);
+                
+                return -1;
             }
             finally
             {
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
-            return sodong;
+        }
+
+        public static bool KiemTraTonTaiHocVien(string studentId)
+        {
+            string sql = "SELECT COUNT(*) FROM Students WHERE StudentID = @StudentID";
+            try
+            {
+                if (!taoketnoi()) return false;
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@StudentID", studentId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi kiểm tra tồn tại học viên: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool KiemTraTonTaiLopHoc(string classId)
+        {
+            string sql = "SELECT COUNT(*) FROM Classes WHERE ClassID = @ClassID";
+            try
+            {
+                if (!taoketnoi()) return false;
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClassID", classId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi kiểm tra tồn tại lớp học: " + ex.Message);
+                return false;
+            }
+        }
+        public static DataTable LayDanhSachHocVienChuaDangKy(string classId)
+        {
+            string sql = @"SELECT s.StudentID, s.FullName 
+                   FROM Students s
+                   WHERE s.StudentID NOT IN (
+                       SELECT e.StudentID FROM Enrollments e WHERE e.ClassID = @ClassID
+                   ) AND s.Status = 'Active'";
+
+            return ExecuteQuery(sql, new MySqlParameter("@ClassID", classId));
         }
 
         // Thêm giáo viên

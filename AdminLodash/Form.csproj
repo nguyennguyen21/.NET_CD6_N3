@@ -372,8 +372,10 @@
     <Folder Include="ProgressBar\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\427021308_1109966216673600_6296491045087482026_n.jpg" />
     <Content Include="Resources\calendarDark.png" />
     <Content Include="Resources\calendarWhite.png" />
+    <Content Include="Resources\reading.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">

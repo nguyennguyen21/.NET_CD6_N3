@@ -40,6 +40,7 @@
             this.txtFullName = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.borderButton1 = new AdminLodash.BorderButton();
             this.Search = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,13 +49,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.borderButton1 = new AdminLodash.BorderButton();
-            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.panelRadius1 = new AdminLodash.panelRadius.panelRadius();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -193,6 +193,25 @@
             this.label9.Text = "Phone";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton1.BoderRadius1 = 40;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.ForeColor = System.Drawing.Color.White;
+            this.borderButton1.Location = new System.Drawing.Point(562, 20);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(111, 40);
+            this.borderButton1.TabIndex = 11;
+            this.borderButton1.Text = "Close";
+            this.borderButton1.TextColor = System.Drawing.Color.White;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
             // Search
             // 
             this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,40 +296,6 @@
             this.txtStudentID.Size = new System.Drawing.Size(191, 22);
             this.txtStudentID.TabIndex = 1;
             // 
-            // borderButton1
-            // 
-            this.borderButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
-            this.borderButton1.BoderRadius1 = 40;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.ForeColor = System.Drawing.Color.White;
-            this.borderButton1.Location = new System.Drawing.Point(562, 20);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(111, 40);
-            this.borderButton1.TabIndex = 11;
-            this.borderButton1.Text = "Close";
-            this.borderButton1.TextColor = System.Drawing.Color.White;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click);
-            // 
-            // pictureBorder1
-            // 
-            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 2;
-            this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(214, 88);
-            this.pictureBorder1.Name = "pictureBorder1";
-            this.pictureBorder1.Size = new System.Drawing.Size(232, 232);
-            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBorder1.TabIndex = 9;
-            this.pictureBorder1.TabStop = false;
-            // 
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
@@ -336,6 +321,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Information";
             // 
+            // pictureBorder1
+            // 
+            this.pictureBorder1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.pictureBorder1.BackgroundImage = global::AdminLodash.Properties.Resources.reading;
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(209, 69);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(234, 234);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 9;
+            this.pictureBorder1.TabStop = false;
+            // 
             // iformationStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,9 +349,9 @@
             this.Text = "iformationStudent";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -21,57 +21,46 @@ namespace AdminLodash
 
         private void LoadForm(Form formCon)
         {
-       
-            // Kiểm tra xem form này đã tồn tại chưa
-            foreach (Control control in panel3.Controls)
-            {
-                if (control.GetType() == formCon.GetType())
-                {
-                    control.BringToFront();
-                    return;
-                }
-            }
-
-            // Nếu chưa có thì thêm mới
+            // Xóa tất cả form cũ khỏi panel3
             foreach (Control control in panel3.Controls)
             {
                 if (control is Form)
                 {
-                    control.Dispose();
+                    panel3.Controls.Remove(control);
                 }
             }
 
-            formCon.TopLevel = false;
-            formCon.FormBorderStyle = FormBorderStyle.None;
-            formCon.Dock = DockStyle.Fill;
+            // Tạo instance mới của form
+            var newForm = (Form)Activator.CreateInstance(formCon.GetType());
 
-            panel3.Controls.Add(formCon);
-            panel3.Tag = formCon;
-            formCon.BringToFront();
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            newForm.Dock = DockStyle.Fill;
 
-            // Thiết lập Opacity ban đầu là 0
-            formCon.Opacity = 0;
-            formCon.Show();
+            panel3.Controls.Add(newForm);
+            panel3.Tag = newForm;
+            newForm.Show();
+            newForm.BringToFront();
 
-            // Tạo Timer để thực hiện hiệu ứng fade in
+            // Hiệu ứng fade in
+            newForm.Opacity = 0;
             Timer fadeInTimer = new Timer();
-            fadeInTimer.Interval = 20; // Tốc độ cập nhật (miligiây)
+            fadeInTimer.Interval = 20;
 
             fadeInTimer.Tick += (s, args) =>
             {
-                if (formCon.Opacity < 1.0)
+                if (newForm.Opacity < 1.0)
                 {
-                    formCon.Opacity += 0.05; // Tăng độ sáng
+                    newForm.Opacity += 0.05;
                 }
                 else
                 {
-                    fadeInTimer.Stop(); // Dừng khi đạt Opacity tối đa
-                    fadeInTimer.Dispose(); // Giải phóng tài nguyên
+                    fadeInTimer.Stop();
+                    fadeInTimer.Dispose();
                 }
             };
 
             fadeInTimer.Start();
-        
         }
 
 
@@ -107,14 +96,12 @@ namespace AdminLodash
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LoadForm(new classmanagement());
-            hideSubMenu();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            LoadForm(new coursemanagement());
-            hideSubMenu();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,8 +126,7 @@ namespace AdminLodash
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadForm(new TeacherManagement());
-            hideSubMenu();
+           
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -150,20 +136,17 @@ namespace AdminLodash
 
         private void button7_Click(object sender, EventArgs e)
         {
-            LoadForm(new viewclasslistmanagement());
-            hideSubMenu();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            LoadForm(new Attendancemanagement());
-            hideSubMenu();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadForm(new Studentmanagement());
-            hideSubMenu();
+         
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -183,7 +166,7 @@ namespace AdminLodash
 
         private void customizDesing()
         {
-            panel4.Visible = false;
+            panel7.Visible = false;
             panel6.Visible = false;
            
             
@@ -191,8 +174,8 @@ namespace AdminLodash
 
         private void hideSubMenu()
         {
-            if (panel4.Visible == true)
-                panel4.Visible = false;
+            if (panel7.Visible == true)
+                panel7.Visible = false;
             if (panel6.Visible == true)
                 panel6.Visible = false;
         }
@@ -218,18 +201,84 @@ namespace AdminLodash
 
         private void button8_Click(object sender, EventArgs e)
         {
-            LoadForm(new TuitionfeesManegement());
-            hideSubMenu();
+          
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            showSubMenu(panel6);
+
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
            
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(panel6);
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new TuitionfeesManegement());
+            
+        }
+
+        private void panel3_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(panel7);
+        }
+
+        private void panelRadius1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new Studentmanagement());
+            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new TeacherManagement());
+           
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new Attendancemanagement());
+           
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new viewclasslistmanagement());
+            
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new coursemanagement());
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            LoadForm(new classmanagement());
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            
+            
         }
     }
 }

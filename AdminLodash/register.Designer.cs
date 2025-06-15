@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(register));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelRadius2 = new AdminLodash.panelRadius.panelRadius();
+            this.label6 = new System.Windows.Forms.Label();
             this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,18 +47,17 @@
             this.txtTeacherId = new AdminLodash.TextBox.TextBox();
             this.toggleControl1 = new AdminLodash.ToggleControls.Togglecontrol();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelRadius2 = new AdminLodash.panelRadius.panelRadius();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panelRadius2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.panelRadius1.SuspendLayout();
-            this.panelRadius2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panelRadius2);
             this.panel1.Controls.Add(this.borderButton4);
             this.panel1.Controls.Add(this.borderButton3);
@@ -63,6 +66,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(0, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1325, 10);
+            this.panel3.TabIndex = 14;
+            // 
+            // panelRadius2
+            // 
+            this.panelRadius2.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius2.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.panelRadius2.BoderRadius1 = 40;
+            this.panelRadius2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.panelRadius2.BorderSize = 0;
+            this.panelRadius2.Controls.Add(this.label6);
+            this.panelRadius2.ForeColor = System.Drawing.Color.White;
+            this.panelRadius2.Location = new System.Drawing.Point(13, 5);
+            this.panelRadius2.Name = "panelRadius2";
+            this.panelRadius2.Size = new System.Drawing.Size(213, 41);
+            this.panelRadius2.TabIndex = 16;
+            this.panelRadius2.TextColor = System.Drawing.Color.White;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(69, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "The Sun";
             // 
             // borderButton4
             // 
@@ -74,7 +110,7 @@
             this.borderButton4.FlatAppearance.BorderSize = 0;
             this.borderButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton4.ForeColor = System.Drawing.Color.Black;
-            this.borderButton4.Location = new System.Drawing.Point(1268, 9);
+            this.borderButton4.Location = new System.Drawing.Point(1268, 1);
             this.borderButton4.Name = "borderButton4";
             this.borderButton4.Size = new System.Drawing.Size(45, 45);
             this.borderButton4.TabIndex = 15;
@@ -93,7 +129,7 @@
             this.borderButton3.FlatAppearance.BorderSize = 0;
             this.borderButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borderButton3.ForeColor = System.Drawing.Color.Black;
-            this.borderButton3.Location = new System.Drawing.Point(1211, 9);
+            this.borderButton3.Location = new System.Drawing.Point(1211, 3);
             this.borderButton3.Name = "borderButton3";
             this.borderButton3.Size = new System.Drawing.Size(45, 45);
             this.borderButton3.TabIndex = 14;
@@ -116,13 +152,15 @@
             // pictureBorder1
             // 
             this.pictureBorder1.BackColor = System.Drawing.Color.White;
+            this.pictureBorder1.BackgroundImage = global::AdminLodash.Properties.Resources._427021308_1109966216673600_6296491045087482026_n;
             this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
             this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
             this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
             this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 2;
+            this.pictureBorder1.BorderSize = 4;
+            this.pictureBorder1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBorder1.ErrorImage")));
             this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(134, 105);
+            this.pictureBorder1.Location = new System.Drawing.Point(126, 105);
             this.pictureBorder1.Name = "pictureBorder1";
             this.pictureBorder1.Size = new System.Drawing.Size(188, 188);
             this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,31 +308,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
-            // panelRadius2
-            // 
-            this.panelRadius2.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.panelRadius2.BackgroundColor = System.Drawing.Color.MediumAquamarine;
-            this.panelRadius2.BoderRadius1 = 40;
-            this.panelRadius2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.panelRadius2.BorderSize = 0;
-            this.panelRadius2.Controls.Add(this.label6);
-            this.panelRadius2.ForeColor = System.Drawing.Color.White;
-            this.panelRadius2.Location = new System.Drawing.Point(12, 9);
-            this.panelRadius2.Name = "panelRadius2";
-            this.panelRadius2.Size = new System.Drawing.Size(213, 41);
-            this.panelRadius2.TabIndex = 16;
-            this.panelRadius2.TextColor = System.Drawing.Color.White;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "The Sun";
-            // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,12 +329,12 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.register_Load);
             this.panel1.ResumeLayout(false);
+            this.panelRadius2.ResumeLayout(false);
+            this.panelRadius2.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
-            this.panelRadius2.ResumeLayout(false);
-            this.panelRadius2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +359,6 @@
         private System.Windows.Forms.Label label5;
         private panelRadius.panelRadius panelRadius2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -265,20 +265,16 @@ namespace Bus
         // ================== LỚP XỬ LÝ HỌC PHÍ ==================
         public class FeeBUS
         {
-            public static int ThemHocPhi(string feeId, string studentId, string classId,
-                                 decimal amountDue, decimal paidAmount,
-                                 DateTime dueDate, DateTime paymentDate, string status)
+            public static int ThemHocPhi(string studentId, string classId,
+                              decimal amountDue, decimal paidAmount,
+                              DateTime dueDate, DateTime? paymentDate, byte status)
             {
-                if (string.IsNullOrWhiteSpace(feeId))
-                    throw new ArgumentException("Mã học phí không được để trống.");
-
                 if (string.IsNullOrWhiteSpace(studentId))
                     throw new ArgumentException("Mã sinh viên không được để trống.");
-
                 if (amountDue < 0 || paidAmount < 0)
                     throw new ArgumentException("Số tiền phải lớn hơn hoặc bằng 0.");
 
-                return SQLServer.ThemHocPhi(feeId, studentId, classId, amountDue, paidAmount, dueDate, paymentDate, status);
+                return SQLServer.ThemHocPhi(studentId, classId, amountDue, paidAmount, dueDate, paymentDate, Convert.ToInt32(status));
             }
 
             public static DataTable LayHocPhiTheoHocVien(string studentId)
