@@ -38,7 +38,7 @@ ________________________________________
 •	Xem danh sách đã/đang nợ học phí
 •	Hóa đơn học phí
 ________________________________________
-7. Điểm danh(đang làm)
+7. Điểm danh(gần xong)
 •	Trang điểm danh theo lớp/ngày
 •	Xem lịch sử điểm danh
 ________________________________________
