@@ -416,27 +416,50 @@ namespace Data
             return sodong;
         }
 
+        public static DataTable LayDanhSachDiemDanhTheoLopVaNgay(string classId, string date)
+        {
+            string sql = "SELECT * FROM Attendance WHERE ClassID = @ClassID AND Date = @Date";
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!taoketnoi()) return dt;
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClassID", classId);
+                    cmd.Parameters.AddWithValue("@Date", date);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách điểm danh theo lớp và ngày: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return dt;
+        }
+
         // Thêm điểm danh
-        public static int ThemDiemDanh(string attendanceId, string studentId, string classId,
-                               DateTime date, string status)
+        public static int ThemDiemDanh(string studentId, string classId, DateTime date, string status)
         {
             string sql = @"INSERT INTO Attendance 
-                   (AttendanceID, StudentID, ClassID, Date, Status) 
+                   (StudentID, ClassID, Date, Status) 
                    VALUES 
-                   (@AttendanceID, @StudentID, @ClassID, @Date, @Status)";
+                   (@StudentID, @ClassID, @Date, @Status)";
             int sodong = 0;
             try
             {
                 if (!taoketnoi()) return 0;
-
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@AttendanceID", attendanceId);
                     cmd.Parameters.AddWithValue("@StudentID", studentId);
                     cmd.Parameters.AddWithValue("@ClassID", classId);
                     cmd.Parameters.AddWithValue("@Date", date);
                     cmd.Parameters.AddWithValue("@Status", status);
-
                     sodong = cmd.ExecuteNonQuery();
                 }
             }
@@ -451,7 +474,6 @@ namespace Data
             }
             return sodong;
         }
-
         // Cập nhật dữ liệu
         public static int CapNhatDuLieu(string tenBang, Dictionary<string, object> duLieuCapNhat, string dieuKienWhere, params MySqlParameter[] parameters)
         {
@@ -1045,32 +1067,7 @@ namespace Data
                     conn.Close();
             }
         }
-        public static DataTable LayDanhSachDiemDanhTheoLopVaNgay(string classId, string date)
-        {
-            string sql = "SELECT * FROM Attendance WHERE ClassID = @ClassID AND Date = @Date";
-            DataTable dt = new DataTable();
-            try
-            {
-                if (!taoketnoi()) return dt;
-                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@ClassID", classId);
-                    cmd.Parameters.AddWithValue("@Date", date);
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
-                        adapter.Fill(dt);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi tải danh sách điểm danh theo lớp và ngày: " + ex.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
-            return dt;
-        }
+      
 
         public static DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
         {
@@ -1102,7 +1099,45 @@ namespace Data
             return dt;
         }
         // Main method (nếu cần)
+        public static DataTable LayDanhSachLopHocCoThongTinKhoaHoc()
+        {
+            string sql = @"SELECT c.ClassID, c.ClassName, c.Room, c.Schedule, co.CourseName 
+                   FROM Classes c
+                   JOIN Courses co ON c.CourseID = co.CourseID";
+            return ExecuteQuery(sql);
+        }
 
+        public static string GetClassIDForStudent(string studentId)
+        {
+            string sql = "SELECT ClassID FROM Enrollments WHERE StudentID = @StudentID";
+            try
+            {
+                if (!taoketnoi()) return "Chưa đăng ký lớp";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@StudentID", studentId);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy ClassID cho học viên: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return "Chưa đăng ký lớp";
+        }
 
 
         static void Main(string[] args)

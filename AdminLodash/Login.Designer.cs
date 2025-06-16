@@ -35,6 +35,7 @@
             this.borderButton4 = new AdminLodash.BorderButton();
             this.borderButton3 = new AdminLodash.BorderButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,27 +45,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelLoi = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new AdminLodash.Datepicker.DateandTime();
-            this.panelRadius3 = new AdminLodash.panelRadius.panelRadius();
-            this.rbNu = new AdminLodash.RadioButton1.RadioButton1();
+            this.dtpDateOfBirth = new AdminLodash.Datepicker.DateandTime();
+            this.radioButtonNu = new AdminLodash.panelRadius.panelRadius();
+            this.rbnNu = new AdminLodash.RadioButton1.RadioButton1();
             this.panelRadius2 = new AdminLodash.panelRadius.panelRadius();
-            this.rbNam = new AdminLodash.RadioButton1.RadioButton1();
+            this.radioButtonNam = new AdminLodash.RadioButton1.RadioButton1();
             this.panelRadius1 = new AdminLodash.panelRadius.panelRadius();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new AdminLodash.TextBox.TextBox();
-            this.txtSDt = new AdminLodash.TextBox.TextBox();
-            this.textBox3 = new AdminLodash.TextBox.TextBox();
-            this.txtMatKhau = new AdminLodash.TextBox.TextBox();
+            this.txtAddress = new AdminLodash.TextBox.TextBox();
+            this.txtPhone = new AdminLodash.TextBox.TextBox();
+            this.txtEmail = new AdminLodash.TextBox.TextBox();
+            this.txtPassword = new AdminLodash.TextBox.TextBox();
             this.borderButton2 = new AdminLodash.BorderButton();
-            this.FullName = new AdminLodash.TextBox.TextBox();
-            this.pictureBorder1 = new AdminLodash.pictureBorder.PictureBorder();
+            this.txtFullName = new AdminLodash.TextBox.TextBox();
             this.panel1.SuspendLayout();
             this.panelRadius4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelRadius3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
+            this.radioButtonNu.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panelRadius1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,11 +161,28 @@
             this.panel2.Size = new System.Drawing.Size(427, 499);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBorder1
+            // 
+            this.pictureBorder1.BackColor = System.Drawing.Color.White;
+            this.pictureBorder1.BackgroundImage = global::AdminLodash.Properties.Resources._427021308_1109966216673600_6296491045087482026_n;
+            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBorder1.BorderSize = 6;
+            this.pictureBorder1.GradientAngle = 50F;
+            this.pictureBorder1.Location = new System.Drawing.Point(96, 127);
+            this.pictureBorder1.Name = "pictureBorder1";
+            this.pictureBorder1.Size = new System.Drawing.Size(211, 211);
+            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBorder1.TabIndex = 11;
+            this.pictureBorder1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(521, 269);
+            this.label1.Location = new System.Drawing.Point(522, 343);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 24);
             this.label1.TabIndex = 8;
@@ -185,11 +202,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(522, 343);
+            this.label3.Location = new System.Drawing.Point(522, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 24);
+            this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Re-Password :";
+            this.label3.Text = "Email";
             // 
             // label4
             // 
@@ -254,52 +271,53 @@
             this.labelLoi.Size = new System.Drawing.Size(61, 18);
             this.labelLoi.TabIndex = 23;
             this.labelLoi.Text = "label10";
+            this.labelLoi.Click += new System.EventHandler(this.labelLoi_Click);
             // 
-            // dtpNgaySinh
+            // dtpDateOfBirth
             // 
-            this.dtpNgaySinh.BackColor = System.Drawing.Color.Transparent;
-            this.dtpNgaySinh.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.dtpNgaySinh.BorderSize = 0;
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.dtpNgaySinh.Location = new System.Drawing.Point(525, 474);
-            this.dtpNgaySinh.MinimumSize = new System.Drawing.Size(100, 35);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Padding = new System.Windows.Forms.Padding(5);
-            this.dtpNgaySinh.Size = new System.Drawing.Size(321, 38);
-            this.dtpNgaySinh.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.dtpNgaySinh.TabIndex = 21;
-            this.dtpNgaySinh.TextColor = System.Drawing.Color.White;
-            this.dtpNgaySinh.Value = new System.DateTime(2025, 4, 25, 10, 49, 19, 378);
+            this.dtpDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.dtpDateOfBirth.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpDateOfBirth.BorderSize = 0;
+            this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(525, 474);
+            this.dtpDateOfBirth.MinimumSize = new System.Drawing.Size(100, 35);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Padding = new System.Windows.Forms.Padding(5);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(321, 38);
+            this.dtpDateOfBirth.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.dtpDateOfBirth.TabIndex = 21;
+            this.dtpDateOfBirth.TextColor = System.Drawing.Color.White;
+            this.dtpDateOfBirth.Value = new System.DateTime(2025, 4, 25, 10, 49, 19, 378);
             // 
-            // panelRadius3
+            // radioButtonNu
             // 
-            this.panelRadius3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.panelRadius3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.panelRadius3.BoderRadius1 = 35;
-            this.panelRadius3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.panelRadius3.BorderSize = 0;
-            this.panelRadius3.Controls.Add(this.rbNu);
-            this.panelRadius3.ForeColor = System.Drawing.Color.White;
-            this.panelRadius3.Location = new System.Drawing.Point(1027, 370);
-            this.panelRadius3.Name = "panelRadius3";
-            this.panelRadius3.Size = new System.Drawing.Size(84, 35);
-            this.panelRadius3.TabIndex = 19;
-            this.panelRadius3.TextColor = System.Drawing.Color.White;
+            this.radioButtonNu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.radioButtonNu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.radioButtonNu.BoderRadius1 = 35;
+            this.radioButtonNu.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.radioButtonNu.BorderSize = 0;
+            this.radioButtonNu.Controls.Add(this.rbnNu);
+            this.radioButtonNu.ForeColor = System.Drawing.Color.White;
+            this.radioButtonNu.Location = new System.Drawing.Point(1027, 370);
+            this.radioButtonNu.Name = "radioButtonNu";
+            this.radioButtonNu.Size = new System.Drawing.Size(84, 35);
+            this.radioButtonNu.TabIndex = 19;
+            this.radioButtonNu.TextColor = System.Drawing.Color.White;
             // 
-            // rbNu
+            // rbnNu
             // 
-            this.rbNu.AutoSize = true;
-            this.rbNu.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rbNu.Location = new System.Drawing.Point(14, 8);
-            this.rbNu.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbNu.Name = "rbNu";
-            this.rbNu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbNu.Size = new System.Drawing.Size(49, 21);
-            this.rbNu.TabIndex = 16;
-            this.rbNu.TabStop = true;
-            this.rbNu.Text = "Nữ";
-            this.rbNu.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbNu.UseVisualStyleBackColor = true;
+            this.rbnNu.AutoSize = true;
+            this.rbnNu.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rbnNu.Location = new System.Drawing.Point(14, 8);
+            this.rbnNu.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbnNu.Name = "rbnNu";
+            this.rbnNu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbnNu.Size = new System.Drawing.Size(49, 21);
+            this.rbnNu.TabIndex = 16;
+            this.rbnNu.TabStop = true;
+            this.rbnNu.Text = "Nữ";
+            this.rbnNu.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbnNu.UseVisualStyleBackColor = true;
             // 
             // panelRadius2
             // 
@@ -308,7 +326,7 @@
             this.panelRadius2.BoderRadius1 = 35;
             this.panelRadius2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.panelRadius2.BorderSize = 0;
-            this.panelRadius2.Controls.Add(this.rbNam);
+            this.panelRadius2.Controls.Add(this.radioButtonNam);
             this.panelRadius2.ForeColor = System.Drawing.Color.White;
             this.panelRadius2.Location = new System.Drawing.Point(925, 370);
             this.panelRadius2.Name = "panelRadius2";
@@ -316,21 +334,21 @@
             this.panelRadius2.TabIndex = 18;
             this.panelRadius2.TextColor = System.Drawing.Color.White;
             // 
-            // rbNam
+            // radioButtonNam
             // 
-            this.rbNam.AutoSize = true;
-            this.rbNam.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rbNam.Location = new System.Drawing.Point(13, 8);
-            this.rbNam.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbNam.Name = "rbNam";
-            this.rbNam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbNam.Size = new System.Drawing.Size(57, 21);
-            this.rbNam.TabIndex = 16;
-            this.rbNam.TabStop = true;
-            this.rbNam.Text = "Nam";
-            this.rbNam.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbNam.UseVisualStyleBackColor = true;
-            this.rbNam.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
+            this.radioButtonNam.AutoSize = true;
+            this.radioButtonNam.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.radioButtonNam.Location = new System.Drawing.Point(13, 8);
+            this.radioButtonNam.MinimumSize = new System.Drawing.Size(0, 21);
+            this.radioButtonNam.Name = "radioButtonNam";
+            this.radioButtonNam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.radioButtonNam.Size = new System.Drawing.Size(57, 21);
+            this.radioButtonNam.TabIndex = 16;
+            this.radioButtonNam.TabStop = true;
+            this.radioButtonNam.Text = "Nam";
+            this.radioButtonNam.UnCheckedColor = System.Drawing.Color.Gray;
+            this.radioButtonNam.UseVisualStyleBackColor = true;
+            this.radioButtonNam.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
             // panelRadius1
             // 
@@ -357,80 +375,80 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Register";
             // 
-            // txtDiaChi
+            // txtAddress
             // 
-            this.txtDiaChi.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDiaChi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.txtDiaChi.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDiaChi.BorderSize = 3;
-            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(925, 301);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDiaChi.Multiline = false;
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Padding = new System.Windows.Forms.Padding(7);
-            this.txtDiaChi.PasswordChar = false;
-            this.txtDiaChi.Size = new System.Drawing.Size(318, 31);
-            this.txtDiaChi.TabIndex = 7;
-            this.txtDiaChi.Texts = "";
-            this.txtDiaChi.UnderlinedStyle = true;
-            this.txtDiaChi.Load += new System.EventHandler(this.textBox5_Load);
+            this.txtAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.txtAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtAddress.BorderSize = 3;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(925, 301);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Multiline = false;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Padding = new System.Windows.Forms.Padding(7);
+            this.txtAddress.PasswordChar = false;
+            this.txtAddress.Size = new System.Drawing.Size(318, 31);
+            this.txtAddress.TabIndex = 7;
+            this.txtAddress.Texts = "";
+            this.txtAddress.UnderlinedStyle = true;
+            this.txtAddress.Load += new System.EventHandler(this.textBox5_Load);
             // 
-            // txtSDt
+            // txtPhone
             // 
-            this.txtSDt.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSDt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.txtSDt.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSDt.BorderSize = 3;
-            this.txtSDt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDt.Location = new System.Drawing.Point(925, 222);
-            this.txtSDt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSDt.Multiline = false;
-            this.txtSDt.Name = "txtSDt";
-            this.txtSDt.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSDt.PasswordChar = false;
-            this.txtSDt.Size = new System.Drawing.Size(318, 31);
-            this.txtSDt.TabIndex = 6;
-            this.txtSDt.Texts = "";
-            this.txtSDt.UnderlinedStyle = true;
-            this.txtSDt.Load += new System.EventHandler(this.textBox4_Load);
+            this.txtPhone.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPhone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.txtPhone.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPhone.BorderSize = 3;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(925, 222);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Multiline = false;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPhone.PasswordChar = false;
+            this.txtPhone.Size = new System.Drawing.Size(318, 31);
+            this.txtPhone.TabIndex = 6;
+            this.txtPhone.Texts = "";
+            this.txtPhone.UnderlinedStyle = true;
+            this.txtPhone.Load += new System.EventHandler(this.textBox4_Load);
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.textBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox3.BorderSize = 3;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(525, 386);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Multiline = false;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox3.PasswordChar = true;
-            this.textBox3.Size = new System.Drawing.Size(321, 31);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Texts = "";
-            this.textBox3.UnderlinedStyle = true;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderSize = 3;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(525, 297);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.Size = new System.Drawing.Size(321, 31);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
             // 
-            // txtMatKhau
+            // txtPassword
             // 
-            this.txtMatKhau.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.txtMatKhau.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtMatKhau.BorderSize = 3;
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(525, 301);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMatKhau.Multiline = false;
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(7);
-            this.txtMatKhau.PasswordChar = true;
-            this.txtMatKhau.Size = new System.Drawing.Size(321, 31);
-            this.txtMatKhau.TabIndex = 4;
-            this.txtMatKhau.Texts = "";
-            this.txtMatKhau.UnderlinedStyle = true;
-            this.txtMatKhau.Load += new System.EventHandler(this.textBox2_Load);
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.txtPassword.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPassword.BorderSize = 3;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(525, 374);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPassword.PasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(321, 31);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = true;
+            this.txtPassword.Load += new System.EventHandler(this.textBox2_Load);
             // 
             // borderButton2
             // 
@@ -451,41 +469,24 @@
             this.borderButton2.UseVisualStyleBackColor = false;
             this.borderButton2.Click += new System.EventHandler(this.borderButton2_Click);
             // 
-            // FullName
+            // txtFullName
             // 
-            this.FullName.BackColor = System.Drawing.SystemColors.Window;
-            this.FullName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.FullName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.FullName.BorderSize = 3;
-            this.FullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FullName.Location = new System.Drawing.Point(525, 222);
-            this.FullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FullName.Multiline = false;
-            this.FullName.Name = "FullName";
-            this.FullName.Padding = new System.Windows.Forms.Padding(7);
-            this.FullName.PasswordChar = false;
-            this.FullName.Size = new System.Drawing.Size(321, 31);
-            this.FullName.TabIndex = 2;
-            this.FullName.Texts = "";
-            this.FullName.UnderlinedStyle = true;
-            this.FullName.Load += new System.EventHandler(this.textBox1_Load);
-            // 
-            // pictureBorder1
-            // 
-            this.pictureBorder1.BackColor = System.Drawing.Color.White;
-            this.pictureBorder1.BackgroundImage = global::AdminLodash.Properties.Resources._427021308_1109966216673600_6296491045087482026_n;
-            this.pictureBorder1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBorder1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBorder1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBorder1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBorder1.BorderSize = 6;
-            this.pictureBorder1.GradientAngle = 50F;
-            this.pictureBorder1.Location = new System.Drawing.Point(96, 127);
-            this.pictureBorder1.Name = "pictureBorder1";
-            this.pictureBorder1.Size = new System.Drawing.Size(211, 211);
-            this.pictureBorder1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBorder1.TabIndex = 11;
-            this.pictureBorder1.TabStop = false;
+            this.txtFullName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtFullName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.txtFullName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtFullName.BorderSize = 3;
+            this.txtFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(525, 222);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.Multiline = false;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Padding = new System.Windows.Forms.Padding(7);
+            this.txtFullName.PasswordChar = false;
+            this.txtFullName.Size = new System.Drawing.Size(321, 31);
+            this.txtFullName.TabIndex = 2;
+            this.txtFullName.Texts = "";
+            this.txtFullName.UnderlinedStyle = true;
+            this.txtFullName.Load += new System.EventHandler(this.textBox1_Load);
             // 
             // Login
             // 
@@ -493,10 +494,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1325, 559);
             this.Controls.Add(this.labelLoi);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dtpNgaySinh);
+            this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.panelRadius3);
+            this.Controls.Add(this.radioButtonNu);
             this.Controls.Add(this.panelRadius2);
             this.Controls.Add(this.panelRadius1);
             this.Controls.Add(this.label6);
@@ -504,13 +507,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.txtSDt);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.borderButton2);
-            this.Controls.Add(this.FullName);
+            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -522,13 +523,13 @@
             this.panelRadius4.ResumeLayout(false);
             this.panelRadius4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelRadius3.ResumeLayout(false);
-            this.panelRadius3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
+            this.radioButtonNu.ResumeLayout(false);
+            this.radioButtonNu.PerformLayout();
             this.panelRadius2.ResumeLayout(false);
             this.panelRadius2.PerformLayout();
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorder1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,12 +539,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private TextBox.TextBox FullName;
+        private TextBox.TextBox txtFullName;
         private BorderButton borderButton2;
-        private TextBox.TextBox txtMatKhau;
-        private TextBox.TextBox textBox3;
-        private TextBox.TextBox txtSDt;
-        private TextBox.TextBox txtDiaChi;
+        private TextBox.TextBox txtPassword;
+        private TextBox.TextBox txtEmail;
+        private TextBox.TextBox txtPhone;
+        private TextBox.TextBox txtAddress;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -552,12 +553,12 @@
         private System.Windows.Forms.Label label6;
         private panelRadius.panelRadius panelRadius1;
         private System.Windows.Forms.Label label7;
-        private RadioButton1.RadioButton1 rbNam;
+        private RadioButton1.RadioButton1 radioButtonNam;
         private panelRadius.panelRadius panelRadius2;
-        private panelRadius.panelRadius panelRadius3;
+        private panelRadius.panelRadius radioButtonNu;
         private System.Windows.Forms.Label label8;
-        private Datepicker.DateandTime dtpNgaySinh;
-        private RadioButton1.RadioButton1 rbNu;
+        private Datepicker.DateandTime dtpDateOfBirth;
+        private RadioButton1.RadioButton1 rbnNu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelLoi;
         private BorderButton borderButton4;

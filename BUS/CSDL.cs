@@ -321,6 +321,7 @@ namespace Bus
         // ================== LỚP XỬ LÝ ĐIỂM DANH ==================
         public static class AttendanceBUS
         {
+
             // Get StudentID by Name
             public static string GetStudentID(string studentName)
             {
@@ -380,20 +381,21 @@ namespace Bus
             // Insert new attendance record
             public static bool InsertAttendance(string studentID, string classID, DateTime date, string status)
             {
-                string sql = $"INSERT INTO attendance (StudentID, ClassID, Date, Status) VALUES ({studentID}, {classID}, '{date:yyyy-MM-dd}', '{status}')";
-
+                string sql = $"INSERT INTO attendance (StudentID, ClassID, Date, Status) VALUES (@studentID, @classID, @date, @status)";
                 try
                 {
                     if (!Data.SQLServer.taoketnoi()) return false;
-
                     using (MySqlCommand cmd = new MySqlCommand(sql, Data.SQLServer.conn))
                     {
+                        cmd.Parameters.AddWithValue("@studentID", studentID);
+                        cmd.Parameters.AddWithValue("@classID", classID);
+                        cmd.Parameters.AddWithValue("@date", date);
+                        cmd.Parameters.AddWithValue("@status", status);
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
-                catch (Exception )
+                catch (Exception)
                 {
-                   
                     return false;
                 }
                 finally
