@@ -38,7 +38,7 @@ ________________________________________
 •	Xem danh sách đã/đang nợ học phí
 •	Hóa đơn học phí
 ________________________________________
-7. Điểm danh(ong tương lai có update)
+7. Điểm danh(xong tương lai có update)
 •	Trang điểm danh theo lớp/ngày
 •	Xem lịch sử điểm danh
 ________________________________________
