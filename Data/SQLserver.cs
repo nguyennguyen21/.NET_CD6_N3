@@ -99,13 +99,13 @@ namespace Data
 
         // Thêm sinh viên
         public static int ThemSinhVien(string studentId, string fullName, DateTime dateOfBirth,
-                                string gender, string phone, string address,
-                                DateTime registrationDate, string status, string password)
+                                string gender, string phone, string email, string address,
+                                DateTime registrationDate, int status, string password)
         {
             string sql = @"INSERT INTO Students 
-                   (StudentID, FullName, DateOfBirth, Gender, Phone, Address, RegistrationDate, Status, Password) 
+                   (StudentID, FullName, DateOfBirth, Gender, Phone, Email, Address, RegistrationDate, Status, Password) 
                    VALUES 
-                   (@StudentID, @FullName, @DateOfBirth, @Gender, @Phone, @Address, @RegistrationDate, @Status, @Password)";
+                   (@StudentID, @FullName, @DateOfBirth, @Gender, @Phone, @Email, @Address, @RegistrationDate, @Status, @Password)";
             int sodong = 0;
             try
             {
@@ -118,6 +118,7 @@ namespace Data
                     cmd.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
                     cmd.Parameters.AddWithValue("@Gender", gender);
                     cmd.Parameters.AddWithValue("@Phone", phone);
+                    cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Address", address);
                     cmd.Parameters.AddWithValue("@RegistrationDate", registrationDate);
                     cmd.Parameters.AddWithValue("@Status", status);
@@ -1138,7 +1139,42 @@ namespace Data
 
             return "Chưa đăng ký lớp";
         }
+        public static int XoaHocVienKhongRangBuoc(string studentId)
+        {
+            int deletedRows = 0;
+            try
+            {
+                if (!taoketnoi()) return 0;
 
+                // Tắt tạm thời kiểm tra khóa ngoại
+                using (MySqlCommand cmd = new MySqlCommand("SET FOREIGN_KEY_CHECKS = 0;", conn))
+                    cmd.ExecuteNonQuery();
+
+                // Xóa các bảng phụ thuộc theo thứ tự từ sâu đến nông
+                deletedRows += XoaDuLieu("Results", "StudentID = @StudentID", new MySqlParameter("@StudentID", studentId));
+                deletedRows += XoaDuLieu("Attendance", "StudentID = @StudentID", new MySqlParameter("@StudentID", studentId));
+                deletedRows += XoaDuLieu("Enrollments", "StudentID = @StudentID", new MySqlParameter("@StudentID", studentId));
+                deletedRows += XoaDuLieu("tuition_fees", "StudentID = @StudentID", new MySqlParameter("@StudentID", studentId));
+
+                // Cuối cùng xóa sinh viên
+                deletedRows += XoaDuLieu("Students", "StudentID = @StudentID", new MySqlParameter("@StudentID", studentId));
+
+                // Bật lại kiểm tra khóa ngoại
+                using (MySqlCommand cmd = new MySqlCommand("SET FOREIGN_KEY_CHECKS = 1;", conn))
+                    cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi xóa học viên: " + ex.Message);
+                return -1;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            return deletedRows;
+        }
 
         static void Main(string[] args)
         {

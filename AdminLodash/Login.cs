@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;  // Xóa hoặc thay bằng MySql.Data nếu sử dụng MySQL
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -58,11 +57,7 @@ namespace AdminLodash
         {
 
         }
-        public enum StudentStatus
-        {
-            Active = 1,
-            Inactive = 0
-        }
+     
         private void borderButton2_Click(object sender, EventArgs e)
         {
             try
@@ -86,7 +81,7 @@ namespace AdminLodash
                 string email = txtEmail.Texts.Trim();
                 string address = txtAddress.Texts.Trim();
                 DateTime registrationDate = DateTime.Now;
-                string status = "Active"; // Mặc định là Active
+                int status = 1; // cũng đúng, nhưng phải đảm bảo hàm ThemSinhVien nhận tham số kiểu int
                 string password = txtPassword.Texts.Trim();
 
                 // Kiểm tra thông tin bắt buộc
@@ -98,7 +93,7 @@ namespace AdminLodash
 
                 // Thêm vào database
                 int result = Data.SQLServer.ThemSinhVien(studentId, fullName, dateOfBirth, gender,
-                                                         phone, address, registrationDate, status, password);
+                                                         phone, email, address, registrationDate, status, password);
 
                 if (result > 0)
                 {

@@ -21,6 +21,7 @@ namespace AdminLodash
             this.Load += StudentManagement_Load;
             borderButton2.Click += borderButton2_Click;
             borderButton2.Click -= borderButton2_Click;
+            LoadData();
         }
 
         private void textBox1_Load(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace AdminLodash
         {
             Login login = new Login();
             login.Show();
+          
         }
         private void LoadData()
         {
@@ -84,7 +86,52 @@ namespace AdminLodash
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Kiểm tra nếu click vào cột "Xóa"
+            if (e.RowIndex >= 0 && dataGridView2.Columns[e.ColumnIndex].Name == "colXoa")
+            {
+                var studentId = dataGridView2.Rows[e.RowIndex].Cells["StudentID"].Value?.ToString();
 
+                if (string.IsNullOrEmpty(studentId))
+                {
+                    MessageBox.Show("Không tìm thấy mã học viên.");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa học viên {studentId}?", "Xác nhận xóa",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    int rowsAffected = BUS.StudentBUS.XoaHocVienKhongRangBuoc(studentId);
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Xóa học viên thành công!");
+                        LoadData(); // Tải lại dữ liệu
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa học viên thành công!");
+                        LoadData();
+                    }
+                }
+            }
+
+            // Kiểm tra nếu click vào cột "Sửa"
+            if (e.RowIndex >= 0 && dataGridView2.Columns[e.ColumnIndex].Name == "colsua")
+            {
+                var studentId = dataGridView2.Rows[e.RowIndex].Cells["StudentID"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(studentId))
+                {
+                    MessageBox.Show("Không tìm thấy mã học viên.");
+                    return;
+                }
+
+                // Mở form cập nhật thông tin học viên (giả sử bạn có form EditStudentForm)
+               
+              
+                LoadData(); // Tải lại dữ liệu sau khi sửa
+            }
         }
 
         private void borderButton3_Click(object sender, EventArgs e)
@@ -221,6 +268,11 @@ namespace AdminLodash
         private void Studentmanagement_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void borderButton5_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

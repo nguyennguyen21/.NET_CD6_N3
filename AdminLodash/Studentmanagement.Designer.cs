@@ -34,6 +34,7 @@
             this.borderButton6 = new AdminLodash.BorderButton();
             this.borderButton1 = new AdminLodash.BorderButton();
             this.borderButton4 = new AdminLodash.BorderButton();
+            this.borderButton5 = new AdminLodash.BorderButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,11 +146,31 @@
             this.borderButton4.UseVisualStyleBackColor = false;
             this.borderButton4.Click += new System.EventHandler(this.borderButton4_Click);
             // 
+            // borderButton5
+            // 
+            this.borderButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(89)))), ((int)(((byte)(209)))));
+            this.borderButton5.BoderRadius1 = 40;
+            this.borderButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton5.BorderSize = 0;
+            this.borderButton5.FlatAppearance.BorderSize = 0;
+            this.borderButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton5.ForeColor = System.Drawing.Color.White;
+            this.borderButton5.Location = new System.Drawing.Point(774, 12);
+            this.borderButton5.Name = "borderButton5";
+            this.borderButton5.Size = new System.Drawing.Size(139, 50);
+            this.borderButton5.TabIndex = 25;
+            this.borderButton5.Text = "Load data";
+            this.borderButton5.TextColor = System.Drawing.Color.White;
+            this.borderButton5.UseVisualStyleBackColor = false;
+            this.borderButton5.Click += new System.EventHandler(this.borderButton5_Click);
+            // 
             // Studentmanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 545);
+            this.Controls.Add(this.borderButton5);
             this.Controls.Add(this.borderButton4);
             this.Controls.Add(this.borderButton3);
             this.Controls.Add(this.borderButton2);
@@ -173,5 +194,6 @@
         private BorderButton borderButton2;
         private BorderButton borderButton3;
         private BorderButton borderButton4;
+        private BorderButton borderButton5;
     }
 }

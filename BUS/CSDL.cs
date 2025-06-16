@@ -73,9 +73,13 @@ namespace Bus
         // ================== LỚP XỬ LÝ SINH VIÊN ==================
         public class StudentBUS
         {
+            public static int XoaHocVienKhongRangBuoc(string studentId)
+            {
+                return SQLServer.XoaHocVienKhongRangBuoc(studentId);
+            }
             public static int ThemSinhVien(string studentId, string fullName, DateTime dateOfBirth,
-                                            string gender, string phone, string address,
-                                            DateTime registrationDate, string status, string password)
+                                            string gender, string phone,string email, string address,
+                                            DateTime registrationDate, int status, string password)
             {
                 if (string.IsNullOrWhiteSpace(studentId))
                     throw new ArgumentException("Mã sinh viên không được để trống.");
@@ -83,7 +87,7 @@ namespace Bus
                 if (string.IsNullOrWhiteSpace(fullName))
                     throw new ArgumentException("Họ tên không được để trống.");
 
-                return SQLServer.ThemSinhVien(studentId, fullName, dateOfBirth, gender, phone, address,
+                return SQLServer.ThemSinhVien(studentId, fullName, dateOfBirth, gender, phone, email, address,
                                               registrationDate, status, password);
             }
             public static DataTable LayDanhSachHocVien()
