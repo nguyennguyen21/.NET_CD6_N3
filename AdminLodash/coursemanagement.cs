@@ -21,7 +21,7 @@ namespace AdminLodash
 {
     public partial class coursemanagement : Form
     {
-        internal Timer fadeInTimer;
+        
         public coursemanagement()
         {
             InitializeComponent();
@@ -41,32 +41,12 @@ namespace AdminLodash
 
 
         }
-        private void InitializeCustomControls()
-        {
-            // Tạo cmbLevel
-            cmbLevel = new ComboBox
-            {
-                Location = new System.Drawing.Point(20, 20),
-                Width = 200
-            };
-            cmbLevel.Items.AddRange(new object[] { "Dễ", "Trung bình", "Khó", "Nâng cao" });
-            this.Controls.Add(cmbLevel);
-
-            // Tạo dataGridView2
-            dataGridView2 = new DataGridView
-            {
-                Dock = DockStyle.Bottom,
-                Top = 50,
-                Height = 400
-            };
-            this.Controls.Add(dataGridView2);
-        }
+     
         
 
         private void borderButton3_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 if (dataGridView2.DataSource == null)
                 {
                     MessageBox.Show("Chưa có dữ liệu để sắp xếp.");
@@ -92,17 +72,13 @@ namespace AdminLodash
 
                 // Đổi text hoặc thông báo tùy chọn
                 borderButton3.Text = "Sorted by StartDate";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
+           
+           
         }
 
         private void borderButton3_ResetClick(object sender, EventArgs e)
         {
-            try
-            {
+            
                 // Quay về chế độ mặc định (không sắp xếp)
                 LoadData(); // Hàm tải lại dữ liệu gốc
 
@@ -115,11 +91,7 @@ namespace AdminLodash
                 // Đăng ký lại sự kiện ban đầu
                 borderButton3.Click -= borderButton3_ResetClick;
                 borderButton3.Click += borderButton3_Click;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
+          
         }
 
 
@@ -184,8 +156,7 @@ namespace AdminLodash
 
         private void borderButton5_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 if (dataGridView2.DataSource == null)
                 {
                     MessageBox.Show("Chưa có dữ liệu để sắp xếp.");
@@ -211,16 +182,11 @@ namespace AdminLodash
 
                 // Đổi tên nút để người dùng biết đang ở chế độ sắp xếp
                 borderButton5.Text = "Sorted by EndDate";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
+            
         }
         private void borderButton5_ResetClick(object sender, EventArgs e)
         {
-            try
-            {
+            
                 // Tải lại dữ liệu gốc
                 LoadData();
 
@@ -231,16 +197,11 @@ namespace AdminLodash
                 borderButton5.Text = "Sort by EndDate";
                 borderButton5.Click -= borderButton5_ResetClick;
                 borderButton5.Click += borderButton5_Click;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
+          
         }
         private void borderButton6_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 // Kiểm tra xem có dữ liệu để xuất không
                 if (dataGridView2.DataSource == null)
                 {
@@ -297,12 +258,8 @@ namespace AdminLodash
                                                                             // Hoặc dùng: System.Diagnostics.Process.Start(filePath);
                 }
 
-                MessageBox.Show("Đã xuất dữ liệu thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
-            }
+               
+          
         }
 
         private void textBox1_Load(object sender, EventArgs e)
@@ -595,20 +552,15 @@ namespace AdminLodash
                     MessageBox.Show("Không lấy được mã khóa học.");
                     return;
                 }
-
                 DialogResult dialogResult = MessageBox.Show(
                     $"Bạn có chắc muốn xóa khóa học {courseId}?",
                     "Xác nhận xóa",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
-
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int ketQua = Bus.BUS.XoaKhoaHocKhongRangBuoc(courseId); // Hoặc XoaKhoaHoc
-                    
-                        LoadData(); // Làm mới dữ liệu trên lưới
-                   
-                   
+                    int ketQua = Bus.BUS.XoaKhoaHocKhongRangBuoc(courseId); // <-- Gọi hàm xóa
+                    LoadData(); // Làm mới dữ liệu trên lưới
                 }
             }
         }

@@ -73,7 +73,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(389, 530);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+           
             // 
             // groupBox2
             // 
@@ -111,7 +111,7 @@
             this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "level";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+         
             // 
             // cmbLevel
             // 
@@ -122,7 +122,7 @@
             this.cmbLevel.Name = "cmbLevel";
             this.cmbLevel.Size = new System.Drawing.Size(257, 24);
             this.cmbLevel.TabIndex = 17;
-            this.cmbLevel.SelectedIndexChanged += new System.EventHandler(this.cmbLevel_SelectedIndexChanged);
+          
             // 
             // txtDuration
             // 
@@ -139,7 +139,7 @@
             this.txtDuration.TabIndex = 16;
             this.txtDuration.Texts = "";
             this.txtDuration.UnderlinedStyle = true;
-            this.txtDuration.Load += new System.EventHandler(this.txtDuration_Load);
+            
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Duration";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // dtpEndDate
             // 
@@ -167,7 +167,7 @@
             this.dtpEndDate.TabIndex = 14;
             this.dtpEndDate.TextColor = System.Drawing.Color.White;
             this.dtpEndDate.Value = new System.DateTime(2025, 5, 28, 18, 53, 51, 4);
-            this.dtpEndDate.Load += new System.EventHandler(this.dtpEndDate_Load);
+            
             // 
             // dtpStartDate
             // 
@@ -246,7 +246,7 @@
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "EndDate";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+           
             // 
             // label6
             // 
@@ -257,7 +257,7 @@
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "StartDate";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+           
             // 
             // label5
             // 
@@ -268,7 +268,7 @@
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "TuitionFee";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // label3
             // 
@@ -279,7 +279,7 @@
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "CourseName";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+        
             // 
             // label4
             // 
@@ -344,7 +344,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+         
             // 
             // button2
             // 
@@ -374,7 +374,7 @@
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "course Id";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // txtTimKiem
             // 

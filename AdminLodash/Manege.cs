@@ -280,5 +280,15 @@ namespace AdminLodash
             
             
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new TestManagement());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            LoadForm(new statisticalmanagement());
+        }
     }
 }

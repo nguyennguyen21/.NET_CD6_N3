@@ -35,8 +35,7 @@ namespace AdminLodash
 
         private void LoadStudents()
         {
-            try
-            {
+          
                 DataTable dtStudents = Data.SQLServer.LayDanhSachHocVien();
 
                 if (dtStudents.Rows.Count > 0)
@@ -49,11 +48,8 @@ namespace AdminLodash
                 {
                     MessageBox.Show("Không có học viên nào.");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách học viên: " + ex.Message);
-            }
+            
+           
         }
         private void cbxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -66,8 +62,7 @@ namespace AdminLodash
       
         private void LoadStudentsByClass(string classId)
         {
-            try
-            {
+           
                 DataTable dtStudents = Data.SQLServer.LayDanhSachHocVienTheoLop(classId);
 
                 if (dtStudents.Rows.Count > 0)
@@ -79,11 +74,8 @@ namespace AdminLodash
                     MessageBox.Show("Lớp học này chưa có học viên nào.");
                     dgvDiemDanh.DataSource = null;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách học viên theo lớp: " + ex.Message);
-            }
+            
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -93,8 +85,7 @@ namespace AdminLodash
 
         private void Attendance_Load(object sender, EventArgs e)
         {
-            try
-            {
+            
                 // Gọi hàm lấy dữ liệu điểm danh từ SQLServer
                 DataTable dtAttendance = Data.SQLServer.LayDanhSachDiemDanh();
 
@@ -108,17 +99,10 @@ namespace AdminLodash
                     MessageBox.Show("Không có dữ liệu điểm danh.");
                     dgvDiemDanh.DataSource = null;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải dữ liệu điểm danh: " + ex.Message);
-            }
-        }
-        private void cboLopHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
-
+          
         }
+    
 
      
 
@@ -198,9 +182,7 @@ namespace AdminLodash
                 return;
             }
 
-            try
-            {
-                DataTable students = Data.SQLServer.LayDanhSachHocVienTheoLop(classId);
+             DataTable students = Data.SQLServer.LayDanhSachHocVienTheoLop(classId);
 
                 foreach (DataRow row in students.Rows)
                 {
@@ -219,62 +201,8 @@ namespace AdminLodash
 
                 MessageBox.Show("Điểm danh thành công!");
                 LoadAttendance(); // Tải lại dữ liệu
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi điểm danh: " + ex.Message);
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
-
-        }
-
-   
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-  
-
-        private void absentRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-    
-
-        private void LoadAttendanceByClassAndDate(string classId, string date)
-        {
-            try
-            {
-                DataTable dt = Data.SQLServer.LayDanhSachDiemDanhTheoLopVaNgay(classId, date);
-                dgvDiemDanh.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi tải điểm danh tự động: " + ex.Message);
-            }
+        
         }
         private void borderButton1_Click_1(object sender, EventArgs e)
         {
@@ -288,8 +216,7 @@ namespace AdminLodash
             string classId = cbxClass.SelectedValue.ToString();
             string selectedDate = dtpDate.Value.ToString("yyyy-MM-dd"); // Định dạng ngày đúng kiểu SQL
 
-            try
-            {
+           
                 // Gọi hàm lấy điểm danh theo lớp và ngày
                 DataTable dtAttendance = Data.SQLServer.LayDanhSachDiemDanhTheoLopVaNgay(classId, selectedDate);
 
@@ -303,16 +230,12 @@ namespace AdminLodash
                     dgvDiemDanh.DataSource = null;
                     MessageBox.Show("Không có dữ liệu điểm danh cho lớp và ngày đã chọn.");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải dữ liệu điểm danh: " + ex.Message);
-            }
+            
+           
         }
         private void LoadClassesForFind()
         {
-            try
-            {
+           
                 DataTable dt = Bus.BUS.ClassBUS.LayDanhLopHoc();
 
                 if (dt.Rows.Count > 0)
@@ -326,15 +249,9 @@ namespace AdminLodash
                 {
                     MessageBox.Show("Không có lớp học nào.");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách lớp học: " + ex.Message);
-            }
+          
+           
         }
-        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.studentComboBox = new System.Windows.Forms.ComboBox();
-            this.cbxClass = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvDiemDanh = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.borderButton1 = new AdminLodash.BorderButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxClassFind = new System.Windows.Forms.ComboBox();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.borderButton1 = new AdminLodash.BorderButton();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.acceptButton = new AdminLodash.BorderButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.studentComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxClass = new System.Windows.Forms.ComboBox();
+            this.dgvDiemDanh = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,91 +63,6 @@
             this.panel1.Size = new System.Drawing.Size(1303, 193);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 47);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 18);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Student Name";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Status";
-            // 
-            // studentComboBox
-            // 
-            this.studentComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentComboBox.FormattingEnabled = true;
-            this.studentComboBox.Location = new System.Drawing.Point(124, 49);
-            this.studentComboBox.Name = "studentComboBox";
-            this.studentComboBox.Size = new System.Drawing.Size(152, 26);
-            this.studentComboBox.TabIndex = 7;
-            this.studentComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // cbxClass
-            // 
-            this.cbxClass.FormattingEnabled = true;
-            this.cbxClass.Location = new System.Drawing.Point(124, 18);
-            this.cbxClass.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxClass.Name = "cbxClass";
-            this.cbxClass.Size = new System.Drawing.Size(151, 24);
-            this.cbxClass.TabIndex = 1;
-            this.cbxClass.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Class Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dgvDiemDanh
-            // 
-            this.dgvDiemDanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiemDanh.Location = new System.Drawing.Point(19, 208);
-            this.dgvDiemDanh.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvDiemDanh.Name = "dgvDiemDanh";
-            this.dgvDiemDanh.RowHeadersWidth = 51;
-            this.dgvDiemDanh.RowTemplate.Height = 24;
-            this.dgvDiemDanh.Size = new System.Drawing.Size(1303, 277);
-            this.dgvDiemDanh.TabIndex = 7;
-            this.dgvDiemDanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtpDate);
-            this.groupBox1.Controls.Add(this.cbxStatus);
-            this.groupBox1.Controls.Add(this.acceptButton);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.studentComboBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbxClass);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 177);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New stus";
             // 
             // groupBox2
             // 
@@ -163,6 +78,26 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find";
+            // 
+            // borderButton1
+            // 
+            this.borderButton1.BackColor = System.Drawing.Color.White;
+            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
+            this.borderButton1.BoderRadius1 = 31;
+            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borderButton1.BorderSize = 0;
+            this.borderButton1.FlatAppearance.BorderSize = 0;
+            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borderButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borderButton1.ForeColor = System.Drawing.Color.Black;
+            this.borderButton1.Location = new System.Drawing.Point(153, 140);
+            this.borderButton1.Name = "borderButton1";
+            this.borderButton1.Size = new System.Drawing.Size(123, 31);
+            this.borderButton1.TabIndex = 8;
+            this.borderButton1.Text = "accept";
+            this.borderButton1.TextColor = System.Drawing.Color.Black;
+            this.borderButton1.UseVisualStyleBackColor = false;
+            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click_1);
             // 
             // label7
             // 
@@ -203,25 +138,26 @@
             this.cbxClassFind.Name = "cbxClassFind";
             this.cbxClassFind.Size = new System.Drawing.Size(151, 24);
             this.cbxClassFind.TabIndex = 1;
-            this.cbxClassFind.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
+         
             // 
-            // cbxStatus
+            // groupBox1
             // 
-            this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Location = new System.Drawing.Point(124, 81);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(152, 26);
-            this.cbxStatus.TabIndex = 12;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(125, 112);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(151, 22);
-            this.dtpDate.TabIndex = 13;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dtpDate);
+            this.groupBox1.Controls.Add(this.cbxStatus);
+            this.groupBox1.Controls.Add(this.acceptButton);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.studentComboBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cbxClass);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(292, 177);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "New stus";
             // 
             // label2
             // 
@@ -234,25 +170,23 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Date";
             // 
-            // borderButton1
+            // dtpDate
             // 
-            this.borderButton1.BackColor = System.Drawing.Color.White;
-            this.borderButton1.BackgroundColor = System.Drawing.Color.White;
-            this.borderButton1.BoderRadius1 = 31;
-            this.borderButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borderButton1.BorderSize = 0;
-            this.borderButton1.FlatAppearance.BorderSize = 0;
-            this.borderButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borderButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borderButton1.ForeColor = System.Drawing.Color.Black;
-            this.borderButton1.Location = new System.Drawing.Point(153, 140);
-            this.borderButton1.Name = "borderButton1";
-            this.borderButton1.Size = new System.Drawing.Size(123, 31);
-            this.borderButton1.TabIndex = 8;
-            this.borderButton1.Text = "accept";
-            this.borderButton1.TextColor = System.Drawing.Color.Black;
-            this.borderButton1.UseVisualStyleBackColor = false;
-            this.borderButton1.Click += new System.EventHandler(this.borderButton1_Click_1);
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(125, 112);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(151, 22);
+            this.dtpDate.TabIndex = 13;
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Location = new System.Drawing.Point(124, 81);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(152, 26);
+            this.cbxStatus.TabIndex = 12;
             // 
             // acceptButton
             // 
@@ -265,7 +199,7 @@
             this.acceptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acceptButton.ForeColor = System.Drawing.Color.Black;
-            this.acceptButton.Location = new System.Drawing.Point(71, 140);
+            this.acceptButton.Location = new System.Drawing.Point(153, 139);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(123, 31);
             this.acceptButton.TabIndex = 8;
@@ -273,6 +207,71 @@
             this.acceptButton.TextColor = System.Drawing.Color.Black;
             this.acceptButton.UseVisualStyleBackColor = false;
             this.acceptButton.Click += new System.EventHandler(this.borderButton1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Status";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 18);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Student Name";
+           
+            // 
+            // studentComboBox
+            // 
+            this.studentComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentComboBox.FormattingEnabled = true;
+            this.studentComboBox.Location = new System.Drawing.Point(124, 49);
+            this.studentComboBox.Name = "studentComboBox";
+            this.studentComboBox.Size = new System.Drawing.Size(152, 26);
+            this.studentComboBox.TabIndex = 7;
+           
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Class Name";
+           
+            // 
+            // cbxClass
+            // 
+            this.cbxClass.FormattingEnabled = true;
+            this.cbxClass.Location = new System.Drawing.Point(124, 18);
+            this.cbxClass.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxClass.Name = "cbxClass";
+            this.cbxClass.Size = new System.Drawing.Size(151, 24);
+            this.cbxClass.TabIndex = 1;
+          
+            // 
+            // dgvDiemDanh
+            // 
+            this.dgvDiemDanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDiemDanh.Location = new System.Drawing.Point(19, 208);
+            this.dgvDiemDanh.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDiemDanh.Name = "dgvDiemDanh";
+            this.dgvDiemDanh.RowHeadersWidth = 51;
+            this.dgvDiemDanh.RowTemplate.Height = 24;
+            this.dgvDiemDanh.Size = new System.Drawing.Size(1303, 277);
+            this.dgvDiemDanh.TabIndex = 7;
+          
             // 
             // Attendancemanagement
             // 
@@ -287,11 +286,11 @@
             this.Text = "Attendance";
             this.Load += new System.EventHandler(this.Attendance_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).EndInit();
             this.ResumeLayout(false);
 
         }

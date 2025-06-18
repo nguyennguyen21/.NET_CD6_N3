@@ -30,6 +30,8 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -79,12 +81,36 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.button11);
+            this.panel6.Controls.Add(this.button9);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 393);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(229, 53);
+            this.panel6.Size = new System.Drawing.Size(229, 130);
             this.panel6.TabIndex = 9;
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(-2, 94);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(232, 45);
+            this.button11.TabIndex = 15;
+            this.button11.Text = "statistical";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(-3, 46);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(232, 45);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "Test";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // button7
             // 
@@ -395,6 +421,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Manege";
             this.Text = "Manege";
@@ -434,5 +461,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
     }
 }

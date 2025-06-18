@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bus;
 using ClosedXML.Excel;
+using Data;
 
 namespace AdminLodash
 {
@@ -84,6 +85,8 @@ namespace AdminLodash
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
             }
         }
+        private bool isEditingMode = false;
+        private DataTable originalData; // Lưu bản sao dữ liệu gốc để phục hồi nếu hủy
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra nếu click vào cột "Xóa"
@@ -102,7 +105,7 @@ namespace AdminLodash
 
                 if (result == DialogResult.Yes)
                 {
-                    int rowsAffected = BUS.StudentBUS.XoaHocVienKhongRangBuoc(studentId);
+                    int rowsAffected = SQLServer.XoaHocVienKhongRangBuoc(studentId);
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Xóa học viên thành công!");
@@ -127,12 +130,79 @@ namespace AdminLodash
                     return;
                 }
 
-                // Mở form cập nhật thông tin học viên (giả sử bạn có form EditStudentForm)
-               
-              
-                LoadData(); // Tải lại dữ liệu sau khi sửa
+                // Bắt đầu chế độ sửa
+                isEditingMode = true;
+                originalData = (DataTable)dataGridView2.DataSource;
+
+                // Sao chép dữ liệu để có thể quay lại nếu người dùng hủy
+                var dtCopy = originalData.Copy();
+                dataGridView2.ReadOnly = false;
+                dataGridView2.AllowUserToAddRows = false;
+
+                // Đăng ký sự kiện KeyDown để bắt Enter
+                dataGridView2.KeyDown += DataGridView2_KeyDown;
             }
         }
+
+        private void DataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && isEditingMode)
+            {
+                e.Handled = true; // Ngăn xử lý mặc định của Enter
+
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu các thay đổi không?", "Xác nhận", MessageBoxButtons.YesNoCancel);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Gọi hàm cập nhật dữ liệu thực tế xuống database
+                    SaveChangesToDatabase();
+                    MessageBox.Show("Lưu thành công!");
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Phục hồi dữ liệu cũ
+                    dataGridView2.DataSource = originalData;
+                    MessageBox.Show("Thay đổi đã bị hủy.");
+                }
+
+                // Thoát chế độ sửa
+                isEditingMode = false;
+                dataGridView2.ReadOnly = true;
+                dataGridView2.KeyDown -= DataGridView2_KeyDown;
+            }
+        }
+
+        private void SaveChangesToDatabase()
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    string studentId = row.Cells["StudentID"].Value?.ToString();
+                    string fullName = row.Cells["FullName"].Value?.ToString();
+                    string phone = row.Cells["Phone"].Value?.ToString();
+                    string email = row.Cells["Email"].Value?.ToString();
+                    string address = row.Cells["Address"].Value?.ToString();
+
+                    if (string.IsNullOrEmpty(studentId)) continue;
+
+                    int rowsAffected = Data.SQLServer.CapNhatHocVien(studentId, fullName, phone, email, address);
+                    if (rowsAffected <= 0)
+                    {
+                        MessageBox.Show($"Cập nhật học viên {studentId} thất bại.");
+                    }
+                }
+
+                LoadData(); // Làm mới dữ liệu từ CSDL
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu: " + ex.Message);
+            }
+        }
+
 
         private void borderButton3_Click(object sender, EventArgs e)
         {

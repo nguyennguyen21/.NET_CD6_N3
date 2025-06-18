@@ -44,7 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.labelLoi = new System.Windows.Forms.Label();
             this.dtpDateOfBirth = new AdminLodash.Datepicker.DateandTime();
             this.radioButtonNu = new AdminLodash.panelRadius.panelRadius();
             this.rbnNu = new AdminLodash.RadioButton1.RadioButton1();
@@ -260,18 +259,6 @@
             this.label9.Size = new System.Drawing.Size(0, 24);
             this.label9.TabIndex = 22;
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // labelLoi
-            // 
-            this.labelLoi.AutoSize = true;
-            this.labelLoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoi.ForeColor = System.Drawing.Color.Red;
-            this.labelLoi.Location = new System.Drawing.Point(934, 439);
-            this.labelLoi.Name = "labelLoi";
-            this.labelLoi.Size = new System.Drawing.Size(61, 18);
-            this.labelLoi.TabIndex = 23;
-            this.labelLoi.Text = "label10";
-            this.labelLoi.Click += new System.EventHandler(this.labelLoi_Click);
             // 
             // dtpDateOfBirth
             // 
@@ -493,7 +480,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1325, 559);
-            this.Controls.Add(this.labelLoi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label9);
@@ -560,7 +546,6 @@
         private Datepicker.DateandTime dtpDateOfBirth;
         private RadioButton1.RadioButton1 rbnNu;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label labelLoi;
         private BorderButton borderButton4;
         private BorderButton borderButton3;
         private pictureBorder.PictureBorder pictureBorder1;

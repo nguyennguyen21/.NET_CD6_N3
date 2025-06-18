@@ -264,6 +264,7 @@ namespace AdminLodash
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
             string columnName = dataGridView1.Columns[e.ColumnIndex].Name;
@@ -277,26 +278,28 @@ namespace AdminLodash
                     return;
                 }
 
-                DialogResult result = MessageBox.Show(
+                DialogResult dialogResult = MessageBox.Show(
                     $"Bạn có chắc muốn xóa lớp học {classId}?",
                     "Xác nhận xóa",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
+                if (dialogResult == DialogResult.Yes)
                 {
-                    int ketQua = Bus.BUS.ClassBUS.XoaLopHoc(classId);
+                    int ketQua = Bus.BUS.ClassBUS.XoaLopHocKhongRangBuoc(classId);
                     if (ketQua > 0)
                     {
                         MessageBox.Show("Xóa lớp học thành công!");
-                        LoadDataForClass(); // Làm mới lại dữ liệu lớp học
+                        LoadDataForClass(); // Làm mới dữ liệu trên lưới
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại. Có thể do ràng buộc dữ liệu.");
+                        LoadDataForClass();
+                        MessageBox.Show("Xóa thất bại hoặc lớp học không tồn tại.");
                     }
                 }
             }
+        
 
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 

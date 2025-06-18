@@ -19,6 +19,7 @@ namespace Bus
             return SQLServer.laydulieutheotenbang("courses");
         }
 
+
       
         // Xóa khóa học
         public static int XoaKhoaHoc(string courseId)
@@ -116,38 +117,17 @@ namespace Bus
             public static int GetMaxStudentFromClass(string classId)
             {
                 return Data.SQLServer.GetMaxStudentFromClass(classId);
+
+            }
+
+            public static int XoaLopHocKhongRangBuoc(string classId)
+            {
+                return SQLServer.XoaLopHocKhongRangBuoc(classId);
             }
             // Hàm xóa lớp học
-            public static int XoaLopHoc(string classId)
-            {
-                int deletedRows = 0;
+          
 
-                try
-                {
-                    if (!Data.SQLServer.taoketnoi()) return 0;
 
-                    // Bước 1: Xóa các bản ghi phụ thuộc
-                    deletedRows += Data.SQLServer.XoaDuLieu("Enrollments", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
-                    deletedRows += Data.SQLServer.XoaDuLieu("Attendance", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
-                    deletedRows += Data.SQLServer.XoaDuLieu("Results", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
-                    deletedRows += Data.SQLServer.XoaDuLieu("Tests", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
-
-                    // Bước 2: Xóa lớp học
-                    deletedRows += Data.SQLServer.XoaDuLieu("Classes", "ClassID = @ClassID", new MySqlParameter("@ClassID", classId));
-                }
-                catch (Exception )
-                {
-                    
-                    return -1;
-                }
-                finally
-                {
-                    if (Data.SQLServer.conn.State == ConnectionState.Open)
-                        Data.SQLServer.conn.Close();
-                }
-
-                return deletedRows;
-            }
             public static int ThemLopHoc(string classId, string courseId, string teacherId, string className,
                                          int maxStudent, string schedule, string room)
             {
@@ -288,22 +268,32 @@ namespace Bus
                     new MySqlParameter("@StudentID", studentId));
             }
 
-          
+            public static DataTable ThongKeTongQuanHocPhi(string classId = null)
+            {
+                return Data.SQLServer.ThongKeHocPhi(classId);
+            }
+
+            // Lấy danh sách lớp học có học phí
+            public static DataTable LayDanhSachLopHoc()
+            {
+                string sql = "SELECT DISTINCT ClassID FROM tuition_fees";
+                return Data.SQLServer.ExecuteQuery(sql);
+            }
+
         }
 
         // ================== LỚP XỬ LÝ BÀI THI ==================
         public class TestBUS
         {
-            public static int ThemBaiThi(string testId, string classId, string testName,
+            public static int ThemBaiThi( string classId, string testName,
                          DateTime testDate, string description, decimal fee)
             {
-                if (string.IsNullOrWhiteSpace(testId))
-                    throw new ArgumentException("Mã bài thi không được để trống.");
+                
 
                 if (string.IsNullOrWhiteSpace(testName))
                     throw new ArgumentException("Tên bài thi không được để trống.");
 
-                return SQLServer.ThemBaiThi(testId, classId, testName, testDate, description, fee);
+                return SQLServer.ThemBaiThi( classId, testName, testDate, description, fee);
             }
         }
 
@@ -410,10 +400,11 @@ namespace Bus
             }
         }
 
+
         
         
 
-        //lấy danh sách khóa học
+        
 
         static void Main(string[] args)
             {

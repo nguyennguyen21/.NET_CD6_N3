@@ -238,6 +238,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="statisticalmanagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statisticalmanagement.Designer.cs">
+      <DependentUpon>statisticalmanagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,11 +339,17 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="statisticalmanagement.resx">
+      <DependentUpon>statisticalmanagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Studentmanagement.resx">
       <DependentUpon>Studentmanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherManagement.resx">
       <DependentUpon>TeacherManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestManagement.resx">
+      <DependentUpon>TestManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextBox\TextBox.resx">
       <DependentUpon>TextBox.cs</DependentUpon>
